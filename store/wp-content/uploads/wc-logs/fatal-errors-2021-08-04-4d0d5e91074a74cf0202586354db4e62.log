@@ -1,0 +1,829 @@
+2021-08-04T09:17:47+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_total() on null in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/cart/header.php:1
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/header.php(16): get_template_part('cart/header')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(770): require_once('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', true, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#7 /Users/eugeneburlak/work/php/rest/store/wp-content in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/cart/header.php on line 1
+
+2021-08-04T09:17:50+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_total() on null in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/cart/header.php:1
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/header.php(16): get_template_part('cart/header')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(770): require_once('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', true, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#7 /Users/eugeneburlak/work/php/rest/store/wp-content in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/cart/header.php on line 1
+
+2021-08-04T09:17:55+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_total() on null in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/cart/header.php:1
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/header.php(16): get_template_part('cart/header')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(770): require_once('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', true, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#7 /Users/eugeneburlak/work/php/rest/store/wp-content in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/cart/header.php on line 1
+
+2021-08-04T09:18:49+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_total() on null in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/cart/header.php:1
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/header.php(16): get_template_part('cart/header')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(770): require_once('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', true, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#7 /Users/eugeneburlak/work/php/rest/store/wp-content in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/cart/header.php on line 1
+
+2021-08-04T09:20:39+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_total() on null in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/cart/header.php:1
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/header.php(16): get_template_part('cart/header')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(770): require_once('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', true, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#7 /Users/eugeneburlak/work/php/rest/store/wp-content in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/cart/header.php on line 1
+
+2021-08-04T09:20:41+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_total() on null in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/cart/header.php:1
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/header.php(16): get_template_part('cart/header')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(770): require_once('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', true, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#7 /Users/eugeneburlak/work/php/rest/store/wp-content in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/cart/header.php on line 1
+
+2021-08-04T09:21:02+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_total() on null in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/cart/header.php:1
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/header.php(16): get_template_part('cart/header')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(770): require_once('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', true, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#7 /Users/eugeneburlak/work/php/rest/store/wp-content in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/cart/header.php on line 1
+
+2021-08-04T09:21:09+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_total() on null in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/cart/header.php:1
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/header.php(16): get_template_part('cart/header')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(770): require_once('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', true, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#7 /Users/eugeneburlak/work/php/rest/store/wp-content in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/cart/header.php on line 1
+
+2021-08-04T09:21:26+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_total() on null in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/cart/header.php:1
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/header.php(16): get_template_part('cart/header')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(770): require_once('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', true, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#7 /Users/eugeneburlak/work/php/rest/store/wp-content in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/cart/header.php on line 1
+
+2021-08-04T09:29:50+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_total() on null in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/cart/header.php:1
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/header.php(16): get_template_part('cart/header')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(770): require_once('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', true, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#7 /Users/eugeneburlak/work/php/rest/store/wp-content in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/cart/header.php on line 1
+
+2021-08-04T09:30:24+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_total() on null in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/cart/header.php:1
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/header.php(16): get_template_part('cart/header')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(770): require_once('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', true, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#7 /Users/eugeneburlak/work/php/rest/store/wp-content in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/cart/header.php on line 1
+
+2021-08-04T09:30:37+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_total() on null in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/cart/header.php:1
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/header.php(16): get_template_part('cart/header')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(770): require_once('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', true, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#7 /Users/eugeneburlak/work/php/rest/store/wp-content in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/cart/header.php on line 1
+
+2021-08-04T09:31:04+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_total() on null in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/cart/header.php:1
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/header.php(16): get_template_part('cart/header')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(770): require_once('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', true, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#7 /Users/eugeneburlak/work/php/rest/store/wp-content in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/cart/header.php on line 1
+
+2021-08-04T09:31:22+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_total() on null in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/cart/header.php:1
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/header.php(16): get_template_part('cart/header')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(770): require_once('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', true, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#7 /Users/eugeneburlak/work/php/rest/store/wp-content in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/cart/header.php on line 1
+
+2021-08-04T09:31:58+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_total() on null in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/cart/header.php:1
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/header.php(16): get_template_part('cart/header')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(770): require_once('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', true, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#7 /Users/eugeneburlak/work/php/rest/store/wp-content in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/cart/header.php on line 1
+
+2021-08-04T09:32:22+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_total() on null in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/cart/header.php:1
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/header.php(16): get_template_part('cart/header')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(770): require_once('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', true, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#7 /Users/eugeneburlak/work/php/rest/store/wp-content in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/cart/header.php on line 1
+
+2021-08-04T09:32:30+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_total() on null in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/cart/header.php:1
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/header.php(16): get_template_part('cart/header')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(770): require_once('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', true, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#7 /Users/eugeneburlak/work/php/rest/store/wp-content in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/cart/header.php on line 1
+
+2021-08-04T09:32:55+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_total() on null in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/cart/header.php:2
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/header.php(16): get_template_part('cart/header')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(770): require_once('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', true, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#7 /Users/eugeneburlak/work/php/rest/store/wp-content in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/cart/header.php on line 2
+
+2021-08-04T09:32:57+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_total() on null in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/cart/header.php:2
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/header.php(16): get_template_part('cart/header')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(770): require_once('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', true, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#7 /Users/eugeneburlak/work/php/rest/store/wp-content in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/cart/header.php on line 2
+
+2021-08-04T09:33:25+00:00 CRITICAL Uncaught Error: Call to undefined function WOO() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/cart/header.php:2
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/header.php(16): get_template_part('cart/header')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(770): require_once('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', true, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#7 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/ind in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/cart/header.php on line 2
+
+2021-08-04T09:34:18+00:00 CRITICAL Uncaught Error: Call to undefined function WOO() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/cart/header.php:2
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/header.php(17): get_template_part('cart/header')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(770): require_once('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', true, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#7 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/ind in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/cart/header.php on line 2
+
+2021-08-04T12:16:24+00:00 CRITICAL syntax error, unexpected '}', expecting ';' in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php on line 217
+
+2021-08-04T12:16:42+00:00 CRITICAL syntax error, unexpected '}', expecting ';' in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php on line 217
+
+2021-08-04T12:16:44+00:00 CRITICAL syntax error, unexpected '}', expecting ';' in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php on line 217
+
+2021-08-04T12:17:11+00:00 CRITICAL syntax error, unexpected '}', expecting ';' in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php on line 217
+
+2021-08-04T13:38:11+00:00 CRITICAL Uncaught Error: Call to a member function get_allowed_countries() on null in /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/wc-core-functions.php:1307
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/data-stores/class-wc-customer-data-store-session.php(128): wc_get_customer_default_location()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/data-stores/class-wc-customer-data-store-session.php(117): WC_Customer_Data_Store_Session->set_defaults(Object(WC_Customer))
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/class-wc-data-store.php(159): WC_Customer_Data_Store_Session->read(Object(WC_Customer))
+#3 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/class-wc-customer.php(116): WC_Data_Store->read(Object(WC_Customer))
+#4 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php(228): WC_Customer->__construct(1, tru in /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/wc-core-functions.php on line 1307
+
+2021-08-04T13:38:23+00:00 CRITICAL Uncaught Error: Call to a member function get_allowed_countries() on null in /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/wc-core-functions.php:1307
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/data-stores/class-wc-customer-data-store-session.php(128): wc_get_customer_default_location()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/data-stores/class-wc-customer-data-store-session.php(117): WC_Customer_Data_Store_Session->set_defaults(Object(WC_Customer))
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/class-wc-data-store.php(159): WC_Customer_Data_Store_Session->read(Object(WC_Customer))
+#3 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/class-wc-customer.php(116): WC_Data_Store->read(Object(WC_Customer))
+#4 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php(228): WC_Customer->__construct(1, tru in /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/wc-core-functions.php on line 1307
+
+2021-08-04T13:39:31+00:00 CRITICAL Uncaught Error: Call to a member function get() on null in /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/class-wc-cart-session.php:73
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/class-wc-cart.php(602): WC_Cart_Session->get_cart_from_session()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php(217): WC_Cart->get_cart()
+#2 /Users/eugeneburlak/work/php/rest/store/wp-settings.php(546): include('/Users/eugenebu...')
+#3 /Users/eugeneburlak/work/php/rest/store/wp-config.php(96): require_once('/Users/eugenebu...')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-load.php(50): require_once('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-blog-header.php(13): require_once('/Users/eugenebu...')
+#6 /Users/eugeneburlak/work/php/rest/store/index.php(17): require('/Users/eugenebu...')
+#7 {main}
+  thrown in /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/class-wc-cart-session.php on line 73
+
+2021-08-04T13:39:37+00:00 CRITICAL Uncaught Error: Call to a member function get() on null in /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/class-wc-cart-session.php:73
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/class-wc-cart.php(602): WC_Cart_Session->get_cart_from_session()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php(223): WC_Cart->get_cart()
+#2 /Users/eugeneburlak/work/php/rest/store/wp-settings.php(546): include('/Users/eugenebu...')
+#3 /Users/eugeneburlak/work/php/rest/store/wp-config.php(96): require_once('/Users/eugenebu...')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-load.php(50): require_once('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-blog-header.php(13): require_once('/Users/eugenebu...')
+#6 /Users/eugeneburlak/work/php/rest/store/index.php(17): require('/Users/eugenebu...')
+#7 {main}
+  thrown in /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/class-wc-cart-session.php on line 73
+
+2021-08-04T13:39:39+00:00 CRITICAL Uncaught Error: Call to a member function get() on null in /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/class-wc-cart-session.php:73
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/class-wc-cart.php(602): WC_Cart_Session->get_cart_from_session()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php(223): WC_Cart->get_cart()
+#2 /Users/eugeneburlak/work/php/rest/store/wp-settings.php(546): include('/Users/eugenebu...')
+#3 /Users/eugeneburlak/work/php/rest/store/wp-config.php(96): require_once('/Users/eugenebu...')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-load.php(50): require_once('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-blog-header.php(13): require_once('/Users/eugenebu...')
+#6 /Users/eugeneburlak/work/php/rest/store/index.php(17): require('/Users/eugenebu...')
+#7 {main}
+  thrown in /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/class-wc-cart-session.php on line 73
+
+2021-08-04T17:51:58+00:00 CRITICAL Uncaught Error: Call to a member function have_posts() on null in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php:14
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/index.php(5): get_template_part('products/index')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template-loader.php(106): include('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-blog-header.php(19): require_once('/Users/eugenebu...')
+#6 /Users/eugeneburlak/work/php/rest/store/index.php(17): require('/Users/eugenebu...')
+#7 {main}
+  thrown in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php on line 14
+
+2021-08-04T17:51:59+00:00 CRITICAL Uncaught Error: Call to a member function have_posts() on null in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php:14
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/index.php(5): get_template_part('products/index')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template-loader.php(106): include('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-blog-header.php(19): require_once('/Users/eugenebu...')
+#6 /Users/eugeneburlak/work/php/rest/store/index.php(17): require('/Users/eugenebu...')
+#7 {main}
+  thrown in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php on line 14
+
+2021-08-04T18:25:20+00:00 CRITICAL syntax error, unexpected '$totalClear' (T_VARIABLE) in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php on line 215
+
+2021-08-04T18:33:09+00:00 CRITICAL Object of class WP_REST_Request could not be converted to string in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php on line 233
+
+2021-08-04T18:37:14+00:00 CRITICAL Uncaught Error: Call to protected method WP_REST_Request::parse_body_params() from context '' in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php:225
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/rest-api/class-wp-rest-server.php(1140): addProduct(Object(WP_REST_Request))
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/rest-api/class-wp-rest-server.php(987): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/burlak/cart/ad...', Array, NULL)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-includes/rest-api/class-wp-rest-server.php(414): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#3 /Users/eugeneburlak/work/php/rest/store/wp-includes/rest-api.php(370): WP_REST_Server->serve_request('/burlak/cart/ad...')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/class-wp-hook.php(303): rest_api_loaded(Object(WP))
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/class-wp-hook.php(327): WP_Hook->apply_filters(NULL, Array)
+#6 /Users/eugene in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php on line 225
+
+2021-08-04T18:37:33+00:00 CRITICAL Uncaught Error: Call to protected method WP_REST_Request::parse_json_params() from context '' in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php:225
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/rest-api/class-wp-rest-server.php(1140): addProduct(Object(WP_REST_Request))
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/rest-api/class-wp-rest-server.php(987): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/burlak/cart/ad...', Array, NULL)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-includes/rest-api/class-wp-rest-server.php(414): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#3 /Users/eugeneburlak/work/php/rest/store/wp-includes/rest-api.php(370): WP_REST_Server->serve_request('/burlak/cart/ad...')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/class-wp-hook.php(303): rest_api_loaded(Object(WP))
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/class-wp-hook.php(327): WP_Hook->apply_filters(NULL, Array)
+#6 /Users/eugene in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php on line 225
+
+2021-08-04T18:40:50+00:00 CRITICAL Uncaught Error: Cannot use object of type stdClass as array in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php:231
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/rest-api/class-wp-rest-server.php(1140): addProduct(Object(WP_REST_Request))
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/rest-api/class-wp-rest-server.php(987): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/burlak/cart/ad...', Array, NULL)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-includes/rest-api/class-wp-rest-server.php(414): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#3 /Users/eugeneburlak/work/php/rest/store/wp-includes/rest-api.php(370): WP_REST_Server->serve_request('/burlak/cart/ad...')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/class-wp-hook.php(303): rest_api_loaded(Object(WP))
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/class-wp-hook.php(327): WP_Hook->apply_filters(NULL, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-incl in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php on line 231
+
+2021-08-04T18:48:33+00:00 CRITICAL Uncaught Error: Call to undefined method WooCommerce::add_to_cart() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php:235
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/rest-api/class-wp-rest-server.php(1140): addProduct(Object(stdClass))
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/rest-api/class-wp-rest-server.php(987): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/burlak/cart/ad...', Array, NULL)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-includes/rest-api/class-wp-rest-server.php(414): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#3 /Users/eugeneburlak/work/php/rest/store/wp-includes/rest-api.php(370): WP_REST_Server->serve_request('/burlak/cart/ad...')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/class-wp-hook.php(303): rest_api_loaded(Object(WP))
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/class-wp-hook.php(327): WP_Hook->apply_filters(NULL, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-inc in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php on line 235
+
+2021-08-04T18:49:02+00:00 CRITICAL Uncaught Error: Call to a member function add_to_cart() on null in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php:229
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/rest-api/class-wp-rest-server.php(1140): addProduct(Object(stdClass))
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/rest-api/class-wp-rest-server.php(987): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/burlak/cart/ad...', Array, NULL)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-includes/rest-api/class-wp-rest-server.php(414): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#3 /Users/eugeneburlak/work/php/rest/store/wp-includes/rest-api.php(370): WP_REST_Server->serve_request('/burlak/cart/ad...')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/class-wp-hook.php(303): rest_api_loaded(Object(WP))
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/class-wp-hook.php(327): WP_Hook->apply_filters(NULL, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-include in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php on line 229
+
+2021-08-04T19:18:37+00:00 CRITICAL Uncaught Error: Call to a member function add_to_cart_url() on null in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php:4
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template('/Users/eugenebu...', false)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php(16): wc_get_template_part('products/item')
+#3 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require('/Users/eugenebu...')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/index.php(5): get_template_part('products/index')
+#7 /Users/eugene in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php on line 4
+
+2021-08-04T19:18:43+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Post::add_to_cart_url() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php:4
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template('/Users/eugenebu...', false)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php(16): wc_get_template_part('products/item')
+#3 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require('/Users/eugenebu...')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/index.php(5): get_template_part('products/index')
+#7 /Users/eugene in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php on line 4
+
+2021-08-04T19:18:45+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Post::add_to_cart_url() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php:4
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template('/Users/eugenebu...', false)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php(16): wc_get_template_part('products/item')
+#3 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require('/Users/eugenebu...')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/index.php(5): get_template_part('products/index')
+#7 /Users/eugene in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php on line 4
+
+2021-08-04T19:18:50+00:00 CRITICAL Uncaught Error: Call to undefined function add_to_cart_url() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php:4
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template('/Users/eugenebu...', false)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php(16): wc_get_template_part('products/item')
+#3 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require('/Users/eugenebu...')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/index.php(5): get_template_part('products/index')
+#7 /Users/eugeneburlak/ in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php on line 4
+
+2021-08-04T19:19:24+00:00 CRITICAL syntax error, unexpected 'wc_get_template_part' (T_STRING) in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php on line 17
+
+2021-08-04T19:19:31+00:00 CRITICAL Uncaught Error: Call to a member function add_to_cart_url() on null in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php:16
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/index.php(5): get_template_part('products/index')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template-loader.php(106): include('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-blog-header.php(19): require_once('/Users/eugenebu...')
+#6 /Users/eugeneburlak/work/php/rest/store/index.php(17): require('/Users/eugenebu...')
+#7 {main}
+  thrown in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php on line 16
+
+2021-08-04T19:19:33+00:00 CRITICAL Uncaught Error: Call to a member function add_to_cart_url() on null in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php:16
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/index.php(5): get_template_part('products/index')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template-loader.php(106): include('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-blog-header.php(19): require_once('/Users/eugenebu...')
+#6 /Users/eugeneburlak/work/php/rest/store/index.php(17): require('/Users/eugenebu...')
+#7 {main}
+  thrown in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php on line 16
+
+2021-08-04T19:19:37+00:00 CRITICAL Uncaught Error: Call to a member function add_to_cart_url() on null in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php:16
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/index.php(5): get_template_part('products/index')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template-loader.php(106): include('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-blog-header.php(19): require_once('/Users/eugenebu...')
+#6 /Users/eugeneburlak/work/php/rest/store/index.php(17): require('/Users/eugenebu...')
+#7 {main}
+  thrown in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php on line 16
+
+2021-08-04T19:19:41+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Post::add_to_cart_url() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php:16
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/index.php(5): get_template_part('products/index')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template-loader.php(106): include('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-blog-header.php(19): require_once('/Users/eugenebu...')
+#6 /Users/eugeneburlak/work/php/rest/store/index.php(17): require('/Users/eugenebu...')
+#7 {main}
+  thrown in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php on line 16
+
+2021-08-04T19:20:26+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Post::add_to_cart_url() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php:6
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template('/Users/eugenebu...', false)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php(16): wc_get_template_part('products/item')
+#3 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require('/Users/eugenebu...')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/index.php(5): get_template_part('products/index')
+#7 /Users/eugene in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php on line 6
+
+2021-08-04T19:20:33+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Post::add_to_cart_url() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php:5
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template('/Users/eugenebu...', false)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php(16): wc_get_template_part('products/item')
+#3 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require('/Users/eugenebu...')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/index.php(5): get_template_part('products/index')
+#7 /Users/eugene in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php on line 5
+
+2021-08-04T19:20:56+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Post::add_to_cart_url() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php:6
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template('/Users/eugenebu...', false)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php(16): wc_get_template_part('products/item')
+#3 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require('/Users/eugenebu...')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/index.php(5): get_template_part('products/index')
+#7 /Users/eugene in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php on line 6
+
+2021-08-04T19:21:04+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Post::add_to_cart_url() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php:6
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template('/Users/eugenebu...', false)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php(16): wc_get_template_part('products/item')
+#3 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require('/Users/eugenebu...')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/index.php(5): get_template_part('products/index')
+#7 /Users/eugene in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php on line 6
+
+2021-08-04T19:21:11+00:00 CRITICAL Object of class WP_Post could not be converted to string in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php on line 6
+
+2021-08-04T19:22:55+00:00 CRITICAL Uncaught Error: Call to undefined function get_id() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php:2
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template('/Users/eugenebu...', false)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php(16): wc_get_template_part('products/item')
+#3 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require('/Users/eugenebu...')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/index.php(5): get_template_part('products/index')
+#7 /Users/eugeneburlak/work/php/ in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php on line 2
+
+2021-08-04T19:23:11+00:00 CRITICAL Uncaught Error: Call to undefined function get_id() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php:2
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template('/Users/eugenebu...', false)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php(16): wc_get_template_part('products/item')
+#3 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require('/Users/eugenebu...')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/index.php(5): get_template_part('products/index')
+#7 /Users/eugeneburlak/work/php/ in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php on line 2
+
+2021-08-04T19:23:12+00:00 CRITICAL Uncaught Error: Call to undefined function get_id() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php:2
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template('/Users/eugenebu...', false)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php(16): wc_get_template_part('products/item')
+#3 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require('/Users/eugenebu...')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/index.php(5): get_template_part('products/index')
+#7 /Users/eugeneburlak/work/php/ in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php on line 2
+
+2021-08-04T19:23:20+00:00 CRITICAL Uncaught Error: Call to undefined function get_id() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php:2
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template('/Users/eugenebu...', false)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php(16): wc_get_template_part('products/item')
+#3 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require('/Users/eugenebu...')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/index.php(5): get_template_part('products/index')
+#7 /Users/eugeneburlak/work/php/ in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php on line 2
+
+2021-08-04T19:23:27+00:00 CRITICAL Uncaught Error: Call to a member function get_id() on bool in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php:5
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template('/Users/eugenebu...', false)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php(16): wc_get_template_part('products/item')
+#3 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require('/Users/eugenebu...')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/index.php(5): get_template_part('products/index')
+#7 /Users/eugeneburlak/wo in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php on line 5
+
+2021-08-04T19:23:29+00:00 CRITICAL Uncaught Error: Call to a member function get_id() on bool in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php:5
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template('/Users/eugenebu...', false)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php(16): wc_get_template_part('products/item')
+#3 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require('/Users/eugenebu...')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/index.php(5): get_template_part('products/index')
+#7 /Users/eugeneburlak/wo in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php on line 5
+
+2021-08-04T19:24:04+00:00 CRITICAL Uncaught Error: Call to a member function get_id() on bool in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php:4
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template('/Users/eugenebu...', false)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php(16): wc_get_template_part('products/item')
+#3 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require('/Users/eugenebu...')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/index.php(5): get_template_part('products/index')
+#7 /Users/eugeneburlak/wo in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php on line 4
+
+2021-08-04T19:26:26+00:00 CRITICAL Uncaught Error: Call to undefined function woocommerce_add_to_cart_url() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php:4
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template('/Users/eugenebu...', false)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php(16): wc_get_template_part('products/item')
+#3 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require('/Users/eugenebu...')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/index.php(5): get_template_part('products/index')
+#7 /Users/e in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php on line 4
+
+2021-08-04T19:26:58+00:00 CRITICAL Uncaught Error: Call to undefined function woocommerce_product_add_to_cart_url() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php:4
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template('/Users/eugenebu...', false)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php(16): wc_get_template_part('products/item')
+#3 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require('/Users/eugenebu...')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/index.php(5): get_template_part('products/index')
+#7  in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php on line 4
+
+2021-08-04T19:27:00+00:00 CRITICAL Uncaught Error: Call to undefined function woocommerce_product_add_to_cart_url() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php:4
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template('/Users/eugenebu...', false)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php(16): wc_get_template_part('products/item')
+#3 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require('/Users/eugenebu...')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/index.php(5): get_template_part('products/index')
+#7  in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php on line 4
+
+2021-08-04T19:28:04+00:00 CRITICAL syntax error, unexpected ')' in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php on line 6
+
+2021-08-04T19:28:13+00:00 CRITICAL Uncaught Error: Call to undefined function woocommerce_product_add_to_cart_url() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php:4
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template('/Users/eugenebu...', false)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php(16): wc_get_template_part('products/item')
+#3 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require('/Users/eugenebu...')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/index.php(5): get_template_part('products/index')
+#7  in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php on line 4
+
+2021-08-04T19:28:18+00:00 CRITICAL Uncaught Error: Call to undefined function woocommerce_product_add_to_cart_url() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php:4
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template('/Users/eugenebu...', false)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php(16): wc_get_template_part('products/item')
+#3 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require('/Users/eugenebu...')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/index.php(5): get_template_part('products/index')
+#7  in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php on line 4
+
+2021-08-04T19:28:31+00:00 CRITICAL Uncaught Error: Call to undefined function woocommerce_product_add_to_cart_url() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php:4
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template('/Users/eugenebu...', false)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php(16): wc_get_template_part('products/item')
+#3 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require('/Users/eugenebu...')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/index.php(5): get_template_part('products/index')
+#7  in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php on line 4
+
+2021-08-04T19:29:30+00:00 CRITICAL Uncaught Error: Call to undefined function get_id() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php:2
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template('/Users/eugenebu...', false)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php(16): wc_get_template_part('products/item')
+#3 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require('/Users/eugenebu...')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/index.php(5): get_template_part('products/index')
+#7 /Users/eugeneburlak/work/php/ in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php on line 2
+
+2021-08-04T19:29:42+00:00 CRITICAL Uncaught Error: Call to undefined function get_id() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php:3
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template('/Users/eugenebu...', false)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php(16): wc_get_template_part('products/item')
+#3 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require('/Users/eugenebu...')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/index.php(5): get_template_part('products/index')
+#7 /Users/eugeneburlak/work/php/ in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php on line 3
+
+2021-08-04T19:29:45+00:00 CRITICAL Uncaught Error: Call to undefined function get_id() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php:3
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template('/Users/eugenebu...', false)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php(16): wc_get_template_part('products/item')
+#3 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require('/Users/eugenebu...')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/index.php(5): get_template_part('products/index')
+#7 /Users/eugeneburlak/work/php/ in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php on line 3
+
+2021-08-04T19:29:51+00:00 CRITICAL Uncaught Error: Call to undefined function get_id() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php:2
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template('/Users/eugenebu...', false)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php(16): wc_get_template_part('products/item')
+#3 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require('/Users/eugenebu...')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/index.php(5): get_template_part('products/index')
+#7 /Users/eugeneburlak/work/php/ in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php on line 2
+
+2021-08-04T19:29:56+00:00 CRITICAL Uncaught Error: Call to undefined function get_id() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php:2
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template('/Users/eugenebu...', false)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php(16): wc_get_template_part('products/item')
+#3 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require('/Users/eugenebu...')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/index.php(5): get_template_part('products/index')
+#7 /Users/eugeneburlak/work/php/ in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php on line 2
+
+2021-08-04T19:29:58+00:00 CRITICAL Uncaught Error: Call to undefined function get_id() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php:2
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template('/Users/eugenebu...', false)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php(16): wc_get_template_part('products/item')
+#3 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require('/Users/eugenebu...')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/index.php(5): get_template_part('products/index')
+#7 /Users/eugeneburlak/work/php/ in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php on line 2
+
+2021-08-04T19:30:18+00:00 CRITICAL Uncaught Error: Call to undefined function get_id() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php:7
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template('/Users/eugenebu...', false)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php(16): wc_get_template_part('products/item')
+#3 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require('/Users/eugenebu...')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/index.php(5): get_template_part('products/index')
+#7 /Users/eugeneburlak/work/php/ in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php on line 7
+
+2021-08-04T19:30:32+00:00 CRITICAL syntax error, unexpected ')', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php on line 3
+
+2021-08-04T19:30:45+00:00 CRITICAL Uncaught Error: Call to undefined function get_id() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php:7
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template('/Users/eugenebu...', false)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php(16): wc_get_template_part('products/item')
+#3 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require('/Users/eugenebu...')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/index.php(5): get_template_part('products/index')
+#7 /Users/eugeneburlak/work/php/ in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php on line 7
+
+2021-08-04T19:31:15+00:00 CRITICAL Uncaught Error: Call to undefined function get_title() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php:8
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template('/Users/eugenebu...', false)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php(16): wc_get_template_part('products/item')
+#3 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require('/Users/eugenebu...')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/index.php(5): get_template_part('products/index')
+#7 /Users/eugeneburlak/work/p in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php on line 8
+
+2021-08-04T19:31:17+00:00 CRITICAL Uncaught Error: Call to undefined function get_title() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php:8
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template('/Users/eugenebu...', false)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php(16): wc_get_template_part('products/item')
+#3 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require('/Users/eugenebu...')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/index.php(5): get_template_part('products/index')
+#7 /Users/eugeneburlak/work/p in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php on line 8
+
+2021-08-04T19:37:08+00:00 CRITICAL Uncaught Error: Call to undefined function woocommerce_loop_add_to_cart_link() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php:9
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template('/Users/eugenebu...', false)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php(16): wc_get_template_part('products/item')
+#3 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require('/Users/eugenebu...')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/index.php(5): get_template_part('products/index')
+#7 /U in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php on line 9
+
+2021-08-04T19:37:18+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Product::woocommerce_loop_add_to_cart_link() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php:9
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template('/Users/eugenebu...', false)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php(16): wc_get_template_part('products/item')
+#3 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require('/Users/eugenebu...')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/index.php(5): get_template_part('products/ind in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php on line 9
+
+2021-08-04T19:37:24+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Product::woocommerce_loop_add_to_cart_link() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php:9
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template('/Users/eugenebu...', false)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php(16): wc_get_template_part('products/item')
+#3 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require('/Users/eugenebu...')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/index.php(5): get_template_part('products/ind in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php on line 9
+
+2021-08-04T19:37:28+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Product::woocommerce_loop_add_to_cart_link() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php:9
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template('/Users/eugenebu...', false)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/index.php(16): wc_get_template_part('products/item')
+#3 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require('/Users/eugenebu...')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/index.php(5): get_template_part('products/ind in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/products/item.php on line 9
+
+2021-08-04T19:54:39+00:00 CRITICAL Uncaught Error: Call to a member function add_to_cart() on null in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php:229
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/rest-api/class-wp-rest-server.php(1140): addProduct(Object(stdClass))
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/rest-api/class-wp-rest-server.php(987): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/burlak/cart/ad...', Array, NULL)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-includes/rest-api/class-wp-rest-server.php(414): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#3 /Users/eugeneburlak/work/php/rest/store/wp-includes/rest-api.php(370): WP_REST_Server->serve_request('/burlak/cart/ad...')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/class-wp-hook.php(303): rest_api_loaded(Object(WP))
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/class-wp-hook.php(327): WP_Hook->apply_filters(NULL, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-include in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php on line 229
+
+2021-08-04T20:02:55+00:00 CRITICAL Uncaught Error: Call to a member function add_to_cart() on null in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php:251
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/class-wp-hook.php(303): {closure}('')
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/class-wp-hook.php(327): WP_Hook->apply_filters(NULL, Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-includes/plugin.php(470): WP_Hook->do_action(Array)
+#3 /Users/eugeneburlak/work/php/rest/store/wp-settings.php(600): do_action('wp_loaded')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-config.php(96): require_once('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-load.php(50): require_once('/Users/eugenebu...')
+#6 /Users/eugeneburlak/work/php/rest/store/wp-cron.php(44): require_once('/Users/eugenebu...')
+#7 {main}
+  thrown in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php on line 251
+
