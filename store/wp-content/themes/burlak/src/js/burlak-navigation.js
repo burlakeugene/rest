@@ -22,8 +22,8 @@
 //	afterInit: function, run after init
 // }
 
-(function(w) {
-  w.BurlakNavigation = function(options) {
+(function (w) {
+  w.BurlakNavigation = function (options) {
     this.options = options;
     this.options.container = this.options.container
       ? this.options.container
@@ -44,7 +44,7 @@
     this.isLoadProcess = false;
     this.exact = this.options.exact ? true : false;
 
-    this.get = function(url, method, data, callbackSuccess, callbackError) {
+    this.get = function (url, method, data, callbackSuccess, callbackError) {
       var res,
         xhr = new XMLHttpRequest(),
         param,
@@ -69,7 +69,7 @@
         ? xhr.setRequestHeader('X-REQUESTED-WITH', 'XMLHttpRequest')
         : '';
       xhr.send(body);
-      xhr.onreadystatechange = function() {
+      xhr.onreadystatechange = function () {
         if (xhr.readyState != 4) return;
         if (xhr.status != 200) {
           callbackError(xhr);
@@ -80,45 +80,45 @@
       };
     };
 
-    this.createPreloader = function() {
+    this.createPreloader = function () {
       var preloader = document.createElement('div'),
         preloaderSpinner = document.createElement('div');
       preloader.classList.add('preloader');
       preloaderSpinner.classList.add('preloader-spinner');
       preloaderSpinner.innerHTML =
-        '<svg class="preloader-spinner-inner" viewBox="25 25 50 50"><circle class="preloader-spinner-inner-path" cx="50" cy="50" r="20" fill="none" stroke-width="2"/></svg>';
+        '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="25 25 50 50"><circle cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke="#45d6b5" stroke-linecap="round" stroke-dashoffset="0" stroke-dasharray="100, 200"><animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 50 50" to="360 50 50" dur="2.5s" repeatCount="indefinite"/><animate attributeName="stroke-dashoffset" values="0;-30;-124" dur="1.25s" repeatCount="indefinite"/><animate attributeName="stroke-dasharray" values="0,200;110,200;110,200" dur="1.25s" repeatCount="indefinite"/></circle></svg>';
       preloader.appendChild(preloaderSpinner);
       return preloader;
     };
 
-    this.appendPreloader = function() {
+    this.appendPreloader = function () {
       var self = this;
       this.preloader = this.createPreloader();
       document.body.appendChild(this.preloader);
-      setTimeout(function() {
+      setTimeout(function () {
         self.preloader.classList.add('preloader__visible');
       }, 0);
     };
 
-    this.removePreloader = function() {
+    this.removePreloader = function () {
       var self = this;
       self.preloader.classList.remove('preloader__visible');
-      setTimeout(function() {
+      setTimeout(function () {
         self.preloader.parentNode.removeChild(self.preloader);
       }, 400);
     };
 
-    this.loadStart = function() {
+    this.loadStart = function () {
       this.isLoadProcess = true;
       this.options.preloader ? this.appendPreloader() : '';
     };
 
-    this.loadEnd = function() {
+    this.loadEnd = function () {
       this.isLoadProcess = false;
       this.options.preloader ? this.removePreloader() : '';
     };
 
-    this.parseAndReplace = function(DOMString, href, addToHistory) {
+    this.parseAndReplace = function (DOMString, href, addToHistory) {
       var self = this,
         parser = new DOMParser(),
         dom = parser.parseFromString(DOMString, 'text/html'),
@@ -139,7 +139,7 @@
       self.loadEnd();
     };
 
-    this.getContent = function(href, addToHistory) {
+    this.getContent = function (href, addToHistory) {
       var self = this;
       if (self.beforeRendered) self.beforeRendered();
       if ((self.exact && this.href === location.href) || self.isLoadProcess)
@@ -150,10 +150,10 @@
         href,
         'POST',
         {},
-        function(DOMString) {
+        function (DOMString) {
           self.parseAndReplace(DOMString, href, addToHistory);
         },
-        function(error) {
+        function (error) {
           if (error.status === 404) {
             self.parseAndReplace(error.responseText, href, addToHistory);
           } else {
@@ -166,7 +166,7 @@
       );
     };
 
-    this.addLinksEvent = function(selector) {
+    this.addLinksEvent = function (selector) {
       var self = this,
         selector = selector ? selector : this.options.navItems,
         links = document.querySelectorAll(selector);
@@ -175,7 +175,7 @@
           links[i] instanceof Element &&
           links[i].tagName.toLowerCase() === 'a'
         ) {
-          links[i].addEventListener('click', function(e) {
+          links[i].addEventListener('click', function (e) {
             e.preventDefault();
             var href = this.href;
             self.getContent(href, true);
@@ -184,18 +184,18 @@
       }
     };
 
-    this.popStateListener = function() {
+    this.popStateListener = function () {
       var self = this;
-      window.addEventListener('popstate', function(e) {
+      window.addEventListener('popstate', function (e) {
         self.getContent(location.pathname + location.search, false);
       });
     };
 
-    this.goTo = function(url) {
+    this.goTo = function (url) {
       this.getContent(url, true);
     };
 
-    this.init = function() {
+    this.init = function () {
       if (this.beforeInit) this.beforeInit();
       this.addLinksEvent(this.options.navItems);
       this.popStateListener();

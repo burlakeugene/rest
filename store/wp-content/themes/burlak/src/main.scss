@@ -1,9 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+:root{
+  --theme: #E31E24;
+  --theme-dark: #c12226;
+  --white: #ffffff;
+  --black: #111111;
+  --gray: #828282;
+  --orange: #FFA800;
+  --container-width: 1280px;
+}
 @import 'js/fancybox/jquery.fancybox.min.css';
 @import 'js/swiper/swiper.min.css';
-@import 'scss/fonts';
 @import 'scss/variables';
 @import 'scss/animations';
 @import 'scss/preloader';
+@import 'scss/header';
+@import 'scss/cart';
+@import 'scss/stories';
 @import 'scss/wordpress-fixies';
 @import 'scss/checkbox';
 @import 'scss/form';

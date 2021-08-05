@@ -221,7 +221,8 @@ function getCartData()
   );
 }
 
-function addProduct($args){
+function addProduct($args)
+{
     defined('WC_ABSPATH') || exit;
     include_once WC_ABSPATH . 'includes/wc-cart-functions.php';
     include_once WC_ABSPATH . 'includes/class-wc-cart.php';
@@ -231,7 +232,9 @@ function addProduct($args){
     $args = json_decode($args->get_body());
     $id = $args->id;
     $count = $args->count;
-    if(!$count) $count = 1;
+    if (!$count) {
+        $count = 1;
+    }
     return WC()->cart->add_to_cart($id, $count);
 }
 
@@ -245,3 +248,36 @@ add_action('rest_api_init', function () {
       'callback' => 'addProduct'
     ));
 });
+
+function burlak_theme_setup(){
+    add_theme_support('custom-logo');
+}
+add_action('after_setup_theme', 'burlak_theme_setup');
+
+function register_post_types_init(){
+  register_post_type(
+    'news',
+    array(
+      'label' => 'Новости и акции',
+      'labels' => array(
+        'menu_name' => 'Новости и акции'
+      ),
+      'public' => true,
+      'has_archive' => true,
+      'supports' => array('thumbnail', 'title', 'editor', 'excerpt', 'custom-fields')
+    )
+  );
+  register_post_type(
+    'stories',
+    array(
+      'label' => 'Рестораны',
+      'labels' => array(
+        'menu_name' => 'Рестораны'
+      ),
+      'public' => true,
+      'has_archive' => true,
+      'supports' => array('thumbnail', 'title', 'editor', 'excerpt', 'custom-fields')
+    )
+  );
+}
+add_action('init', 'register_post_types_init');

@@ -1,0 +1,30 @@
+.stories {
+  &__icon {
+    width: 20px;
+  }
+}
+
+.stories--header {
+  margin-right: 40px;
+  display: flex;
+  align-items: center;
+  border: none;
+  background-color: var(--theme-dark);
+  border-radius: 5px;
+  padding: 10px 30px;
+  color: var(--white);
+  transition: all 0.3s;
+  font-size: 0;
+  span{
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .stories{
+    &__icon{
+      margin-right: 6px;
+    }
+  }
+  &:hover{
+    background-color: var(--orange);
+  }
+}

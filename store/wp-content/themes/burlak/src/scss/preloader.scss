@@ -9,7 +9,7 @@
   -o-transition: all 0.4s;
   transition: all 0.4s;
   opacity: 0;
-  background: $theme-background;
+  background: var(--white);
   visibility: hidden;
 }
 
@@ -26,30 +26,10 @@
   height: 70px;
   transform: translate(-50%, -50%);
   transition: all 0.4s;
-  &-inner {
-    -webkit-animation: rotate 2.5s linear infinite;
-    animation: rotate 2.5s linear infinite;
-    -webkit-transform-origin: center center;
-    transform-origin: center center;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    &-path {
-      stroke-dasharray: 1, 200;
-      stroke-dashoffset: 0;
-      stroke: #181f21;
-      -webkit-animation: dash 1.5s ease-in-out infinite;
-      animation: dash 1.5s ease-in-out infinite;
-      stroke-linecap: round;
+  svg {
+    circle {
+      stroke: var(--theme);
+      stroke-width: 5px;
     }
   }
-}
-
-.preloader__visible .preloader-spinner {
-  transform: translate(-50%, -50%);
 }

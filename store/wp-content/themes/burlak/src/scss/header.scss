@@ -1,0 +1,31 @@
+.header{
+  background-color: var(--theme);
+  .container{
+    padding: 0;
+  }
+  .logo{
+    width: 100%;
+    max-width: 284px;
+    display: block;
+    font-size: 0;
+    img{
+      width: 100%;
+      height: auto;
+    }
+  }
+  &__main{
+    display: flex;
+    justify-content: space-between;
+  }
+  &__left,
+  &__right{
+    display: flex;
+    align-items: center;
+  }
+  &__left{
+    justify-content: flex-start;
+  }
+  &__right{
+    justify-content: flex-end;
+  }
+}
