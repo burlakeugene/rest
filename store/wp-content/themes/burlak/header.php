@@ -18,7 +18,7 @@
           <?php get_template_part('blocks/logo') ?>
         </div>
         <div class="header__right">
-          <?php get_template_part('stories/header') ?>
+          <?php get_template_part('stores/header') ?>
           <?php get_template_part('cart/header') ?>
         </div>
       </div>

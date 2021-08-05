@@ -268,7 +268,7 @@ function register_post_types_init(){
     )
   );
   register_post_type(
-    'stories',
+    'stores',
     array(
       'label' => 'Рестораны',
       'labels' => array(

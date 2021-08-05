@@ -110,6 +110,52 @@
     -webkit-box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.1);
             box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.1); } }
 
+@-webkit-keyframes jump {
+  0% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0); }
+  10% {
+    -webkit-transform: scale(1.1, 0.9) translateY(0);
+            transform: scale(1.1, 0.9) translateY(0); }
+  30% {
+    -webkit-transform: scale(0.9, 1.1) translateY(-30%);
+            transform: scale(0.9, 1.1) translateY(-30%); }
+  50% {
+    -webkit-transform: scale(1.05, 0.95) translateY(0);
+            transform: scale(1.05, 0.95) translateY(0); }
+  57% {
+    -webkit-transform: scale(1, 1) translateY(-1%);
+            transform: scale(1, 1) translateY(-1%); }
+  64% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0); }
+  100% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0); } }
+
+@keyframes jump {
+  0% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0); }
+  10% {
+    -webkit-transform: scale(1.1, 0.9) translateY(0);
+            transform: scale(1.1, 0.9) translateY(0); }
+  30% {
+    -webkit-transform: scale(0.9, 1.1) translateY(-30%);
+            transform: scale(0.9, 1.1) translateY(-30%); }
+  50% {
+    -webkit-transform: scale(1.05, 0.95) translateY(0);
+            transform: scale(1.05, 0.95) translateY(0); }
+  57% {
+    -webkit-transform: scale(1, 1) translateY(-1%);
+            transform: scale(1, 1) translateY(-1%); }
+  64% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0); }
+  100% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0); } }
+
 .preloader {
   position: fixed;
   z-index: 1000;
@@ -229,10 +275,10 @@
   .cart--header:hover .cart__count span {
     opacity: 1; }
 
-.stories__icon {
+.stores__icon {
   width: 20px; }
 
-.stories--header {
+.stores--header {
   margin-right: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -248,13 +294,16 @@
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   font-size: 0; }
-  .stories--header span {
+  .stores--header span {
     font-size: 13px;
     font-weight: 600; }
-  .stories--header .stories__icon {
+  .stores--header .stores__icon {
     margin-right: 6px; }
-  .stories--header:hover {
+  .stores--header:hover {
     background-color: var(--orange); }
+    .stores--header:hover .stores__icon {
+      -webkit-animation: jump 1s linear forwards;
+              animation: jump 1s linear forwards; }
 
 .gallery {
   margin: 0 !important;

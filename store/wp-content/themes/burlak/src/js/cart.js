@@ -22,7 +22,7 @@ export const add = (data) => {
   })
     .then((resp) => {
       Notic.addMessage({
-        message: 'Товар "' + data.product_title + '" добавленв корзину',
+        message: 'Товар "' + data.product_title + '" добавлен в корзину',
         type: 'success',
         delay: 5000,
       });

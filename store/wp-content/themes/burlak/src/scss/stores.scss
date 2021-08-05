@@ -1,10 +1,10 @@
-.stories {
+.stores {
   &__icon {
     width: 20px;
   }
 }
 
-.stories--header {
+.stores--header {
   margin-right: 40px;
   display: flex;
   align-items: center;
@@ -19,12 +19,17 @@
     font-size: 13px;
     font-weight: 600;
   }
-  .stories{
+  .stores{
     &__icon{
       margin-right: 6px;
     }
   }
   &:hover{
     background-color: var(--orange);
+    .stores{
+      &__icon{
+        animation: jump 1s linear forwards;
+      }
+    }
   }
 }
