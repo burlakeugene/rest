@@ -15,7 +15,27 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        loader: 'babel-loader'
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env'],
+              plugins: [
+                require('@babel/plugin-proposal-optional-chaining'),
+                require('@babel/plugin-syntax-dynamic-import'),
+                require('@babel/plugin-proposal-object-rest-spread'),
+                [
+                  require('@babel/plugin-proposal-decorators'),
+                  { legacy: true },
+                ],
+                [
+                  require('@babel/plugin-proposal-class-properties'),
+                  { loose: true },
+                ],
+              ],
+            },
+          },
+        ],
       },
       {
         test: /\.(sass|scss|css)$/,

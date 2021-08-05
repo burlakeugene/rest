@@ -4,8 +4,8 @@ import Swiper from './js/swiper/swiper.min.js';
 import BurlakNavigation from './js/burlak-navigation.js';
 import * as Burlak from 'burlak';
 import mapInit from './js/map-yandex.js';
-import Request from './js/request';
 import * as Cart from './js/cart';
+import Notic from 'notic';
 (function ($) {
   if ($.fancybox) {
     $.fancybox.defaults.hash = false;
@@ -47,6 +47,7 @@ import * as Cart from './js/cart';
   var view = Burlak.InView;
   var isMobile = new Burlak.Detection().isMobile;
   $(document).ready(function () {
+    window.Notic = new Notic();
     document.addEventListener('wpcf7mailsent', function (event) {
       setTimeout(function () {
         $.fancybox.close();
@@ -85,10 +86,8 @@ import * as Cart from './js/cart';
       products.length &&
         products.forEach((product) => {
           product.addEventListener('click', (event) => {
-            let id = event.target.getAttribute('data-id');
-            Cart.add({
-              product_id: +id,
-            });
+            let { dataset } = event.target;
+            Cart.add(dataset);
           });
         });
       if (!isMobile()) {

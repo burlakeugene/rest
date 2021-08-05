@@ -2,7 +2,7 @@
   $product = new WC_Product(get_the_id());
 ?>
 
-<div class="product" data-id="<?= get_the_id() ?>" data-cart-url="<?= $product->add_to_cart_url() ?>">
+<div class="product" data-product_id="<?= $product->get_id() ?>" data-product_title="<?= $product->get_title() ?>">
   <?= $product->get_id() ?>
   <?= $product->get_title() ?>
 </div>
