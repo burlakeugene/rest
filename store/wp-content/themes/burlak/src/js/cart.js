@@ -1,14 +1,17 @@
 import Request from './request';
-export const update = () => {
-  Request.get({
-    url: '',
-  }).then((resp) => {
-    let html = new DOMParser();
-    html = html.parseFromString(resp, 'text/html');
-    let cart = html.querySelector('.cart'),
-      oldCart = document.querySelector('.cart');
-    oldCart.parentNode.replaceChild(cart, oldCart);
-  });
+
+export const update = (cart) => {
+  if(!cart.fragments) return;
+  for(let fragment in cart.fragments){
+    let html = cart.fragments[fragment],
+      elements = document.querySelectorAll(fragment);
+    elements.forEach((element) => {
+      let parser = new DOMParser(),
+        htmlDoc = parser.parseFromString(html, 'text/html'),
+        htmlFragment = htmlDoc.querySelector(fragment);
+      element.parentNode.replaceChild(htmlFragment, element);
+    })
+  }
 };
 
 export const add = (data) => {
@@ -26,7 +29,7 @@ export const add = (data) => {
         type: 'success',
         delay: 5000,
       });
-      update();
+      update(resp);
     })
     .catch(() => {})
     .finally(() => {

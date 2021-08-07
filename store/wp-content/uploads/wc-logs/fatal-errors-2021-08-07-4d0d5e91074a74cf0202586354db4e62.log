@@ -1,0 +1,33 @@
+2021-08-07T12:45:21+00:00 CRITICAL Uncaught Error: Call to undefined function get_tempalte_part() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php:291
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/class-wp-hook.php(303): woocommerce_header_add_to_cart_fragment(Array)
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/plugin.php(189): WP_Hook->apply_filters(Array, Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/class-wc-ajax.php(196): apply_filters('woocommerce_add...', Array)
+#3 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/class-wc-ajax.php(430): WC_AJAX::get_refreshed_fragments()
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/class-wp-hook.php(303): WC_AJAX::add_to_cart('')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/class-wp-hook.php(327): WP_Hook->apply_filters('', Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-includes/plugin.php(470): WP_Hook->do_action(Array)
+#7 /Users/eugeneburl in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php on line 291
+
+2021-08-07T12:45:44+00:00 CRITICAL Uncaught Error: Call to undefined function get_tempalte_part() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php:290
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/class-wp-hook.php(303): woocommerce_header_add_to_cart_fragment(Array)
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/plugin.php(189): WP_Hook->apply_filters(Array, Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/class-wc-ajax.php(196): apply_filters('woocommerce_add...', Array)
+#3 /Users/eugeneburlak/work/php/rest/store/wp-includes/class-wp-hook.php(303): WC_AJAX::get_refreshed_fragments('')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/class-wp-hook.php(327): WP_Hook->apply_filters('', Array)
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/plugin.php(470): WP_Hook->do_action(Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/class-wc-ajax.php(90): do_action('wc_ajax_get_ref...')
+#7 /Users/eu in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php on line 290
+
+2021-08-07T12:45:46+00:00 CRITICAL Uncaught Error: Call to undefined function get_tempalte_part() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php:290
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/class-wp-hook.php(303): woocommerce_header_add_to_cart_fragment(Array)
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/plugin.php(189): WP_Hook->apply_filters(Array, Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/class-wc-ajax.php(196): apply_filters('woocommerce_add...', Array)
+#3 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/class-wc-ajax.php(430): WC_AJAX::get_refreshed_fragments()
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/class-wp-hook.php(303): WC_AJAX::add_to_cart('')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/class-wp-hook.php(327): WP_Hook->apply_filters('', Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-includes/plugin.php(470): WP_Hook->do_action(Array)
+#7 /Users/eugeneburl in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php on line 290
+

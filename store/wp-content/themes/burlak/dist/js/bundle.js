@@ -2292,16 +2292,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "add", function() { return add; });
 /* harmony import */ var _request__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./request */ "./src/js/request.js");
 
-var update = function update() {
-  _request__WEBPACK_IMPORTED_MODULE_0__["default"].get({
-    url: ''
-  }).then(function (resp) {
-    var html = new DOMParser();
-    html = html.parseFromString(resp, 'text/html');
-    var cart = html.querySelector('.cart'),
-        oldCart = document.querySelector('.cart');
-    oldCart.parentNode.replaceChild(cart, oldCart);
-  });
+var update = function update(cart) {
+  if (!cart.fragments) return;
+
+  var _loop = function _loop(fragment) {
+    var html = cart.fragments[fragment],
+        elements = document.querySelectorAll(fragment);
+    elements.forEach(function (element) {
+      var parser = new DOMParser(),
+          htmlDoc = parser.parseFromString(html, 'text/html'),
+          htmlFragment = htmlDoc.querySelector(fragment);
+      element.parentNode.replaceChild(htmlFragment, element);
+    });
+  };
+
+  for (var fragment in cart.fragments) {
+    _loop(fragment);
+  }
 };
 var add = function add(data) {
   Notic.loadingOn();
@@ -2317,7 +2324,7 @@ var add = function add(data) {
       type: 'success',
       delay: 5000
     });
-    update();
+    update(resp);
   }).catch(function () {}).finally(function () {
     setTimeout(function () {
       Notic.loadingOff();

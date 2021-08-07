@@ -249,15 +249,17 @@ add_action('rest_api_init', function () {
     ));
 });
 
-function burlak_theme_setup(){
+function burlak_theme_setup()
+{
     add_theme_support('custom-logo');
 }
 add_action('after_setup_theme', 'burlak_theme_setup');
 
-function register_post_types_init(){
-  register_post_type(
-    'news',
-    array(
+function register_post_types_init()
+{
+    register_post_type(
+        'news',
+        array(
       'label' => 'Новости и акции',
       'labels' => array(
         'menu_name' => 'Новости и акции'
@@ -266,10 +268,10 @@ function register_post_types_init(){
       'has_archive' => true,
       'supports' => array('thumbnail', 'title', 'editor', 'excerpt', 'custom-fields')
     )
-  );
-  register_post_type(
-    'stores',
-    array(
+    );
+    register_post_type(
+        'stores',
+        array(
       'label' => 'Рестораны',
       'labels' => array(
         'menu_name' => 'Рестораны'
@@ -278,6 +280,14 @@ function register_post_types_init(){
       'has_archive' => true,
       'supports' => array('thumbnail', 'title', 'editor', 'excerpt', 'custom-fields')
     )
-  );
+    );
 }
 add_action('init', 'register_post_types_init');
+
+add_filter('woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment');
+function woocommerce_header_add_to_cart_fragment($fragments){
+    ob_start();
+    my_get_template_part('cart/header');
+    $fragments['.cart--header'] = ob_get_clean();
+    return $fragments;
+}
