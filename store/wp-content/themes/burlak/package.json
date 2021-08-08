@@ -36,7 +36,7 @@
     "webpack-cli": "^3.3.10"
   },
   "dependencies": {
-    "burlak": "^2.0.1",
+    "burlak": "^2.0.2",
     "maskit": "^1.0.7",
     "notic": "^2.0.3"
   }

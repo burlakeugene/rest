@@ -99,7 +99,7 @@ function theme_settings_page()
     <form action="options.php" method="post">
       <?php
         settings_fields('theme-page-settings');
-        do_settings_sections('theme-page-settings'); ?>
+    do_settings_sections('theme-page-settings'); ?>
       <label>
         <div>Common scripts</div>
         <textarea name="common_scripts"><?= esc_attr(get_option('common_scripts')); ?></textarea>
@@ -229,33 +229,18 @@ function getCartData()
   );
 }
 
-function addProduct($args)
+add_action('wc_ajax_clear_cart', 'clear_cart');
+function clear_cart($args)
 {
-    defined('WC_ABSPATH') || exit;
-    include_once WC_ABSPATH . 'includes/wc-cart-functions.php';
-    include_once WC_ABSPATH . 'includes/class-wc-cart.php';
-    if (is_null(WC()->cart)) {
-        wc_load_cart();
-    }
-    $args = json_decode($args->get_body());
-    $id = $args->id;
-    $count = $args->count;
-    if (!$count) {
-        $count = 1;
-    }
-    return WC()->cart->add_to_cart($id, $count);
+    WC()->cart->empty_cart();
+    $result = array(
+      'fragments' => array()
+    );
+    ob_start();
+    my_get_template_part('cart/header');
+    $result['fragments']['.cart--header'] = ob_get_clean();
+    exit(json_encode($result));
 }
-
-add_action('rest_api_init', function () {
-    register_rest_route('burlak', 'cart', array(
-      'methods' => 'GET',
-      'callback' => 'getCartData',
-    ));
-    register_rest_route('burlak', 'cart/add', array(
-      'methods' => 'POST',
-      'callback' => 'addProduct'
-    ));
-});
 
 function burlak_theme_setup()
 {
@@ -293,7 +278,8 @@ function register_post_types_init()
 add_action('init', 'register_post_types_init');
 
 add_filter('woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment');
-function woocommerce_header_add_to_cart_fragment($fragments){
+function woocommerce_header_add_to_cart_fragment($fragments)
+{
     ob_start();
     my_get_template_part('cart/header');
     $fragments['.cart--header'] = ob_get_clean();

@@ -24,7 +24,6 @@ export const add = (data) => {
     },
   })
     .then((resp) => {
-      console.log(data);
       Notic.addMessage({
         message: 'Товар "' + data.product_title + '" добавлен в корзину',
         type: 'success',
@@ -42,3 +41,29 @@ export const add = (data) => {
       }, 300);
     });
 };
+
+export const clear = () => {
+  Notic.loadingOn();
+  return Request.post({
+    url: '?wc-ajax=clear_cart',
+  })
+    .then((resp) => {
+      Notic.addMessage({
+        message: 'Корзина очищена',
+        type: 'success',
+        delay: 5000,
+      });
+      update(resp);
+      return resp;
+    })
+    .catch((error) => {
+      return error;
+    })
+    .finally(() => {
+      setTimeout(() => {
+        Notic.loadingOff();
+      }, 300);
+    });
+};
+
+window.cartClear = clear;

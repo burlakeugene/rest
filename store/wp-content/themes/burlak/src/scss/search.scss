@@ -60,8 +60,7 @@
   &__form{
     display: flex;
     padding: 10px;
-    border-top: 2px solid var(--theme);
-    border-bottom: 2px solid var(--theme);
+    border-bottom: 2px solid var(--body-background);
     input{
       flex: 1;
       margin-right: 10px;
