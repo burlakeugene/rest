@@ -1,0 +1,25 @@
+.product{
+  &__categories{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    a{
+      display: flex;
+      align-items: center;
+      color: var(--black);
+      font-size: 14px;
+      font-weight: 600;
+      padding: 12px 20px;
+      transition: all 0.3s;
+      &:hover,
+      &.active{
+        color: var(--theme);
+      }
+      img{
+        width: 30px;
+        height: auto;
+        margin-right: 10px;
+      }
+    }
+  }
+}

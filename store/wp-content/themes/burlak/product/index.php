@@ -13,9 +13,9 @@
 $products = new WP_Query($args);
 if ($products->have_posts()) {
     while ($products->have_posts()) : $products->the_post();
-    wc_get_template_part('products/item');
+    wc_get_template_part('product/item');
     endwhile;
 } else {
-    wc_get_template_part('products/empty');
+    wc_get_template_part('product/empty');
 }
 wp_reset_postdata();

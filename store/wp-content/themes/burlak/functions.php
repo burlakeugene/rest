@@ -6,6 +6,7 @@ if (!function_exists('burlak_setup')) :
       add_theme_support('automatic-feed-links');
       add_theme_support('title-tag');
       add_theme_support('post-thumbnails');
+      add_theme_support('woocommerce');
       register_nav_menus(array(
       'header' => esc_html__('Header', 'burlak'),
       'footer' => esc_html__('Footer', 'burlak'),
@@ -83,7 +84,10 @@ add_action('admin_init', function () {
     register_setting('theme-page-settings', 'common_scripts');
     register_setting('theme-page-settings', 'head_additions');
     register_setting('theme-page-settings', 'copyrights');
+    register_setting('theme-page-settings', 'work_time');
     register_setting('theme-page-settings', 'address');
+    register_setting('theme-page-settings', 'phone');
+    register_setting('theme-page-settings', 'email');
     register_setting('theme-page-settings', 'theme-color');
 });
 
@@ -95,7 +99,7 @@ function theme_settings_page()
     <form action="options.php" method="post">
       <?php
         settings_fields('theme-page-settings');
-    do_settings_sections('theme-page-settings'); ?>
+        do_settings_sections('theme-page-settings'); ?>
       <label>
         <div>Common scripts</div>
         <textarea name="common_scripts"><?= esc_attr(get_option('common_scripts')); ?></textarea>
@@ -105,12 +109,12 @@ function theme_settings_page()
         <textarea name="head_additions"><?= esc_attr(get_option('head_additions')); ?></textarea>
       </label>
       <label>
-        <div>Address</div>
-        <input type="text" name="address" value="<?= esc_attr(get_option('address')) ?>" />
+        <div>Work time</div>
+        <textarea name="work_time"><?= esc_attr(get_option('work_time')); ?></textarea>
       </label>
       <label>
-        <div>Copyrights</div>
-        <input type="text" name="copyrights" value="<?= esc_attr(get_option('copyrights')) ?>" />
+        <div>Address</div>
+        <input type="text" name="address" value="<?= esc_attr(get_option('address')) ?>" />
       </label>
       <label>
         <div>Phone</div>
@@ -118,7 +122,11 @@ function theme_settings_page()
       </label>
       <label>
         <div>Mail</div>
-        <input type="email" name="mail" value="<?= esc_attr(get_option('mail')) ?>" />
+        <input type="email" name="mail" value="<?= esc_attr(get_option('email')) ?>" />
+      </label>
+      <label>
+        <div>Copyrights</div>
+        <input type="text" name="copyrights" value="<?= esc_attr(get_option('copyrights')) ?>" />
       </label>
       <label>
         <div>Theme color</div>

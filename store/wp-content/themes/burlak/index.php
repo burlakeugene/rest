@@ -2,7 +2,7 @@
   get_header();
 ?>
 <?php
-  get_template_part('products/index')
+  get_template_part('product/index')
 ?>
 <?php
   get_footer();

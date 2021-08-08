@@ -6,6 +6,7 @@ import * as Burlak from 'burlak';
 import mapInit from './js/map-yandex.js';
 import * as Cart from './js/cart';
 import Notic from 'notic';
+import Search from './js/search';
 (function ($) {
   if ($.fancybox) {
     $.fancybox.defaults.hash = false;
@@ -82,14 +83,24 @@ import Notic from 'notic';
     });
 
     function commonFunc() {
-      let products = document.querySelectorAll('.product');
+      let products = document.querySelectorAll('.product__add');
       products.length &&
         products.forEach((product) => {
           product.addEventListener('click', (event) => {
-            let { dataset } = event.target;
-            Cart.add(dataset);
+            let { dataset } = product;
+            product.disabled = true;
+            Cart.add(dataset).finally(() => {
+              product.disabled = false;
+            });
           });
         });
+
+      let search = new Search({
+        buttonSelector: '.search--button',
+        panelSelector: '.search--panel',
+        activeClass: 'search--button--active',
+      });
+
       if (!isMobile()) {
         $('[data-fancybox="gallery"]').fancybox({
           thumbs: {

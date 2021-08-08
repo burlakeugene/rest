@@ -8,6 +8,7 @@
   <meta name="theme-color" content="<?= get_option('theme-color') ?>">
   <?php get_template_part('open-graph') ?>
   <?php wp_head(); ?>
+  <?= get_option('head_additions'); ?>
 </head>
 
 <body data-home="<?= esc_url(home_url('/')); ?>" <?php body_class(); ?>>
@@ -16,13 +17,16 @@
       <div class="header__main">
         <div class="header__left">
           <?php get_template_part('blocks/logo') ?>
+          <?php get_template_part('stores/header') ?>
+          <?php get_template_part('contacts/header') ?>
         </div>
         <div class="header__right">
-          <?php get_template_part('stores/header') ?>
+          <?php get_template_part('search/button') ?>
           <?php get_template_part('cart/header') ?>
         </div>
       </div>
+      <?php get_template_part('search/panel') ?>
       <div class="header__navigation">
-        <?php get_template_part('products/header') ?>
+        <?php get_template_part('product/categories') ?>
       </div>
     </header>

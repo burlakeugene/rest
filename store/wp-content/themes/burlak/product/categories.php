@@ -17,9 +17,18 @@ $args = array(
        'hide_empty'   => $empty,
       );
 $categories = get_categories($args);
-foreach ($categories as $category) {
-    echo '<a href="' .  esc_url(get_term_link($category)) . '" class="ajax">';
-    woocommerce_subcategory_thumbnail($category);
-    echo $category->name;
-    echo '</a>';
-}
+?>
+<div class="product__categories">
+	<?php
+    foreach ($categories as $category):
+        $url = esc_url(get_term_link($category));
+        $current_url =  home_url($wp->request).'/';
+    ?>
+	<a href="<?= $url ?>" class="ajax <?= $current_url === $url ? 'active' : '' ?>">
+		<?= woocommerce_subcategory_thumbnail($category); ?>
+		<?= $category->name ?>
+	</a>
+	<?php
+    endforeach;
+    ?>
+</div>
