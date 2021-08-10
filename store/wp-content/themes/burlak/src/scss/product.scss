@@ -1,9 +1,9 @@
-.product{
-  &__categories{
+.product {
+  &__categories {
     display: flex;
     align-items: center;
     justify-content: center;
-    a{
+    a {
       display: flex;
       align-items: center;
       color: var(--black);
@@ -12,13 +12,128 @@
       padding: 12px 20px;
       transition: all 0.3s;
       &:hover,
-      &.active{
+      &.active {
         color: var(--theme);
       }
-      img{
+      img {
         width: 30px;
         height: auto;
         margin-right: 10px;
+      }
+    }
+  }
+  &__remove {
+    width: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-right: 15px;
+    padding: 0;
+    svg {
+      width: 100%;
+      height: auto;
+      fill: var(--gray-medium);
+      transition: all 0.3s;
+    }
+    &:hover {
+      svg {
+        fill: var(--red);
+      }
+    }
+  }
+  &__image {
+    font-size: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 60px;
+    height: 60px;
+  }
+  &__title {
+    width: 100%;
+    margin-bottom: 10px;
+    a {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--black);
+      transition: all 0.3s;
+      &:hover {
+        color: var(--theme);
+      }
+    }
+  }
+  &__qty {
+    display: flex;
+    align-items: center;
+    &__action {
+      position: relative;
+      border: none;
+      background-color: transparent;
+      width: 15px;
+      height: 15px;
+      cursor: pointer;
+      padding: 0;
+      &:before,
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 2px;
+        background-color: var(--theme);
+      }
+      &:after {
+        transform: translate(-50%, -50%) rotate(90deg);
+      }
+      &[disabled] {
+        cursor: not-allowed;
+        &:before,
+        &:after {
+          background-color: var(--gray-medium);
+        }
+      }
+      &--minus {
+        &:after {
+          display: none;
+        }
+      }
+    }
+    &__value {
+      margin: 0 10px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+  }
+  &__price {
+    font-size: 16px;
+    font-weight: 700;
+  }
+  &--cart {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    .product {
+      &__inner {
+        display: flex;
+        flex: 1;
+        align-items: center;
+      }
+      &__image {
+        width: 60px;
+        height: 60px;
+      }
+      &__data {
+        flex: 1;
+        padding-left: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
       }
     }
   }

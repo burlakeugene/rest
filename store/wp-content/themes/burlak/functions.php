@@ -56,6 +56,7 @@ function generate_youtube($atts)
 
 add_image_size('lazy', 50, 50, false);
 add_image_size('lazy-square', 50, 50, true);
+add_image_size('product-square', 120, 120, true);
 
 function getMonth($month)
 {
@@ -180,6 +181,12 @@ function my_get_template_part($template, $data = array())
     require locate_template($template . '.php');
 }
 
+function declension($value = 1, $wordForms = ['товар', 'товара', 'товаров'])
+{
+    $array = [2,0,1,1,1,2];
+    return $wordForms[($value%100>4&&$value%100<20)?2:$array[($value%10<5)?$value%10:5]];
+}
+
 add_shortcode('tabs', function ($attrs) {
     $ids = $attrs && $attrs['ids'] ? $attrs['ids'] : false;
     $linksText = $attrs && $attrs['linkstext'] ? $attrs['linkstext'] : false;
@@ -216,32 +223,6 @@ add_shortcode('tabs', function ($attrs) {
     }
 });
 
-//REST
-function getCartData()
-{
-    $totalClear = WC()->cart->total;
-    $total = wc_price($totalClear);
-    $count = WC()->cart->cart_contents_count;
-    return array(
-    'totalClear' => $totalClear,
-    'total' => $total,
-    'count' => $count
-  );
-}
-
-add_action('wc_ajax_clear_cart', 'clear_cart');
-function clear_cart($args)
-{
-    WC()->cart->empty_cart();
-    $result = array(
-      'fragments' => array()
-    );
-    ob_start();
-    my_get_template_part('cart/header');
-    $result['fragments']['.cart--header'] = ob_get_clean();
-    exit(json_encode($result));
-}
-
 function burlak_theme_setup()
 {
     add_theme_support('custom-logo');
@@ -274,14 +255,66 @@ function register_post_types_init()
       'supports' => array('thumbnail', 'title', 'editor', 'excerpt', 'custom-fields')
     )
     );
+    register_post_type(
+        'banners',
+        array(
+    'label' => 'Баннер',
+    'labels' => array(
+      'menu_name' => 'Баннеры'
+    ),
+    'public' => true,
+    'has_archive' => false,
+    'supports' => array('thumbnail', 'title', 'custom-fields')
+  )
+    );
 }
 add_action('init', 'register_post_types_init');
+
+/** Disable Ajax Call from WooCommerce */
+add_action('wp_enqueue_scripts', 'dequeue_woocommerce_cart_fragments', 11);
+function dequeue_woocommerce_cart_fragments()
+{
+    wp_dequeue_script('wc-cart-fragments');
+}
+
+//REST
+function getFragments()
+{
+    $result = array(
+    'fragments' => array()
+  );
+    ob_start();
+    my_get_template_part('cart/count');
+    $result['fragments']['.cart__count'] = ob_get_clean();
+    ob_start();
+    my_get_template_part('cart/list');
+    $result['fragments']['.cart__list'] = ob_get_clean();
+    return $result;
+}
 
 add_filter('woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment');
 function woocommerce_header_add_to_cart_fragment($fragments)
 {
-    ob_start();
-    my_get_template_part('cart/header');
-    $fragments['.cart--header'] = ob_get_clean();
-    return $fragments;
+    return getFragments()['fragments'];
+}
+
+add_action('wc_ajax_cart_clear', 'cart_clear');
+function cart_clear($args)
+{
+    WC()->cart->empty_cart();
+    exit(json_encode(getFragments()));
+}
+
+add_action('wc_ajax_cart_remove', 'cart_remove');
+function cart_remove()
+{
+    WC()->cart->remove_cart_item($_POST['key']);
+    exit(json_encode(getFragments()));
+}
+
+add_action('wc_ajax_cart_qty', 'cart_qty');
+function cart_qty()
+{
+    WC()->cart->set_quantity($_POST['key'], $_POST['qty']);
+    exit(json_encode(getFragments()));
 }

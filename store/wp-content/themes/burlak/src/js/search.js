@@ -1,33 +1,32 @@
 class Search {
   constructor(props = {}) {
     this.props = props;
-    this.button = document.querySelector(props.buttonSelector);
-    this.panel = document.querySelector(props.panelSelector);
+    this.button = document.querySelector('.search--button');
+    this.panel = document.querySelector('.search--panel');
     document.addEventListener('click', (event) => {
-      this.hidePanel();
+      this.hide();
     });
     this.panel.addEventListener('click', (event) => {
       event.stopPropagation();
     });
     this.init();
   }
-  hidePanel() {
-    let { activeClass } = this.props;
-    this.button.classList.remove(activeClass);
+  hide() {
+    this.props.onHide && this.props.onHide();
+    this.button.classList.remove('search--button--active');
     this.panel.style.height = '0px';
   }
-  showPanel() {
-    let { activeClass } = this.props;
-    this.button.classList.add(activeClass);
+  show() {
+    this.props.onShow && this.props.onShow();
+    this.button.classList.add('search--button--active');
     this.panel.style.height = this.panel.scrollHeight + 'px';
   }
   init() {
-    let { activeClass } = this.props;
     let self = this;
     this.button.addEventListener('click', (event) => {
       event.stopPropagation();
-      let nextState = !this.button.classList.contains(activeClass);
-      nextState ? this.showPanel() : this.hidePanel();
+      let nextState = !this.button.classList.contains('search--button--active');
+      nextState ? this.show() : this.hide();
     });
   }
 }

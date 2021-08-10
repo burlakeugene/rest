@@ -22,8 +22,9 @@
         </div>
         <div class="header__right">
           <?php get_template_part('search/button') ?>
-          <?php get_template_part('cart/header') ?>
+          <?php get_template_part('cart/button') ?>
         </div>
+        <?php get_template_part('cart/popup') ?>
       </div>
       <?php get_template_part('search/panel') ?>
       <div class="header__navigation">

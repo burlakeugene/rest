@@ -4,10 +4,16 @@
   --theme-dark: #c12226;
   --white: #ffffff;
   --black: #111111;
+  --gray-light: #f2f2f2;
   --gray: #828282;
+  --gray-medium: #BDBDBD;
   --orange: #FFA800;
+  --red: #E31E24;
+  --green: #45841F;
+  --red-light: #fce8e8;
   --container-width: 1280px;
   --body-background: #eef2f3;
+  --border-color: #E0E0E0;
 }
 @import 'js/fancybox/jquery.fancybox.min.css';
 @import 'js/swiper/swiper.min.css';
@@ -20,6 +26,7 @@
 @import 'scss/contacts';
 @import 'scss/search';
 @import 'scss/product';
+@import 'scss/banners';
 @import 'scss/wordpress-fixies';
 @import 'scss/checkbox';
 @import 'scss/form';

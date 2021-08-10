@@ -4,9 +4,9 @@ import Swiper from './js/swiper/swiper.min.js';
 import BurlakNavigation from './js/burlak-navigation.js';
 import * as Burlak from 'burlak';
 import mapInit from './js/map-yandex.js';
-import * as Cart from './js/cart';
 import Notic from 'notic';
 import Search from './js/search';
+import Cart from './js/cart';
 (function ($) {
   if ($.fancybox) {
     $.fancybox.defaults.hash = false;
@@ -43,6 +43,12 @@ import Search from './js/search';
     item.removeAttribute('bool');
     from = parseInt(from);
     $(item).text(from);
+  }
+
+  function eventDecorator({ target, event }) {
+    if (target.dataset['event']) return;
+    target.addEventListener(event.type, event.body);
+    target.setAttribute('data-event', '1');
   }
 
   var view = Burlak.InView;
@@ -83,24 +89,100 @@ import Search from './js/search';
     });
 
     function commonFunc() {
-      let products = document.querySelectorAll('.product__add');
-      products.length &&
-        products.forEach((product) => {
-          product.addEventListener('click', (event) => {
-            let { dataset } = product;
-            product.disabled = true;
-            Cart.add(dataset).finally(() => {
-              product.disabled = false;
-            });
-          });
-        });
-
       let search = new Search({
-        buttonSelector: '.search--button',
-        panelSelector: '.search--panel',
-        activeClass: 'search--button--active',
+        onShow: () => {
+          cart.hide();
+        },
       });
-
+      let cart = new Cart({
+        onShow: () => {
+          search.hide();
+        },
+        listeners: (cart) => {
+          let products = document.querySelectorAll('.product__add');
+          products.length &&
+            products.forEach((button) => {
+              eventDecorator({
+                target: button,
+                event: {
+                  type: 'click',
+                  body: (e) => {
+                    button.disabled = true;
+                    cart.add(button.dataset).finally(() => {
+                      button.disabled = false;
+                    });
+                  },
+                },
+              });
+            });
+          let clearCart = document.querySelectorAll('.cart__clear');
+          clearCart.length &&
+            clearCart.forEach((button) => {
+              eventDecorator({
+                target: button,
+                event: {
+                  type: 'click',
+                  body: (e) => {
+                    cart.clear();
+                  },
+                },
+              });
+            });
+          let continueCart = document.querySelectorAll('.cart__continue');
+          continueCart.length &&
+            continueCart.forEach((button) => {
+              eventDecorator({
+                target: button,
+                event: {
+                  type: 'click',
+                  body: (e) => {
+                    cart.hide();
+                  },
+                },
+              });
+            });
+          let remove = document.querySelectorAll('.product__remove');
+          remove.length &&
+            remove.forEach((button) => {
+              eventDecorator({
+                target: button,
+                event: {
+                  type: 'click',
+                  body: (e) => {
+                    cart.remove(button.dataset);
+                  },
+                },
+              });
+            });
+          let qty = document.querySelectorAll('.product__qty__action');
+          qty.length &&
+            qty.forEach((button) => {
+              eventDecorator({
+                target: button,
+                event: {
+                  type: 'click',
+                  body: (e) => {
+                    let buttons = button.parentNode.querySelectorAll(
+                      '.product__qty__action'
+                    );
+                    buttons.forEach((button) => {
+                      button.disabled = true;
+                      button.classList.add('cursor--pointer');
+                    });
+                    cart.qty(button.dataset).finally(() => {
+                      buttons.forEach((button) => {
+                        button.disabled = false;
+                        button.classList.remove('cursor--pointer');
+                      });
+                    });
+                  },
+                },
+              });
+            });
+        },
+      });
+      window.search = search;
+      window.cart = cart;
       if (!isMobile()) {
         $('[data-fancybox="gallery"]').fancybox({
           thumbs: {
@@ -183,41 +265,20 @@ import Search from './js/search';
         },
       });
 
-      new Swiper(name, {
+      new Swiper('.banners__slider', {
         speed: 600,
-        slidesPerView: 7,
+        slidesPerView: 1,
         spaceBetween: 10,
-        loop: true,
         navigation: {
-          prevEl: name + ' .swiper-button-prev',
-          nextEl: name + ' .swiper-button-next',
+          prevEl: '.banners__slider .swiper-button-prev',
+          nextEl: '.banners__slider .swiper-button-next',
         },
         pagination: {
-          el: '.swiper-pagination',
+          el: '.banners__slider .swiper-pagination',
           clickable: true,
-          renderBullet: function (index, className) {
-            return '<span class="' + className + '">' + (index + 1) + '</span>';
-          },
         },
         autoplay: {
           delay: 5000,
-        },
-        breakpoints: {
-          900: {
-            slidesPerView: 6,
-          },
-          740: {
-            slidesPerView: 5,
-          },
-          600: {
-            slidesPerView: 4,
-          },
-          400: {
-            slidesPerView: 3,
-          },
-          340: {
-            slidesPerView: 2,
-          },
         },
       });
 
