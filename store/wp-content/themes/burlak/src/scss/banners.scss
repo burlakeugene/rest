@@ -27,9 +27,12 @@
     .banners__grid{
       width: 420px;
       padding-left: 20px;
+      display: flex;
+      flex-direction: column;
       .banner{
         margin-bottom: 20px;
         height: auto;
+        flex-grow: 1;
         &:last-child{
           margin-bottom: 0;
         }

@@ -270,6 +270,22 @@ function register_post_types_init()
 }
 add_action('init', 'register_post_types_init');
 
+
+function custom_pre_get_posts_query( $q ) {
+  if (is_shop() && $_GET['categories']) {
+      $tax_query = (array) $q->get('tax_query');
+      $categories = explode(',',$_GET['categories']);
+      $tax_query[] = array(
+         'taxonomy' => 'product_cat',
+         'field' => 'slug',
+         'terms' => $categories,
+         'operator' => 'IN'
+  );
+      $q->set('tax_query', $tax_query);
+  }
+}
+add_action( 'woocommerce_product_query', 'custom_pre_get_posts_query' );
+
 /** Disable Ajax Call from WooCommerce */
 add_action('wp_enqueue_scripts', 'dequeue_woocommerce_cart_fragments', 11);
 function dequeue_woocommerce_cart_fragments()
