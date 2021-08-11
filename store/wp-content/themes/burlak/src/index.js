@@ -7,6 +7,7 @@ import mapInit from './js/map-yandex.js';
 import Notic from 'notic';
 import Search from './js/search';
 import Cart from './js/cart';
+import Request from './js/request';
 (function ($) {
   if ($.fancybox) {
     $.fancybox.defaults.hash = false;
@@ -183,6 +184,38 @@ import Cart from './js/cart';
       });
       window.search = search;
       window.cart = cart;
+
+      //shipping
+      let shippingSwitchers = document.querySelectorAll('[data-set-shipping]');
+      shippingSwitchers.length &&
+        shippingSwitchers.forEach((button) => {
+          eventDecorator({
+            target: button,
+            event: {
+              type: 'click',
+              body: (e) => {
+                let shipping = button.dataset.setShipping;
+                let shippingContainers = document.querySelectorAll('.shipping');
+                shippingContainers.length &
+                  shippingContainers.forEach((container) => {
+                    container.classList.remove('shipping--courier');
+                    container.classList.remove('shipping--self');
+                    container.classList.add('shipping--' + shipping);
+                  });
+                Request.post({
+                  url: '?wc-ajax=shipping_set',
+                  data: {
+                    key: 'type',
+                    value: shipping,
+                  },
+                  headers: {
+                    'Content-Type': '',
+                  },
+                }).then((resp) => {});
+              },
+            },
+          });
+        });
       if (!isMobile()) {
         $('[data-fancybox="gallery"]').fancybox({
           thumbs: {

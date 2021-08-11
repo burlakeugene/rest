@@ -334,3 +334,13 @@ function cart_qty()
     WC()->cart->set_quantity($_POST['key'], $_POST['qty']);
     exit(json_encode(getFragments()));
 }
+
+add_action('wc_ajax_shipping_set', 'shipping_set');
+function shipping_set()
+{
+    $shipping = WC()->session->get('shipping');
+    if(!$shipping) $shipping = array();
+    $shipping[$_POST['key']] = $_POST['value'];
+    WC()->session->set('shipping', $shipping);
+    exit(json_encode($shipping));
+}

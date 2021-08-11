@@ -1,0 +1,127 @@
+.shipping {
+  margin: 20px 0;
+  background-color: var(--white);
+  border-radius: 10px;
+  padding: 30px 40px;
+  padding-left: 230px;
+  background-image: url(../../images/delivery.svg);
+  background-repeat: no-repeat;
+  background-size: 277px 209px;
+  background-position: -40px center;
+  &__top {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__switcher {
+    padding: 5px;
+    background-color: #eff2f3;
+    display: flex;
+    border-radius: 10px;
+    &__inner {
+      position: relative;
+      font-size: 0;
+      width: 300px;
+      display: flex;
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        background-color: var(--theme);
+        border-radius: 8px;
+        z-index: 1;
+        transition: all 0.3s;
+      }
+    }
+    button {
+      width: 50%;
+      background: transparent;
+      color: var(--black);
+      font-size: 13px;
+      font-weight: 600;
+      border: none;
+      padding: 12px 30px;
+      cursor: pointer;
+      position: relative;
+      z-index: 2;
+      transition: all 0.3s;
+      &[data-set-shipping='courier'] {
+        width: 40%;
+      }
+      &[data-set-shipping='self'] {
+        width: 60%;
+      }
+    }
+  }
+  &--courier {
+    [data-set-shipping='courier'] {
+      color: var(--white);
+    }
+    .shipping__switcher {
+      &__inner {
+        &:before {
+          left: 0;
+          width: 40%;
+        }
+      }
+    }
+  }
+  &--self {
+    [data-set-shipping='self'] {
+      color: var(--white);
+    }
+    .shipping__switcher {
+      &__inner {
+        &:before {
+          left: 40%;
+          width: 60%;
+        }
+      }
+    }
+  }
+  &__address {
+    padding-left: 20px;
+    display: flex;
+    flex: 1;
+    &__panel {
+      border: 1px solid var(--border-color);
+      border-radius: 10px 0 0 10px;
+      background-color: var(--white);
+      border-right: none;
+      display: flex;
+      flex: 1;
+      button {
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        font-size: 0;
+        cursor: pointer;
+        width: 64px;
+        height: 100%;
+        text-align: center;
+        .stores__icon {
+          width: 24px;
+          display: inline-block;
+        }
+        svg {
+          fill: var(--gray-medium);
+        }
+        &:hover {
+          svg {
+            fill: var(--theme);
+          }
+          .stores__icon {
+            animation: jump 1s linear forwards;
+          }
+        }
+      }
+      input{
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}

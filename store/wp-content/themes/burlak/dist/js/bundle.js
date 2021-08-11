@@ -1791,6 +1791,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var notic__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(notic__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _js_search__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./js/search */ "./src/js/search.js");
 /* harmony import */ var _js_cart__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./js/cart */ "./src/js/cart.js");
+/* harmony import */ var _js_request__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./js/request */ "./src/js/request.js");
+
 
 
 
@@ -1969,7 +1971,36 @@ __webpack_require__.r(__webpack_exports__);
         }
       });
       window.search = search;
-      window.cart = cart;
+      window.cart = cart; //shipping
+
+      var shippingSwitchers = document.querySelectorAll('[data-set-shipping]');
+      shippingSwitchers.length && shippingSwitchers.forEach(function (button) {
+        eventDecorator({
+          target: button,
+          event: {
+            type: 'click',
+            body: function body(e) {
+              var shipping = button.dataset.setShipping;
+              var shippingContainers = document.querySelectorAll('.shipping');
+              shippingContainers.length & shippingContainers.forEach(function (container) {
+                container.classList.remove('shipping--courier');
+                container.classList.remove('shipping--self');
+                container.classList.add('shipping--' + shipping);
+              });
+              _js_request__WEBPACK_IMPORTED_MODULE_9__["default"].post({
+                url: '?wc-ajax=shipping_set',
+                data: {
+                  key: 'type',
+                  value: shipping
+                },
+                headers: {
+                  'Content-Type': ''
+                }
+              }).then(function (resp) {});
+            }
+          }
+        });
+      });
 
       if (!isMobile()) {
         $('[data-fancybox="gallery"]').fancybox({
