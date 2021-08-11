@@ -1846,6 +1846,16 @@ __webpack_require__.r(__webpack_exports__);
     target.setAttribute('data-event', '1');
   }
 
+  function setShippingField(data) {
+    return _js_request__WEBPACK_IMPORTED_MODULE_9__["default"].post({
+      url: '?wc-ajax=shipping_set',
+      data: data,
+      headers: {
+        'Content-Type': ''
+      }
+    });
+  }
+
   var view = burlak__WEBPACK_IMPORTED_MODULE_4__["InView"];
   var isMobile = new burlak__WEBPACK_IMPORTED_MODULE_4__["Detection"]().isMobile;
   $(document).ready(function () {
@@ -1987,16 +1997,32 @@ __webpack_require__.r(__webpack_exports__);
                 container.classList.remove('shipping--self');
                 container.classList.add('shipping--' + shipping);
               });
-              _js_request__WEBPACK_IMPORTED_MODULE_9__["default"].post({
-                url: '?wc-ajax=shipping_set',
-                data: {
-                  key: 'type',
-                  value: shipping
-                },
-                headers: {
-                  'Content-Type': ''
-                }
-              }).then(function (resp) {});
+              setShippingField({
+                key: 'type',
+                value: shipping
+              });
+            }
+          }
+        });
+      });
+      var addressButtons = document.querySelectorAll('.shipping__address__button');
+      addressButtons.length && addressButtons.forEach(function (button) {
+        eventDecorator({
+          target: button,
+          event: {
+            type: 'click',
+            body: function body(e) {
+              button.classList.add('shipping__address__button--loading');
+              button.disabled = true;
+              var parent = button.closest('.shipping__address'),
+                  input = parent.querySelector('.shipping__address__panel__input');
+              setShippingField({
+                key: 'address',
+                value: input.value
+              }).then(function (resp) {
+                button.disabled = false;
+                button.classList.remove('shipping__address__button--loading');
+              });
             }
           }
         });

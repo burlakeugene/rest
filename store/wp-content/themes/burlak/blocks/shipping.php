@@ -18,12 +18,15 @@
         </div>
         <div class="shipping__address">
           <div class="shipping__address__panel">
-            <button onClick="alert('1')">
+            <button class="shipping__address__panel__button">
               <?php get_template_part('stores/icon') ?>
             </button>
-            <input type="text" value="<?= $shipping['address'] ? $shipping['address'] : '' ?>">
+            <input class="shipping__address__panel__input" placeholder="Введите адрес доставки" type="text" value="<?= $shipping['address'] ? $shipping['address'] : '' ?>">
           </div>
-          <button>Подтвердить</button>
+          <button class="shipping__address__button">
+            <span>Подтвердить</span>
+            <?php get_template_part('blocks/loading') ?>
+          </button>
         </div>
       </div>
     </div>

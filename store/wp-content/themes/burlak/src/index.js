@@ -52,6 +52,16 @@ import Request from './js/request';
     target.setAttribute('data-event', '1');
   }
 
+  function setShippingField(data) {
+    return Request.post({
+      url: '?wc-ajax=shipping_set',
+      data,
+      headers: {
+        'Content-Type': '',
+      },
+    });
+  }
+
   var view = Burlak.InView;
   var isMobile = new Burlak.Detection().isMobile;
   $(document).ready(function () {
@@ -202,16 +212,37 @@ import Request from './js/request';
                     container.classList.remove('shipping--self');
                     container.classList.add('shipping--' + shipping);
                   });
-                Request.post({
-                  url: '?wc-ajax=shipping_set',
-                  data: {
-                    key: 'type',
-                    value: shipping,
-                  },
-                  headers: {
-                    'Content-Type': '',
-                  },
-                }).then((resp) => {});
+                setShippingField({
+                  key: 'type',
+                  value: shipping,
+                });
+              },
+            },
+          });
+        });
+      let addressButtons = document.querySelectorAll(
+        '.shipping__address__button'
+      );
+      addressButtons.length &&
+        addressButtons.forEach((button) => {
+          eventDecorator({
+            target: button,
+            event: {
+              type: 'click',
+              body: (e) => {
+                button.classList.add('shipping__address__button--loading');
+                button.disabled = true;
+                let parent = button.closest('.shipping__address'),
+                  input = parent.querySelector(
+                    '.shipping__address__panel__input'
+                  );
+                setShippingField({
+                  key: 'address',
+                  value: input.value,
+                }).then((resp) => {
+                  button.disabled = false;
+                  button.classList.remove('shipping__address__button--loading');
+                });
               },
             },
           });

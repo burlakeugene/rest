@@ -925,7 +925,7 @@
       -webkit-box-flex: 1;
           -ms-flex: 1;
               flex: 1; }
-      .shipping__address__panel button {
+      .shipping__address__panel__button {
         padding: 0;
         border: none;
         background-color: transparent;
@@ -934,19 +934,66 @@
         width: 64px;
         height: 100%;
         text-align: center; }
-        .shipping__address__panel button .stores__icon {
+        .shipping__address__panel__button .stores__icon {
           width: 24px;
           display: inline-block; }
-        .shipping__address__panel button svg {
-          fill: var(--gray-medium); }
-        .shipping__address__panel button:hover svg {
+        .shipping__address__panel__button svg {
+          fill: var(--gray-medium);
+          -webkit-transition: all 0.3s;
+          transition: all 0.3s; }
+        .shipping__address__panel__button:hover svg {
           fill: var(--theme); }
-        .shipping__address__panel button:hover .stores__icon {
+        .shipping__address__panel__button:hover .stores__icon {
           -webkit-animation: jump 1s linear forwards;
                   animation: jump 1s linear forwards; }
-      .shipping__address__panel input {
+      .shipping__address__panel__input {
         width: 100%;
-        height: auto; }
+        height: auto;
+        border: none;
+        font-size: 13px;
+        font-weight: 500;
+        padding-right: 15px; }
+        .shipping__address__panel__input:focus {
+          outline: none; }
+    .shipping__address__button {
+      border-radius: 0 10px 10px 0;
+      border: none;
+      background-color: var(--theme);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--white);
+      cursor: pointer;
+      padding: 15px 60px;
+      line-height: 1em;
+      position: relative; }
+      .shipping__address__button span {
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s; }
+      .shipping__address__button svg {
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%) scale(0);
+                transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+        visibility: hidden;
+        width: 30px;
+        height: 30px; }
+        .shipping__address__button svg circle {
+          stroke: var(--white);
+          stroke-width: 5px; }
+      .shipping__address__button--loading {
+        cursor: progress; }
+        .shipping__address__button--loading span {
+          opacity: 0;
+          visibility: hidden; }
+        .shipping__address__button--loading svg {
+          -webkit-transform: translate(-50%, -50%) scale(1);
+                  transform: translate(-50%, -50%) scale(1);
+          opacity: 1;
+          visibility: visible; }
 
 .gallery {
   margin: 0 !important;
