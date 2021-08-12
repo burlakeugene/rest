@@ -15,10 +15,12 @@
   --body-background: #eef2f3;
   --border-color: #E0E0E0;
 }
-@import 'js/fancybox/jquery.fancybox.min.css';
+@import 'js/fancybox/fancybox.css';
 @import 'js/swiper/swiper.min.css';
+
 @import 'scss/variables';
 @import 'scss/animations';
+
 @import 'scss/preloader';
 @import 'scss/header';
 @import 'scss/cart';
@@ -28,8 +30,10 @@
 @import 'scss/product';
 @import 'scss/banners';
 @import 'scss/shipping';
+
 @import 'scss/wordpress-fixies';
-@import 'scss/checkbox';
+@import 'scss/modal';
+@import 'scss/control';
 @import 'scss/form';
 @import 'scss/common';
 @import 'scss/content';

@@ -1,6 +1,12 @@
-.cart {
-  &__icon {
-    width: 20px;
+.cart__button {
+  border: none;
+  cursor: pointer;
+  height: 100%;
+  padding: 10px 40px;
+  background-color: var(--orange);
+  .icon {
+    position: relative;
+    width: 24px;
     transition: all 0.3s;
     font-size: 0;
     svg {
@@ -8,29 +14,12 @@
       width: 100%;
       height: auto;
       transition: all 0.3s;
-    }
-    &--cart {
-      width: 24px;
-    }
-  }
-}
-
-.cart__button {
-  border: none;
-  cursor: pointer;
-  height: 100%;
-  padding: 10px 40px;
-  background-color: var(--orange);
-  .cart__icon {
-    position: relative;
-    svg {
       position: relative;
-      transition: all 0.3s;
       z-index: 2;
     }
   }
   &:hover {
-    .cart__icon {
+    .icon {
       svg {
         transform: rotate(-15deg);
       }
@@ -43,6 +32,9 @@
   color: var(--white);
   display: flex;
   align-items: center;
+  .icon {
+    margin-right: 6px;
+  }
   .cart {
     &__count {
       display: flex;
@@ -52,9 +44,7 @@
       opacity: 0.7;
       transition: all 0.3s;
       white-space: nowrap;
-    }
-    &__icon {
-      margin-right: 6px;
+      line-height: 1em;
     }
   }
 }
@@ -107,15 +97,17 @@
   padding: 5px 11px;
   cursor: pointer;
   transition: all 0.3s;
-  .cart__icon {
+  .icon {
     margin-right: 5px;
+    width: 20px;
     svg {
       fill: var(--gray);
+      transition: all 0.3s;
     }
   }
   &:hover {
     color: var(--red);
-    .cart__icon {
+    .icon {
       svg {
         fill: var(--red);
       }

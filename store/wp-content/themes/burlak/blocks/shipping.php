@@ -17,16 +17,49 @@
           </div>
         </div>
         <div class="shipping__address">
-          <div class="shipping__address__panel">
-            <button class="shipping__address__panel__button">
-              <?php get_template_part('stores/icon') ?>
-            </button>
+          <label class="shipping__address__panel">
             <input class="shipping__address__panel__input" placeholder="Введите адрес доставки" type="text" value="<?= $shipping['address'] ? $shipping['address'] : '' ?>">
-          </div>
+            <div class="shipping__address__panel__icon">
+              <?php get_template_part('icons/pin') ?>
+            </div>
+          </label>
           <button class="shipping__address__button">
             <span>Подтвердить</span>
             <?php get_template_part('blocks/loading') ?>
           </button>
+        </div>
+      </div>
+      <div class="shipping__bottom">
+        <div class="shipping__time">
+          <div class="shipping__time__title">
+            Когда доставить?
+          </div>
+          <div class="shipping__time__checkboxies">
+            <label class="control control--radio">
+              <input type="radio" value="0" name="shipping_time">
+              <div class="control__fake">
+                Чем раньше, тем лучше
+              </div>
+            </label>
+            <label class="control control--radio">
+              <input type="radio" value="1" name="shipping_time">
+              <div class="control__fake">
+                Выбрать дату и время
+              </div>
+            </label>
+          </div>
+          <div class="shipping__time__control shipping__time__control--calendar">
+            <label>
+              <input type="text">
+              <?php get_template_part('icons/calendar') ?>
+            </label>
+          </div>
+          <div class="shipping__time__control shipping__time__control--time">
+            <label>
+              <input type="text">
+              <?php get_template_part('icons/time') ?>
+            </label>
+          </div>
         </div>
       </div>
     </div>

@@ -29,15 +29,17 @@
     "file-loader": "^5.0.2",
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.13.0",
+    "sass-loader": "^10",
     "postcss-loader": "^3.0.0",
     "resolve-url-loader": "^3.1.1",
-    "sass-loader": "^8.0.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"
   },
   "dependencies": {
+    "@fancyapps/ui": "^4.0.0-beta.0",
     "burlak": "^2.0.2",
     "maskit": "^1.0.7",
-    "notic": "^2.0.3"
+    "notic": "^2.0.3",
+    "style-loader": "^3.2.1"
   }
 }

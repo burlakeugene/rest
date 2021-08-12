@@ -22,17 +22,17 @@
     font-size: 13px;
     font-weight: 600;
   }
-  .stores{
-    &__icon{
-      margin-right: 6px;
+  .icon{
+    width: 20px;
+    margin-right: 6px;
+    svg{
+      fill: var(--white);
     }
   }
   &:hover{
     background-color: var(--orange);
-    .stores{
-      &__icon{
-        animation: jump 1s linear forwards;
-      }
+    .icon{
+      animation: jump 1s linear forwards;
     }
   }
 }

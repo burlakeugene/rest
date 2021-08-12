@@ -1781,7 +1781,7 @@ module.exports = function (module) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_jquery_jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./js/jquery/jquery */ "./src/js/jquery/jquery.js");
 /* harmony import */ var _js_jquery_jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_js_jquery_jquery__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _js_fancybox_jquery_fancybox_min_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/fancybox/jquery.fancybox.min.js */ "./src/js/fancybox/jquery.fancybox.min.js");
+/* harmony import */ var _js_fancybox_fancybox_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/fancybox/fancybox.js */ "./src/js/fancybox/fancybox.js");
 /* harmony import */ var _js_swiper_swiper_min_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./js/swiper/swiper.min.js */ "./src/js/swiper/swiper.min.js");
 /* harmony import */ var _js_swiper_swiper_min_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_js_swiper_swiper_min_js__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _js_burlak_navigation_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./js/burlak-navigation.js */ "./src/js/burlak-navigation.js");
@@ -2628,10 +2628,10 @@ function () {
 
 /***/ }),
 
-/***/ "./src/js/fancybox/jquery.fancybox.min.js":
-/*!************************************************!*\
-  !*** ./src/js/fancybox/jquery.fancybox.min.js ***!
-  \************************************************/
+/***/ "./src/js/fancybox/fancybox.js":
+/*!*************************************!*\
+  !*** ./src/js/fancybox/fancybox.js ***!
+  \*************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 

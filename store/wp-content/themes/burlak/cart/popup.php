@@ -2,7 +2,7 @@
   <div class="cart__popup__header">
     <h2>Корзина</h2>
     <button class="cart__clear">
-      <?php get_template_part('cart/icon_garbage') ?>
+      <?php get_template_part('icons/garbage') ?>
       Очистить
     </button>
     <?php get_template_part('cart/count') ?>

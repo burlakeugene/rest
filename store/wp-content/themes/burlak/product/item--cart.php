@@ -12,12 +12,12 @@
 ?>
 <div class="product product--cart">
   <button class="product__remove" data-key="<?= $key ?>">
-    <?php get_template_part('cart/icon_garbage') ?>
+    <?php get_template_part('icons/garbage') ?>
   </button>
   <div class="product__inner">
     <div class="product__image">
       <a data-view href="<?= $link ?>" class="ajax" title="<?= $name ?>">
-        <img src="<?php  echo $image[0]; ?>" alt="<?= $name ?>">
+        <img src="<?= $image[0] ?>" alt="<?= $name ?>">
       </a>
     </div>
     <div class="product__data">

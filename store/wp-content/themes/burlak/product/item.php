@@ -6,6 +6,6 @@
   <?= $product->get_id() ?>
   <?= $product->get_title() ?>
   <button class="product__add" data-product_id="<?= $product->get_id() ?>" data-product_title="<?= $product->get_title() ?>">
-      <?php get_template_part('cart/icon_cart') ?>
+      <?php get_template_part('icons/cart') ?>
   </button>
 </div>

@@ -70,7 +70,13 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        use: [{
+          loader: 'css-loader',
+          options: {
+            sourceMap: true,
+            url: false
+          }
+        },]
       },
       {
         test: /\.(png|jpg|gif)$/,

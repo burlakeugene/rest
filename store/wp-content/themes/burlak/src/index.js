@@ -1,5 +1,5 @@
 import jQuery from './js/jquery/jquery';
-import fancybox from './js/fancybox/jquery.fancybox.min.js';
+import fancybox from './js/fancybox/fancybox.js';
 import Swiper from './js/swiper/swiper.min.js';
 import BurlakNavigation from './js/burlak-navigation.js';
 import * as Burlak from 'burlak';

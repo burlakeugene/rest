@@ -20,13 +20,13 @@ function mapInit() {
         center: [mapData.x, mapData.y],
         zoom: mapData.zoom,
         controls: ['zoomControl'],
-        behaviors: ['Drag']
+        behaviors: ['Drag'],
       });
       myPlacemark = new ymaps.Placemark(
         [mapData.x, mapData.y],
         {
           balloonContentHeader: mapData.title,
-          balloonContent: mapData.content
+          balloonContent: mapData.content,
         },
         {
           iconLayout: 'default#image',
@@ -34,7 +34,7 @@ function mapInit() {
           iconImageSize: [mapData.pinWidth, mapData.pinHeight],
           iconImageOffset: [-(mapData.pinWidth / 2), -mapData.pinHeight],
           hideIconOnBalloonOpen: false,
-          balloonOffset: [0, 0]
+          balloonOffset: [0, 0],
         }
       );
       if (isMobile) {

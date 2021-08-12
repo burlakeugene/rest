@@ -137,4 +137,12 @@
       }
     }
   }
+  &__add{
+    .icon{
+      width: 20px;
+      svg{
+        fill: var(--white);
+      }
+    }
+  }
 }
