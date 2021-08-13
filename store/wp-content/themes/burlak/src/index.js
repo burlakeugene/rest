@@ -1,6 +1,8 @@
 import jQuery from './js/jquery/jquery';
 import fancybox from './js/fancybox/fancybox.js';
 import Swiper from './js/swiper/swiper.min.js';
+import dateDropper from './js/datedropper/datedropper.js';
+import timeDropper from './js/timedropper/timedropper.js';
 import BurlakNavigation from './js/burlak-navigation.js';
 import * as Burlak from 'burlak';
 import mapInit from './js/map-yandex.js';
@@ -196,7 +198,7 @@ import Request from './js/request';
       window.cart = cart;
 
       //shipping
-      let shippingSwitchers = document.querySelectorAll('[data-set-shipping]');
+      let shippingSwitchers = document.querySelectorAll('[data-shipping-type]');
       shippingSwitchers.length &&
         shippingSwitchers.forEach((button) => {
           eventDecorator({
@@ -204,13 +206,11 @@ import Request from './js/request';
             event: {
               type: 'click',
               body: (e) => {
-                let shipping = button.dataset.setShipping;
-                let shippingContainers = document.querySelectorAll('.shipping');
-                shippingContainers.length &
-                  shippingContainers.forEach((container) => {
-                    container.classList.remove('shipping--courier');
-                    container.classList.remove('shipping--self');
-                    container.classList.add('shipping--' + shipping);
+                let shipping = button.dataset.shippingType;
+                let containers = document.querySelectorAll('.shipping');
+                containers.length &
+                  containers.forEach((container) => {
+                    container.setAttribute('data-type', shipping);
                   });
                 setShippingField({
                   key: 'type',
@@ -232,13 +232,18 @@ import Request from './js/request';
               body: (e) => {
                 button.classList.add('shipping__address__button--loading');
                 button.disabled = true;
-                let parent = button.closest('.shipping__address'),
+                let parent = button.closest('.shipping'),
                   input = parent.querySelector(
                     '.shipping__address__panel__input'
-                  );
+                  ),
+                  select = parent.querySelector(
+                    '.shipping__address__panel__select'
+                  ),
+                  target = parent.dataset.type === 'self' ? select : input,
+                  key = parent.dataset.type === 'self' ? 'store' : 'address';
                 setShippingField({
-                  key: 'address',
-                  value: input.value,
+                  key,
+                  value: target.value,
                 }).then((resp) => {
                   button.disabled = false;
                   button.classList.remove('shipping__address__button--loading');
@@ -247,6 +252,67 @@ import Request from './js/request';
             },
           });
         });
+      let timeRadios = document.querySelectorAll('[name="shipping_at_time"]');
+      timeRadios.length &&
+        timeRadios.forEach((radio) => {
+          eventDecorator({
+            target: radio,
+            event: {
+              type: 'change',
+              body: (e) => {
+                let checked = document.querySelector(
+                    '[name="shipping_at_time"]:checked'
+                  ),
+                  containers = document.querySelectorAll('.shipping');
+                containers.length &
+                  containers.forEach((container) => {
+                    container.setAttribute('data-at-time', checked.value);
+                  });
+                setShippingField({
+                  key: 'at_time',
+                  value: checked.value,
+                });
+              },
+            },
+          });
+        });
+
+      let themeColor = getComputedStyle(
+        document.documentElement
+      ).getPropertyValue('--theme');
+      $('.shipping__time__control--calendar input').dateDropper({
+        animate: false,
+        lang: 'ru',
+        dropWidth: 200,
+        dropPrimaryColor: themeColor,
+        dropBorder: '1px solid ' + themeColor,
+      });
+      $('.shipping__time__control--calendar input').on('change', (e) => {
+        setShippingField({
+          key: 'date',
+          value: e.target.value,
+        }).then((resp) => {
+          $('.shipping__time__control--calendar input').val(e.target.value);
+        });
+      });
+
+      $('.shipping__time__control--time input').timeDropper({
+        format: 'HH:mm',
+        primaryColor: themeColor,
+        borderColor: themeColor,
+        setCurrentTime: false,
+      });
+
+      $('.shipping__time__control--time input').on('change', (e) => {
+        console.log(e.target.value);
+        setShippingField({
+          key: 'time',
+          value: e.target.value,
+        }).then((resp) => {
+          $('.shipping__time__control--time input').val(e.target.value);
+        });
+      });
+
       if (!isMobile()) {
         $('[data-fancybox="gallery"]').fancybox({
           thumbs: {

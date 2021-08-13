@@ -43,17 +43,6 @@
       outline: none;
     }
   }
-  select {
-    height: 42px;
-    -webkit-appearance: none;
-    background-image: url(../images/arrow.svg);
-    background-position: center right;
-    background-position-x: calc(100% - 10px);
-    background-size: 20px 20px;
-    background-repeat: no-repeat;
-    appearance: none;
-    padding-right: 40px;
-  }
   textarea {
     resize: none;
     max-height: 100px;
@@ -141,5 +130,41 @@
         background-image: url(../images/clip.svg);
       }
     }
+  }
+}
+
+select {
+  -webkit-appearance: none;
+  background-image: url(../../images/arrow.svg);
+  background-position: center right;
+  background-position-x: calc(100% - 10px);
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  appearance: none;
+  padding: 10px 15px;
+  padding-right: 40px;
+  line-height: 1em;
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+  font-weight: 500;
+  width: 100%;
+  display: block;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  &::-webkit-input-placeholder {
+    color: $color-gray;
+  }
+  &::-moz-placeholder {
+    color: $color-gray;
+  }
+  &:-ms-input-placeholder {
+    color: $color-gray;
+  }
+  &:-moz-placeholder {
+    color: $color-gray;
+  }
+  &:focus {
+    outline: none;
   }
 }

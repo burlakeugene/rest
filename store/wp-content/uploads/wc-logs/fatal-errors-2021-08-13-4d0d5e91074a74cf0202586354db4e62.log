@@ -1,0 +1,16 @@
+2021-08-13T10:23:40+00:00 CRITICAL syntax error, unexpected ''time'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/blocks/shipping.php on line 5
+
+2021-08-13T10:24:08+00:00 CRITICAL syntax error, unexpected ''time'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/blocks/shipping.php on line 5
+
+2021-08-13T12:22:14+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Post as array in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/blocks/shipping.php:35
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/index.php(4): get_template_part('blocks/shipping')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template-loader.php(106): include('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-blog-header.php(19): require_once('/Users/eugenebu...')
+#6 /Users/eugeneburlak/work/php/rest/store/index.php(17): require('/Users/eugenebu...')
+#7 {main}
+  thrown in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/blocks/shipping.php on line 35
+

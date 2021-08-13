@@ -48,16 +48,16 @@
       position: relative;
       z-index: 2;
       transition: all 0.3s;
-      &[data-set-shipping='courier'] {
+      &[data-shipping-type='courier'] {
         width: 40%;
       }
-      &[data-set-shipping='self'] {
+      &[data-shipping-type='self'] {
         width: 60%;
       }
     }
   }
-  &--courier {
-    [data-set-shipping='courier'] {
+  &[data-type='courier'] {
+    [data-shipping-type='courier'] {
       color: var(--white);
     }
     .shipping__switcher {
@@ -69,8 +69,8 @@
       }
     }
   }
-  &--self {
-    [data-set-shipping='self'] {
+  &[data-type='self']{
+    [data-shipping-type='self'] {
       color: var(--white);
     }
     .shipping__switcher {
@@ -120,7 +120,8 @@
           transition: all 0.3s;
         }
       }
-      &__input {
+      &__input,
+      &__select {
         width: 100%;
         height: auto;
         border: none;
@@ -136,6 +137,9 @@
             }
           }
         }
+      }
+      &__select{
+        padding-right: 40px;
       }
     }
     &__button {
@@ -243,6 +247,22 @@
           }
         }
       }
+    }
+  }
+  &[data-at-time="0"]{
+    .shipping__time__control{
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  &[data-type="self"]{
+    .shipping__address__panel__input{
+      display: none;
+    }
+  }
+  &[data-type="courier"]{
+    .shipping__address__panel__select{
+      display: none;
     }
   }
 }
