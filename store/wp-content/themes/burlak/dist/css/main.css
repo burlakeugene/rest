@@ -2008,10 +2008,10 @@
         padding: 0 15px 0 0; }
         .shipping__address__panel__input:focus, .shipping__address__panel__select:focus {
           outline: none; }
-          .shipping__address__panel__input:focus + .shipping__address__panel__icon, .shipping__address__panel__select:focus + .shipping__address__panel__icon {
+          .shipping__address__panel__input:focus ~ .shipping__address__panel__icon, .shipping__address__panel__select:focus ~ .shipping__address__panel__icon {
             -webkit-animation: jump 1s linear forwards;
                     animation: jump 1s linear forwards; }
-            .shipping__address__panel__input:focus + .shipping__address__panel__icon svg, .shipping__address__panel__select:focus + .shipping__address__panel__icon svg {
+            .shipping__address__panel__input:focus ~ .shipping__address__panel__icon svg, .shipping__address__panel__select:focus ~ .shipping__address__panel__icon svg {
               fill: var(--theme); }
       .shipping__address__panel__select {
         padding-right: 40px; }

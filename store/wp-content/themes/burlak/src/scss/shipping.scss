@@ -130,7 +130,7 @@
         padding: 0 15px 0 0;
         &:focus {
           outline: none;
-          & + .shipping__address__panel__icon {
+          & ~ .shipping__address__panel__icon {
             animation: jump 1s linear forwards;
             svg {
               fill: var(--theme);
