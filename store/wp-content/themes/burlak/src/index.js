@@ -313,6 +313,27 @@ import Request from './js/request';
         });
       });
 
+      let popularButtons = document.querySelectorAll('[data-set-popular]');
+      popularButtons.length && popularButtons.forEach((button) => {
+        eventDecorator({
+          target: button,
+          event: {
+            type: 'click',
+            body: (e) => {
+              popularButtons.forEach((currentButton) => {
+                let next = button.dataset.setPopular === currentButton.dataset.setPopular;
+                if(next){
+                  currentButton.setAttribute('data-active', 'true');
+                }
+                else{
+                  currentButton.removeAttribute('data-active');
+                }
+              });
+            },
+          },
+        });
+      });
+
       if (!isMobile()) {
         $('[data-fancybox="gallery"]').fancybox({
           thumbs: {

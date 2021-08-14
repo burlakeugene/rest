@@ -270,6 +270,18 @@ function register_post_types_init()
 }
 add_action('init', 'register_post_types_init');
 
+function settings(){
+  if (!is_admin()) {
+    if (!WC()->session->get('product')) {
+      WC()->session->set('product', array(
+        'popular' => array(
+          'active' => 'all'
+        )
+      ));
+    }
+  }
+}
+add_action('init', 'settings');
 
 function custom_pre_get_posts_query( $q ) {
   if (is_shop() && $_GET['categories']) {

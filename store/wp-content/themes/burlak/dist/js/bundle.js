@@ -2085,6 +2085,26 @@ __webpack_require__.r(__webpack_exports__);
           $('.shipping__time__control--time input').val(e.target.value);
         });
       });
+      var popularButtons = document.querySelectorAll('[data-set-popular]');
+      popularButtons.length && popularButtons.forEach(function (button) {
+        eventDecorator({
+          target: button,
+          event: {
+            type: 'click',
+            body: function body(e) {
+              popularButtons.forEach(function (currentButton) {
+                var next = button.dataset.setPopular === currentButton.dataset.setPopular;
+
+                if (next) {
+                  currentButton.setAttribute('data-active', 'true');
+                } else {
+                  currentButton.removeAttribute('data-active');
+                }
+              });
+            }
+          }
+        });
+      });
 
       if (!isMobile()) {
         $('[data-fancybox="gallery"]').fancybox({

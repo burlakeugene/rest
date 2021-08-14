@@ -1,5 +1,5 @@
 <?php
-  $product = new WC_Product(get_the_id());
+  if(!$product) $product = new WC_Product(get_the_id());
 ?>
 
 <div class="product">
