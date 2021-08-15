@@ -607,6 +607,7 @@
                   'Saturday',
                 ];
           }
+
           var x = function () {
               m.find('.dd-d li,.dd-s-b li').show(),
                 n(h) && 2 == f

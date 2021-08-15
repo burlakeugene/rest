@@ -1,12 +1,5 @@
 <?php
-  if (!WC()->session->get('shipping')) {
-      WC()->session->set('shipping', array(
-      'type' => 'courier',
-      'at_time' => '0'
-    ));
-  }
   $shipping = WC()->session->get('shipping');
-
   $stores = get_post_type_object('stores');
   $args = array(
     'numberposts' => -1,
@@ -47,7 +40,7 @@
           </label>
           <button class="shipping__address__button">
             <span>Подтвердить</span>
-            <?php get_template_part('blocks/loading') ?>
+            <?php get_template_part('icons/loading') ?>
           </button>
         </div>
       </div>

@@ -156,7 +156,7 @@
       span {
         transition: all 0.3s;
       }
-      svg {
+      .icon {
         transition: all 0.3s;
         position: absolute;
         top: 50%;
@@ -177,7 +177,7 @@
           opacity: 0;
           visibility: hidden;
         }
-        svg {
+        .icon {
           transform: translate(-50%, -50%) scale(1);
           opacity: 1;
           visibility: visible;

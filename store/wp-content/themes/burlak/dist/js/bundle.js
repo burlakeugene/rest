@@ -2077,7 +2077,6 @@ __webpack_require__.r(__webpack_exports__);
         setCurrentTime: false
       });
       $('.shipping__time__control--time input').on('change', function (e) {
-        console.log(e.target.value);
         setShippingField({
           key: 'time',
           value: e.target.value
@@ -2092,13 +2091,14 @@ __webpack_require__.r(__webpack_exports__);
           event: {
             type: 'click',
             body: function body(e) {
-              popularButtons.forEach(function (currentButton) {
-                var next = button.dataset.setPopular === currentButton.dataset.setPopular;
+              var targets = button.closest('.product__popular').querySelectorAll('[data-popular]');
+              targets.forEach(function (current) {
+                var next = button.dataset.setPopular === current.dataset.popular;
 
                 if (next) {
-                  currentButton.setAttribute('data-active', 'true');
+                  current.setAttribute('data-active', 'true');
                 } else {
-                  currentButton.removeAttribute('data-active');
+                  current.removeAttribute('data-active');
                 }
               });
             }

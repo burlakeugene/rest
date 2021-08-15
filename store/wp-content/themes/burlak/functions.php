@@ -57,6 +57,8 @@ function generate_youtube($atts)
 add_image_size('lazy', 50, 50, false);
 add_image_size('lazy-square', 50, 50, true);
 add_image_size('product-square', 120, 120, true);
+add_image_size('product-rect-lazy', 30, 20, true);
+add_image_size('product-rect', 300, 200, true);
 
 function getMonth($month)
 {
@@ -66,8 +68,8 @@ function getMonth($month)
 
 function devise_number_displayed_posts($query)
 {
-    if (!is_admin() && is_post_type_archive('gallery')) {
-        $query->set('posts_per_page', -1);
+    if (!is_admin() && (is_post_type_archive('product') || is_tax( get_object_taxonomies( 'product' )))) {
+        $query->set('posts_per_page', 16);
         return;
     }
     if (!is_admin() && is_post_type_archive('articles')) {
@@ -271,12 +273,18 @@ function register_post_types_init()
 add_action('init', 'register_post_types_init');
 
 function settings(){
-  if (!is_admin()) {
+  if (!is_admin() && WC() && WC()->session) {
     if (!WC()->session->get('product')) {
       WC()->session->set('product', array(
         'popular' => array(
           'active' => 'all'
         )
+      ));
+    }
+    if (!WC()->session->get('shipping')) {
+      WC()->session->set('shipping', array(
+        'type' => 'courier',
+        'at_time' => '0'
       ));
     }
   }

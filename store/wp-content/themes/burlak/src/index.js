@@ -304,7 +304,6 @@ import Request from './js/request';
       });
 
       $('.shipping__time__control--time input').on('change', (e) => {
-        console.log(e.target.value);
         setShippingField({
           key: 'time',
           value: e.target.value,
@@ -314,25 +313,29 @@ import Request from './js/request';
       });
 
       let popularButtons = document.querySelectorAll('[data-set-popular]');
-      popularButtons.length && popularButtons.forEach((button) => {
-        eventDecorator({
-          target: button,
-          event: {
-            type: 'click',
-            body: (e) => {
-              popularButtons.forEach((currentButton) => {
-                let next = button.dataset.setPopular === currentButton.dataset.setPopular;
-                if(next){
-                  currentButton.setAttribute('data-active', 'true');
-                }
-                else{
-                  currentButton.removeAttribute('data-active');
-                }
-              });
+      popularButtons.length &&
+        popularButtons.forEach((button) => {
+          eventDecorator({
+            target: button,
+            event: {
+              type: 'click',
+              body: (e) => {
+                let targets = button
+                  .closest('.product__popular')
+                  .querySelectorAll('[data-popular]');
+                targets.forEach((current) => {
+                  let next =
+                    button.dataset.setPopular === current.dataset.popular;
+                  if (next) {
+                    current.setAttribute('data-active', 'true');
+                  } else {
+                    current.removeAttribute('data-active');
+                  }
+                });
+              },
             },
-          },
+          });
         });
-      });
 
       if (!isMobile()) {
         $('[data-fancybox="gallery"]').fancybox({
