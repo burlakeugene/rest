@@ -72,8 +72,8 @@ function devise_number_displayed_posts($query)
         $query->set('posts_per_page', 16);
         return;
     }
-    if (!is_admin() && is_post_type_archive('articles')) {
-        $query->set('posts_per_page', 8);
+    if (!is_admin() && is_post_type_archive('news')) {
+        $query->set('posts_per_page', 9);
         return;
     }
 }
@@ -234,16 +234,17 @@ add_action('after_setup_theme', 'burlak_theme_setup');
 function register_post_types_init()
 {
     register_post_type(
-        'news',
-        array(
-      'label' => 'Новости и акции',
-      'labels' => array(
-        'menu_name' => 'Новости и акции'
-      ),
-      'public' => true,
-      'has_archive' => true,
-      'supports' => array('thumbnail', 'title', 'editor', 'excerpt', 'custom-fields')
-    )
+      'news',
+      array(
+        'label' => 'Новости и акции',
+        'labels' => array(
+          'menu_name' => 'Новости и акции'
+        ),
+        'taxonomies' => array('post_tag'),
+        'public' => true,
+        'has_archive' => true,
+        'supports' => array('thumbnail', 'title', 'editor', 'excerpt', 'custom-fields')
+      )
     );
     register_post_type(
         'stores',

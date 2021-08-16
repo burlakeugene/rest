@@ -26,20 +26,8 @@
 	}
 	$popular = WC()->session->get('product')['popular'];
 ?>
-
-<div class="container">
-	<div class="product__popular">
-		<div class="product__popular__header">
-			<div class="product__popular__title">
-				<h2>Популярные товары</h2>
-			</div>
-			<div class="product__popular__button">
-				<a class="ajax" href="<?= get_permalink(wc_get_page_id('shop')); ?>">
-					Перейти в каталог
-				</a>
-			</div>
-		</div>
-		<div class="product__popular__categories">
+<div class="product__popular">
+	<div class="product__popular__categories">
 		<?php
 			foreach ($array as $category):
 				if(!count($category['products'])) continue;
@@ -54,24 +42,23 @@
 			<?php
 			endforeach;
 		?>
-		</div>
-		<?php
-			foreach ($array as $category):
-				if(!count($category['products'])) continue;
-			?>
-				<div
-				class="product__popular__list"
-				data-active="<?= $category['key'] == $popular['active'] ? 'true' : '' ?>"
-				data-popular="<?= $category['key'] ?>"
-				>
-					<?php
-						my_get_template_part('product/list', array(
-							'products' => $category['products']
-						));
-					?>
-				</div>
-			<?php
-			endforeach;
-		?>
 	</div>
+	<?php
+		foreach ($array as $category):
+			if(!count($category['products'])) continue;
+		?>
+			<div
+			class="product__popular__list"
+			data-active="<?= $category['key'] == $popular['active'] ? 'true' : '' ?>"
+			data-popular="<?= $category['key'] ?>"
+			>
+				<?php
+					my_get_template_part('product/list', array(
+						'products' => $category['products']
+					));
+				?>
+			</div>
+		<?php
+		endforeach;
+	?>
 </div>

@@ -147,20 +147,6 @@ a,
   text-align: center;
 }
 
-.section {
-  background-color: $color-white;
-  padding: 50px 0;
-  &__no-top-padding {
-    padding-top: 0;
-  }
-  &__backgrounded {
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-  }
-}
-
 .button {
   cursor: pointer;
   text-transform: uppercase;
@@ -374,5 +360,35 @@ a,
   svg{
     width: 100%;
     height: auto;
+  }
+}
+
+
+.section {
+  margin: 80px 0;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    h2 {
+      line-height: 1em;
+      font-size: 36px;
+      font-weight: 600;
+    }
+    a {
+      background-color: var(--white);
+      color: var(--theme);
+      padding: 15px 30px;
+      border-radius: 5px;
+      transition: all 0.3s;
+      line-height: 1em;
+      font-size: 13px;
+      font-weight: 600;
+      &:hover {
+        color: var(--white);
+        background-color: var(--orange);
+      }
+    }
   }
 }

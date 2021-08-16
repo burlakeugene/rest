@@ -37,6 +37,16 @@
             <?= wc_price($product->price) ?>
           </div>
           <?php if($product->price != $product->regular_price): ?>
+            <div class="product__sale">
+              <?php
+                $percent = ($product->regular_price - $product->price) / $product->regular_price * 100;
+                $percent = explode('.', $percent);
+                if($percent[1] && strlen($percent[1]) && $percent[1] > 2){
+                  $percent[1] = substr($percent[1], 0, 2);
+                }
+                echo '-'.implode('.', $percent).'%';
+              ?>
+            </div>
             <div class="product__price product__price--old">
               <?= wc_price($product->regular_price) ?>
             </div>

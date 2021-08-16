@@ -1,23 +1,45 @@
 <?php
-$image = get_the_post_thumbnail_url(get_the_ID(), 'news-lazy');
-$image_lazy = get_the_post_thumbnail_url(get_the_ID(), 'news');
+  if(!$news) $news = get_post(get_the_id());
+  $tags = get_the_tags($news->ID);
 ?>
-<div class="news-item">
-  <div class="news-item-inner">
-    <a class="news-item-image ajax" href="<?php the_permalink() ?>">
-      <div class="lazy">
-        <img src="<?= $image ?>" data-lazy="<?= $image_lazy ?>" alt="<?php the_title() ?>">
-      </div>
-    </a>
-    <a class="news-item-title ajax" href="<?php the_permalink() ?>">
-      <?php the_title() ?>
-    </a>
-    <div class="news-item-text">
-      <?php the_excerpt() ?>
+<div class="news__item">
+  <div class="news__item__top">
+    <div class="news__item__info">
+      <div class="news__item__date">
+          <?php get_template_part('icons/calendar') ?>
+          <span>
+            <?php
+              $date = date_parse($news->post_date);
+              echo $date['day'].' '.getMonth($date['month'])
+            ?>
+          </span>
+        </div>
+        <div class="news__item__tags">
+          <?php foreach($tags as $tag):
+            ?>
+            <a
+              data-tag="<?= $tag->slug ?>"
+              href="<?= get_post_type_archive_link('news').'?tags='.$tag->slug ?>"
+              class="ajax"
+            >
+              <?= $tag->name ?>
+            </a>
+          <?php endforeach; ?>
+        </div>
     </div>
-    <div class="news-item-more">
-      <a class="ajax" href="<?php the_permalink() ?>">
-        Читать больше
+    <div class="news__item__title">
+      <a class="ajax" href="<?php the_permalink($news->ID) ?>">
+        <?= $news->post_title ?>
+      </a>
+    </div>
+  </div>
+  <div class="news__item__bottom">
+    <div class="news__item__text">
+      <?= $news->post_excerpt ?>
+    </div>
+    <div class="news__item__more">
+      <a class="ajax" href="<?php the_permalink($news->ID) ?>">
+        Узнать подробнее
       </a>
     </div>
   </div>
