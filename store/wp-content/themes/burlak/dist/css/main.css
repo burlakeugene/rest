@@ -2525,10 +2525,11 @@
     height: 100%;
     border-radius: 50%;
     position: relative;
-    color: #1E88E5;
     background-color: currentColor;
     -webkit-transition: all 0.3s;
     transition: all 0.3s; }
+    .social a, .social a:hover {
+      color: #1E88E5; }
     .social a:before {
       content: '';
       display: block;
@@ -2564,11 +2565,11 @@
       .social a:hover:before {
         -webkit-transform: scale(1.3);
                 transform: scale(1.3); }
-  .social--telegram a {
+  .social--telegram a, .social--telegram a:hover {
     color: #039BE5; }
-  .social--instagram a {
+  .social--instagram a, .social--instagram a:hover {
     color: #F01061; }
-  .social--odnoklassniki a {
+  .social--odnoklassniki a, .social--odnoklassniki a:hover {
     color: #FF9800; }
 
 .navigation {

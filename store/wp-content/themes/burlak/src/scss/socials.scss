@@ -17,9 +17,11 @@
     height: 100%;
     border-radius: 50%;
     position: relative;
-    color: #1E88E5;
     background-color: currentColor;
     transition: all 0.3s;
+    &, &:hover{
+      color: #1E88E5;
+    }
     &:before{
       content: '';
       display: block;
@@ -52,17 +54,23 @@
   }
   &--telegram{
     a{
-      color: #039BE5;
+      &, &:hover{
+        color: #039BE5;
+      }
     }
   }
   &--instagram{
     a{
-      color: #F01061;
+      &, &:hover{
+        color: #F01061;
+      }
     }
   }
   &--odnoklassniki{
     a{
-      color: #FF9800;
+      &, &:hover{
+        color: #FF9800;
+      }
     }
   }
 }
