@@ -1,20 +1,20 @@
-.news{
-  &__list{
+.news {
+  &__list {
     margin: -10px;
     display: flex;
     flex-wrap: wrap;
   }
-  &__item{
+  &__item {
     padding: 10px;
     width: 33.333%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    &__info{
+    &__info {
       display: flex;
       align-items: center;
     }
-    &__date{
+    &__date {
       display: flex;
       align-items: center;
       text-transform: lowercase;
@@ -22,18 +22,18 @@
       font-size: 13px;
       font-weight: 500;
       margin-right: 20px;
-      .icon{
+      .icon {
         width: 20px;
         margin-right: 10px;
-        svg{
+        svg {
           fill: var(--gray-medium);
         }
       }
     }
-    &__tags{
+    &__tags {
       display: flex;
       align-items: center;
-      a{
+      a {
         color: var(--red);
         padding: 5px 15px;
         line-height: 1em;
@@ -43,29 +43,60 @@
         margin-right: 10px;
         font-size: 13px;
         font-weight: 600;
-        &:hover{
+        &:hover {
           color: var(--white);
           background-color: var(--red);
         }
-        &[data-tag="akczii"]{
+        &[data-tag='akczii'] {
           border-color: var(--orange);
           color: var(--orange);
-          &:hover{
+          &:hover {
             color: var(--white);
             background-color: var(--orange);
           }
         }
       }
     }
-    &__title{
+    &__title {
       margin: 10px 0;
-      a{
+      a {
         font-size: 23px;
         font-weight: 500;
         color: var(--black);
         transition: all 0.3s;
-        &:hover{
+        &:hover {
           color: var(--theme);
+        }
+      }
+    }
+    &__text {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.5em;
+    }
+    &__more {
+      margin-top: 15px;
+      .icon {
+        margin-left: 10px;
+        width: 25px;
+        overflow: hidden;
+        svg{
+          fill: var(--red);
+          transition: all 0.3s;
+        }
+      }
+      a {
+        color: var(--red);
+        display: inline-flex;
+        align-items: center;
+        font-size: 13px;
+        font-weight: 500;
+        &:hover {
+          .icon {
+            svg {
+              transform: translateX(-10px);
+            }
+          }
         }
       }
     }

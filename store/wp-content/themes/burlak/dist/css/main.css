@@ -2382,10 +2382,10 @@
       .news__item__tags a:hover {
         color: var(--white);
         background-color: var(--red); }
-      .news__item__tags a[data-tag="akczii"] {
+      .news__item__tags a[data-tag='akczii'] {
         border-color: var(--orange);
         color: var(--orange); }
-        .news__item__tags a[data-tag="akczii"]:hover {
+        .news__item__tags a[data-tag='akczii']:hover {
           color: var(--white);
           background-color: var(--orange); }
   .news__item__title {
@@ -2398,6 +2398,33 @@
       transition: all 0.3s; }
       .news__item__title a:hover {
         color: var(--theme); }
+  .news__item__text {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5em; }
+  .news__item__more {
+    margin-top: 15px; }
+    .news__item__more .icon {
+      margin-left: 10px;
+      width: 25px;
+      overflow: hidden; }
+      .news__item__more .icon svg {
+        fill: var(--red);
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s; }
+    .news__item__more a {
+      color: var(--red);
+      display: -webkit-inline-box;
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      font-size: 13px;
+      font-weight: 500; }
+      .news__item__more a:hover .icon svg {
+        -webkit-transform: translateX(-10px);
+                transform: translateX(-10px); }
 
 .gallery {
   margin: 0 !important;

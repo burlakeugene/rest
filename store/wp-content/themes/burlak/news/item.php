@@ -19,7 +19,7 @@
             ?>
             <a
               data-tag="<?= $tag->slug ?>"
-              href="<?= get_post_type_archive_link('news').'?tags='.$tag->slug ?>"
+              href="<?= get_post_type_archive_link('news').'?tag='.$tag->slug ?>"
               class="ajax"
             >
               <?= $tag->name ?>
@@ -39,7 +39,8 @@
     </div>
     <div class="news__item__more">
       <a class="ajax" href="<?php the_permalink($news->ID) ?>">
-        Узнать подробнее
+        <span>Узнать подробнее</span>
+        <?php get_template_part('icons/arrow-right') ?>
       </a>
     </div>
   </div>
