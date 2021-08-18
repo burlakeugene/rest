@@ -1874,7 +1874,7 @@ __webpack_require__.r(__webpack_exports__);
 
     window.callModal = function (name) {
       $.fancybox.open({
-        src: '#request',
+        src: '#callback',
         type: 'inline',
         opts: {
           baseClass: 'modal-wrapper',
@@ -1901,6 +1901,13 @@ __webpack_require__.r(__webpack_exports__);
     });
 
     function commonFunc() {
+      var callbackButtons = document.querySelectorAll('[data-callback]');
+      callbackButtons.length && callbackButtons.forEach(function (button) {
+        button.addEventListener('click', function (e) {
+          e.preventDefault();
+          callModal(button.dataset.callback);
+        });
+      });
       var search = new _js_search__WEBPACK_IMPORTED_MODULE_9__["default"]({
         onShow: function onShow() {
           cart.hide();
@@ -2229,6 +2236,20 @@ __webpack_require__.r(__webpack_exports__);
           parent.classList.toggle('opened');
         });
       }
+
+      var scrollers = document.querySelectorAll('.scroller, .scroller a');
+      scrollers.length && scrollers.forEach(function (scroller) {
+        scroller.addEventListener('click', function (e) {
+          var target = document.querySelector(scroller.getAttribute('href'));
+          if (!target) return;
+          e.preventDefault();
+          var top = target.getBoundingClientRect().top + window.scrollY;
+          window.scrollTo({
+            top: top,
+            behavior: 'smooth'
+          });
+        });
+      });
     }
 
     var router = new _js_burlak_navigation_js__WEBPACK_IMPORTED_MODULE_5__["default"]({

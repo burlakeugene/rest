@@ -1,3 +1,91 @@
+	<?php
+		$phone = get_option('phone');
+		$work_time = get_option('work_time');
+		$socials = get_socials();
+		$stores = get_stores();
+	?>
+	<footer class="footer">
+		<div class="container">
+			<a class="to-top scroller" href="#top">
+				<?php get_template_part('icons/arrow-top') ?>
+			</a>
+			<div class="footer__blocks">
+				<?php
+					if($phone):
+				?>
+				<div class="footer__block">
+					<div class="footer__block__title">
+						Контактный телефон:
+					</div>
+					<div class="footer__block__inner">
+						<a href="tel:<?= phone_replace($phone) ?>">
+							<?= $phone ?>
+						</a>
+					</div>
+				</div>
+				<?php endif; ?>
+				<?php
+					if($work_time):
+				?>
+				<div class="footer__block">
+					<div class="footer__block__title">
+						Время работы:
+					</div>
+					<div class="footer__block__inner">
+						<?= $work_time ?>
+					</div>
+				</div>
+				<?php endif; ?>
+
+				<?php
+					if($stores):
+				?>
+				<div class="footer__block footer__block--stores">
+					<div class="footer__block__title">
+						Адреса ресторанов:
+					</div>
+					<div class="footer__block__inner">
+						<?php get_template_part('stores/list--mini') ?>
+					</div>
+				</div>
+				<?php endif; ?>
+				<?php if($socials): ?>
+				<div class="footer__block">
+					<div class="footer__block__title">
+						Мы в соц. сетях:
+					</div>
+					<div class="footer__block__inner">
+						<?php get_template_part('blocks/socials') ?>
+					</div>
+				</div>
+				<?php endif; ?>
+			</div>
+			<div class="footer__blocks footer__blocks--borders">
+				<div class="footer__block">
+					<?php
+						wp_nav_menu(array(
+							'theme_location' => 'footer',
+							'menu_class' => 'navigation navigation--footer'
+						));
+					?>
+				</div>
+				<div class="footer__block footer__block--callback">
+					<button class="button button--gray" data-callback="Футер">
+						Обратная связь
+					</button>
+				</div>
+			</div>
+			<div class="footer__blocks">
+				<div class="footer__block footer__block--rights">
+					<?= get_option('copyrights') ?>
+				</div>
+				<div class="footer__block footer__block--developer">
+					<a href="https://marketing.rockotov.ru/" target="_blank">Разработка сайтов</a>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<?php get_template_part('blocks/callback') ?>
 </div>
 <div class="preloader preloader__visible">
 	<div class="preloader-spinner">

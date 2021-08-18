@@ -8,10 +8,9 @@ if (!function_exists('burlak_setup')) :
       add_theme_support('post-thumbnails');
       add_theme_support('woocommerce');
       register_nav_menus(array(
-      'header' => esc_html__('Header', 'burlak'),
-      'footer' => esc_html__('Footer', 'burlak'),
-      'slidebar' => esc_html__('Slidebar', 'burlak')
-    ));
+        'header' => esc_html__('Header', 'burlak'),
+        'footer' => esc_html__('Footer', 'burlak')
+      ));
   }
 endif;
 add_action('after_setup_theme', 'burlak_setup');
@@ -92,6 +91,10 @@ add_action('admin_init', function () {
     register_setting('theme-page-settings', 'phone');
     register_setting('theme-page-settings', 'email');
     register_setting('theme-page-settings', 'theme-color');
+    register_setting('theme-page-settings', 'vkontakte');
+    register_setting('theme-page-settings', 'telegram');
+    register_setting('theme-page-settings', 'instagram');
+    register_setting('theme-page-settings', 'odnoklassniki');
 });
 
 function theme_settings_page()
@@ -134,6 +137,22 @@ function theme_settings_page()
       <label>
         <div>Theme color</div>
         <input name="theme-color" type="text" value="<?= esc_attr(get_option('theme-color')); ?>">
+      </label>
+      <label>
+        <div>Vkontakte</div>
+        <input name="vkontakte" type="text" value="<?= esc_attr(get_option('vkontakte')); ?>">
+      </label>
+      <label>
+        <div>Telegram</div>
+        <input name="telegram" type="text" value="<?= esc_attr(get_option('telegram')); ?>">
+      </label>
+      <label>
+        <div>Instagram</div>
+        <input name="instagram" type="text" value="<?= esc_attr(get_option('instagram')); ?>">
+      </label>
+      <label>
+        <div>Odnoklassniki</div>
+        <input name="odnoklassniki" type="text" value="<?= esc_attr(get_option('odnoklassniki')); ?>">
       </label>
       <?php submit_button(); ?>
     </form>
@@ -364,4 +383,23 @@ function shipping_set()
     $shipping[$_POST['key']] = $_POST['value'];
     WC()->session->set('shipping', $shipping);
     exit(json_encode($shipping));
+}
+
+function get_socials() {
+  $socials = array();
+  if(get_option('vkontakte')) $socials['vkontakte'] = get_option('vkontakte');
+  if(get_option('telegram')) $socials['telegram'] = get_option('telegram');
+  if(get_option('instagram')) $socials['instagram'] = get_option('instagram');
+  if(get_option('odnoklassniki')) $socials['odnoklassniki'] = get_option('odnoklassniki');
+  return $socials;
+}
+
+function get_stores(){
+  $stores = get_post_type_object('stores');
+  $args = array(
+    'numberposts' => -1,
+    'post_type' => $stores->name,
+  );
+  $stores = get_posts($args);
+  return $stores;
 }

@@ -1,16 +1,15 @@
 .modal {
   width: 100%;
-  max-width: 600px;
+  max-width: 630px;
   padding: 40px;
   display: none;
 }
 
 .modal-wrapper {
   .fancybox-bg {
-    background-color: #fff;
+    background-color: #111;
   }
   .fancybox-content {
-    box-shadow: 0 30px 69px -5px rgba(0, 0, 0, 0.3);
-    border-radius: 5px;
+    border-radius: 10px;
   }
 }

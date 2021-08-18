@@ -9,7 +9,7 @@
           <h2><?= $title ?></h2>
         <?php endif; ?>
         <?php if($link): ?>
-          <a class="<?= $link['ajax'] ? 'ajax' : '' ?>" href="<?= $link['href'] ?>">
+          <a class="button <?= $link['ajax'] ? 'ajax' : '' ?>" href="<?= $link['href'] ?>">
             <?= $link['text'] ?>
           </a>
         <?php endif; ?>

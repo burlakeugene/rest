@@ -14,6 +14,7 @@
 
 <body data-home="<?= esc_url(home_url('/')); ?>" <?php body_class(); ?>>
   <div id="app">
+    <div id="top"></div>
     <header class="header">
       <div class="header__main">
         <div class="header__left">

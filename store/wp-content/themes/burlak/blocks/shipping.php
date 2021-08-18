@@ -1,11 +1,6 @@
 <?php
   $shipping = WC()->session->get('shipping');
-  $stores = get_post_type_object('stores');
-  $args = array(
-    'numberposts' => -1,
-    'post_type' => $stores->name,
-  );
-  $stores = get_posts($args);
+  $stores = get_stores();
 ?>
 <section>
   <div class="container">
@@ -28,7 +23,7 @@
                 foreach ($stores as $store):
               ?>
                 <option value="<?= $store->ID ?>" <?= $shipping['store'] == $store->ID ? 'selected' : '' ?>>
-                  <?= $store->post_title?>
+                  <?= get_field('address', $store->ID) ?>
                 </option>
               <?php
                 endforeach;
@@ -80,5 +75,4 @@
     </div>
   </div>
 </section>
-
 <!-- WC()->session->set('chosen_shipping_methods', array( 'flat_rate:1' ) ); -->

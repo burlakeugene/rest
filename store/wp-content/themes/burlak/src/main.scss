@@ -14,6 +14,10 @@
   --container-width: 1280px;
   --body-background: #eef2f3;
   --border-color: #E0E0E0;
+  --footer: #282828;
+  --footer-text: #E0E0E0;
+  --footer-title: #828282;
+  --button-gray: #4F4F4F;
 }
 @import 'js/fancybox/fancybox.css';
 @import 'js/swiper/swiper.min.css';
@@ -34,6 +38,9 @@
 @import 'scss/banners';
 @import 'scss/shipping';
 @import 'scss/news';
+@import 'scss/footer';
+@import 'scss/socials';
+@import 'scss/navigation';
 
 @import 'scss/wordpress-fixies';
 @import 'scss/modal';

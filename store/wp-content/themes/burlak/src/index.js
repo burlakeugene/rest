@@ -76,7 +76,7 @@ import Request from './js/request';
 
     window.callModal = function (name) {
       $.fancybox.open({
-        src: '#request',
+        src: '#callback',
         type: 'inline',
         opts: {
           baseClass: 'modal-wrapper',
@@ -102,6 +102,13 @@ import Request from './js/request';
     });
 
     function commonFunc() {
+      let callbackButtons = document.querySelectorAll('[data-callback]');
+      callbackButtons.length && callbackButtons.forEach((button) => {
+        button.addEventListener('click', (e) => {
+          e.preventDefault();
+          callModal(button.dataset.callback);
+        });
+      })
       let search = new Search({
         onShow: () => {
           cart.hide();
@@ -479,6 +486,17 @@ import Request from './js/request';
           parent.classList.toggle('opened');
         });
       }
+
+      let scrollers = document.querySelectorAll('.scroller, .scroller a');
+      scrollers.length && scrollers.forEach((scroller) => {
+        scroller.addEventListener('click', (e) => {
+          let target = document.querySelector(scroller.getAttribute('href'));
+          if(!target) return;
+          e.preventDefault();
+          let top = target.getBoundingClientRect().top + window.scrollY;
+          window.scrollTo({ top, behavior: 'smooth' });
+        })
+      });
     }
 
     var router = new BurlakNavigation({
