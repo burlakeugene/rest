@@ -14,7 +14,7 @@
   </div>
   <?php endif; ?>
   <?php if($fields['shortcode']): ?>
-  <div class="modal__text">
+  <div class="modal__content">
   <?= do_shortcode($fields['shortcode']) ?>
   </div>
   <?php endif; ?>

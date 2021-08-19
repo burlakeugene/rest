@@ -15,13 +15,13 @@
 }
 
 ::selection {
-  background: var(--white);
-  color: var(--theme);
+  background: var(--theme);
+  color: var(--white);
 }
 
 ::-moz-selection {
-  background: var(--white);
-  color: var(--theme);
+  background: var(--theme);
+  color: var(--white);
 }
 
 ::-webkit-scrollbar {
@@ -158,12 +158,16 @@ a,
   font-size: 13px;
   font-weight: 600;
   border: none;
-  &:hover{
+  &:not([disabled]):hover{
     color: var(--white);
     background-color: var(--orange);
   }
   &--gray{
     background-color: var(--button-gray);
+    color: var(--white);
+  }
+  &--red{
+    background-color: var(--red);
     color: var(--white);
   }
 }

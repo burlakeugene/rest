@@ -69,9 +69,12 @@ import Request from './js/request';
   $(document).ready(function () {
     window.Notic = new Notic();
     document.addEventListener('wpcf7mailsent', function (event) {
-      setTimeout(function () {
-        $.fancybox.close();
-      }, 3000);
+      $.fancybox.close();
+      window.Notic.addMessage({
+        message: event.detail.apiResponse.message,
+        type: 'success',
+        delay: 5000,
+      });
     });
 
     window.callModal = function (name) {
@@ -455,7 +458,7 @@ import Request from './js/request';
       window.wpcf7 &&
         forms.length &&
         forms.forEach((form, index) => {
-          window.wpcf7.initForm(form);
+          if(!form.querySelector('.ajax-loader'))window.wpcf7.init(form);
         });
 
       let accordions = document.querySelectorAll('.accordion');

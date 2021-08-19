@@ -1867,9 +1867,13 @@ __webpack_require__.r(__webpack_exports__);
   $(document).ready(function () {
     window.Notic = new notic__WEBPACK_IMPORTED_MODULE_8___default.a();
     document.addEventListener('wpcf7mailsent', function (event) {
-      setTimeout(function () {
-        $.fancybox.close();
-      }, 3000);
+      console.log(event);
+      $.fancybox.close();
+      window.Notic.addMessage({
+        message: event.detail.apiResponse.message,
+        type: 'success',
+        delay: 5000
+      });
     });
 
     window.callModal = function (name) {
@@ -2204,7 +2208,7 @@ __webpack_require__.r(__webpack_exports__);
       });
       var forms = document.querySelectorAll('.wpcf7-form');
       window.wpcf7 && forms.length && forms.forEach(function (form, index) {
-        window.wpcf7.initForm(form);
+        if (!form.querySelector('.ajax-loader')) window.wpcf7.init(form);
       });
       var accordions = document.querySelectorAll('.accordion');
 

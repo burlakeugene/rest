@@ -2658,6 +2658,30 @@
   max-width: 630px;
   padding: 40px;
   display: none; }
+  .modal__title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 10px; }
+  .modal__text {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 30px; }
+
+.modal-wrapper .fancybox-close-small {
+  width: 55px;
+  height: 55px;
+  color: #5D666D;
+  overflow: hidden; }
+  .modal-wrapper .fancybox-close-small svg {
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s; }
+  .modal-wrapper .fancybox-close-small path {
+    stroke-width: 1px; }
+  .modal-wrapper .fancybox-close-small:hover svg {
+    -webkit-transform: scale(0.9) rotate(90deg);
+            transform: scale(0.9) rotate(90deg); }
 
 .modal-wrapper .fancybox-bg {
   background-color: #111; }
@@ -2725,98 +2749,48 @@ span.wpcf7-list-item {
             box-shadow: inset 0 0 0 5px var(--white); }
 
 .form {
-  margin: 0 -15px;
-  font-size: 0; }
-  .form-title {
-    color: #333;
-    font-size: 24px;
-    text-align: center;
-    margin-bottom: 10px;
-    padding: 0 15px; }
-  .form .phone {
-    position: static; }
-  .form label {
-    display: block;
-    padding: 5px 0; }
-  .form input,
-  .form textarea,
-  .form select {
-    padding: 10px 15px;
-    line-height: 1em;
-    background-color: #ffffff;
-    border: 2px solid #a34e17;
-    color: #333;
-    font-weight: 300;
-    width: 100%;
-    display: block;
-    border-radius: 5px;
-    font-size: 16px; }
-    .form input::-webkit-input-placeholder,
-    .form textarea::-webkit-input-placeholder,
-    .form select::-webkit-input-placeholder {
-      color: #404040; }
-    .form input::-moz-placeholder,
-    .form textarea::-moz-placeholder,
-    .form select::-moz-placeholder {
-      color: #404040; }
-    .form input:-ms-input-placeholder,
-    .form textarea:-ms-input-placeholder,
-    .form select:-ms-input-placeholder {
-      color: #404040; }
-    .form input:-moz-placeholder,
-    .form textarea:-moz-placeholder,
-    .form select:-moz-placeholder {
-      color: #404040; }
-    .form input:focus,
-    .form textarea:focus,
-    .form select:focus {
-      outline: none; }
-  .form textarea {
-    resize: none;
-    max-height: 100px; }
-  .form-bottom {
-    font-size: 0; }
-    .form-bottom-left, .form-bottom-right {
-      display: inline-block;
-      width: 50%;
-      vertical-align: top; }
-    .form-bottom-right {
-      text-align: right; }
-  .form .form-submit {
-    display: inline-block;
+  margin: 0 auto;
+  max-width: 460px; }
+  .form__item {
+    padding: 0 15px;
+    margin: 15px 0; }
+    .form__item:last-child {
+      margin-bottom: 0; }
+    .form__item .wpcf7-not-valid-tip {
+      color: var(--red);
+      font-size: 13px;
+      font-weight: 600;
+      margin-top: 5px; }
+  .form__item__submit-inner {
     position: relative;
-    padding: 0 15px; }
-    .form .form-submit .ajax-loader {
+    display: inline-block; }
+  .form__item--submit {
+    text-align: center; }
+    .form__item--submit .ajax-loader {
       position: absolute;
       background-image: none;
       top: 50%;
-      right: 23px;
+      right: 7px;
       margin: 0;
       width: 16px;
       height: 16px;
       margin-top: -8px;
-      border: 2px solid #ffffff;
+      border: 2px solid var(--white);
       border-right-color: transparent;
+      background-color: transparent;
       opacity: 0;
       visibility: hidden;
       border-radius: 50%;
       -webkit-animation: rotate 1s linear infinite;
       animation: rotate 1s linear infinite; }
-      .form .form-submit .ajax-loader.is-active {
+      .form__item--submit .ajax-loader:before {
+        display: none; }
+      .form__item--submit .ajax-loader.is-active {
         opacity: 1;
         visibility: visible; }
   .form label,
   .form .wpcf7-response-output {
     font-size: 14px; }
-  .form .wpcf7-response-output {
-    padding: 15px; }
-  .form label {
-    display: inline-block;
-    vertical-align: top;
-    width: 100%;
-    padding: 10px 15px; }
-    .form label.half {
-      width: 50%; }
   .form-file {
     position: relative; }
     .form-file input {
@@ -2842,6 +2816,59 @@ span.wpcf7-list-item {
         background-position: center center;
         background-repeat: no-repeat;
         background-image: url(./images/clip.svg); }
+
+input,
+textarea,
+select {
+  padding: 14px 15px;
+  line-height: 1em;
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+  color: #333;
+  font-weight: 300;
+  display: block;
+  border-radius: 10px;
+  font-size: 13px;
+  font-family: Inter; }
+  input::-webkit-input-placeholder,
+  textarea::-webkit-input-placeholder,
+  select::-webkit-input-placeholder {
+    color: #404040; }
+  input::-moz-placeholder,
+  textarea::-moz-placeholder,
+  select::-moz-placeholder {
+    color: #404040; }
+  input:-ms-input-placeholder,
+  textarea:-ms-input-placeholder,
+  select:-ms-input-placeholder {
+    color: #404040; }
+  input:-moz-placeholder,
+  textarea:-moz-placeholder,
+  select:-moz-placeholder {
+    color: #404040; }
+  input:focus,
+  textarea:focus,
+  select:focus {
+    outline: none; }
+
+textarea {
+  resize: none;
+  max-height: 100px; }
+
+input,
+select,
+textarea {
+  font-size: 13px;
+  font-weight: 500; }
+
+.form .control__fake {
+  font-size: 13px;
+  font-weight: 500; }
+
+.form select,
+.form input,
+.form textarea {
+  width: 100%; }
 
 select {
   -webkit-appearance: none;
@@ -2874,6 +2901,13 @@ select {
   select:focus {
     outline: none; }
 
+.wpcf7-response-output {
+  margin-bottom: 0;
+  margin-top: 15px; }
+
+.wpcf7 .wpcf7-response-output {
+  display: none; }
+
 .container {
   max-width: var(--container-width);
   padding: 0 15px;
@@ -2889,16 +2923,16 @@ select {
   scrollbar-width: thin; }
 
 ::-moz-selection {
-  background: var(--white);
-  color: var(--theme); }
+  background: var(--theme);
+  color: var(--white); }
 
 ::selection {
-  background: var(--white);
-  color: var(--theme); }
+  background: var(--theme);
+  color: var(--white); }
 
 ::-moz-selection {
-  background: var(--white);
-  color: var(--theme); }
+  background: var(--theme);
+  color: var(--white); }
 
 ::-webkit-scrollbar {
   background: 0 0;
@@ -3019,11 +3053,14 @@ a,
   font-size: 13px;
   font-weight: 600;
   border: none; }
-  .button:hover {
+  .button:not([disabled]):hover {
     color: var(--white);
     background-color: var(--orange); }
   .button--gray {
     background-color: var(--button-gray);
+    color: var(--white); }
+  .button--red {
+    background-color: var(--red);
     color: var(--white); }
 
 .modal__review {
