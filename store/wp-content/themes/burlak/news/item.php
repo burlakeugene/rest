@@ -1,9 +1,20 @@
 <?php
   if(!$news) $news = get_post(get_the_id());
   $tags = get_the_tags($news->ID);
+  $image_lazy = get_the_post_thumbnail_url($news->ID, 'news-rect-lazy');
+  $image = get_the_post_thumbnail_url($news->ID, 'news-rect');
 ?>
 <div class="news__item">
   <div class="news__item__top">
+    <?php if(is_archive()):?>
+      <div class="news__item__image">
+        <a href="<?php the_permalink($news->ID) ?>" data-view>
+          <div class="lazy">
+            <img src="<?= $image_lazy ?>" data-lazy="<?= $image ?>"/>
+          </div>
+        </a>
+      </div>
+    <?php endif;?>
     <div class="news__item__info">
       <div class="news__item__date">
           <?php get_template_part('icons/calendar') ?>

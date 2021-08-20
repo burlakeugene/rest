@@ -158,6 +158,7 @@ a,
   font-size: 13px;
   font-weight: 600;
   border: none;
+  position: relative;
   &:not([disabled]):hover{
     color: var(--white);
     background-color: var(--orange);
@@ -169,6 +170,31 @@ a,
   &--red{
     background-color: var(--red);
     color: var(--white);
+  }
+  &--loader{
+    .icon{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      opacity: 0;
+      visibility: hidden;
+      width: 20px;
+      height: 20px;
+      transition: all 0.3s;
+      svg circle{
+        stroke: var(--red);
+        stroke-width: 4px;
+      }
+    }
+    &.button--loading{
+      color: transparent;
+      .icon{
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+        visibility: visible;
+      }
+    }
   }
 }
 
@@ -202,17 +228,17 @@ a,
     width: 35px;
     height: 35px;
     border-radius: 50%;
-    background-color: $theme-color;
-    color: $color-white;
+    background-color: var(--theme);
+    color: var(--white);
     margin: 3px;
-    box-shadow: inset 0 0 0 2px $theme-color;
+    box-shadow: inset 0 0 0 2px var(--theme);
     transition: all 0.3s;
     &:hover {
       transform: scale(1.1);
     }
     &.current {
-      background-color: $color-white;
-      color: $theme-color;
+      background-color: var(--white);
+      color: var(--theme);
       &:hover {
         transform: scale(1);
       }
@@ -221,7 +247,7 @@ a,
     &.prev {
       width: auto;
       background-color: transparent;
-      color: $theme-color;
+      color: var(--theme);
       font-size: 16px;
       margin: 3px 8px;
       box-shadow: none;
@@ -424,5 +450,25 @@ a,
     .icon{
       animation: jump 1s linear forwards;
     }
+  }
+}
+
+.list{
+  margin: 40px 0;
+}
+
+.load-more{
+  &__pagination{
+    text-align: center;
+    margin: 40px 0 60px 0;
+    &:empty{
+      margin: 0;
+    }
+    &__button{
+
+    }
+  }
+  .pagination{
+    display: none;
   }
 }

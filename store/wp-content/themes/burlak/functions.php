@@ -58,6 +58,8 @@ add_image_size('lazy-square', 50, 50, true);
 add_image_size('product-square', 120, 120, true);
 add_image_size('product-rect-lazy', 30, 20, true);
 add_image_size('product-rect', 300, 200, true);
+add_image_size('news-rect-lazy', 30, 20, true);
+add_image_size('news-rect', 360, 220, true);
 
 function getMonth($month)
 {

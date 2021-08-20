@@ -1867,7 +1867,6 @@ __webpack_require__.r(__webpack_exports__);
   $(document).ready(function () {
     window.Notic = new notic__WEBPACK_IMPORTED_MODULE_8___default.a();
     document.addEventListener('wpcf7mailsent', function (event) {
-      console.log(event);
       $.fancybox.close();
       window.Notic.addMessage({
         message: event.detail.apiResponse.message,
@@ -2254,9 +2253,57 @@ __webpack_require__.r(__webpack_exports__);
           });
         });
       });
+      var loadMore = document.querySelectorAll('.load-more');
+      loadMore.length && loadMore.forEach(function (container) {
+        var button = container.querySelector('.load-more__pagination__button');
+        button && eventDecorator({
+          target: button,
+          event: {
+            type: 'click',
+            body: function body(e) {
+              e.preventDefault();
+              button.classList.add('button--loading');
+              button.disabled = true;
+              var navigation = button.closest('.load-more__pagination'),
+                  list = button.closest('.load-more').querySelector('.load-more__list'),
+                  next = navigation.querySelector('.next'),
+                  href = next.href;
+              _js_request__WEBPACK_IMPORTED_MODULE_11__["default"].get({
+                url: href,
+                headers: {
+                  'Content-Type': 'text/html; charset=utf-8'
+                }
+              }).then(function (html) {
+                var parser = new DOMParser();
+                html = parser.parseFromString(html, 'text/html');
+                html = html.querySelector('.load-more');
+                var htmlNavigation = html.querySelector('.load-more__pagination'),
+                    htmlList = html.querySelector('.load-more__list');
+
+                if (htmlList.children.length) {
+                  for (var _i = 0; _i <= htmlList.children.length; _i++) {
+                    list.appendChild(htmlList.children[_i]);
+                  }
+
+                  router.addLinksEvent();
+                }
+
+                if (htmlNavigation) {
+                  navigation.parentNode.replaceChild(htmlNavigation, navigation);
+                } else {
+                  navigation.remove();
+                }
+
+                history.pushState(null, null, href);
+                commonFunc();
+              });
+            }
+          }
+        });
+      });
     }
 
-    var router = new _js_burlak_navigation_js__WEBPACK_IMPORTED_MODULE_5__["default"]({
+    window.router = new _js_burlak_navigation_js__WEBPACK_IMPORTED_MODULE_5__["default"]({
       container: '#app',
       navItems: '.ajax, .ajax a, .pagination a',
       preloader: true,

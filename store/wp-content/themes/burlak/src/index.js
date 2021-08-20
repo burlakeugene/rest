@@ -106,12 +106,13 @@ import Request from './js/request';
 
     function commonFunc() {
       let callbackButtons = document.querySelectorAll('[data-callback]');
-      callbackButtons.length && callbackButtons.forEach((button) => {
-        button.addEventListener('click', (e) => {
-          e.preventDefault();
-          callModal(button.dataset.callback);
+      callbackButtons.length &&
+        callbackButtons.forEach((button) => {
+          button.addEventListener('click', (e) => {
+            e.preventDefault();
+            callModal(button.dataset.callback);
+          });
         });
-      })
       let search = new Search({
         onShow: () => {
           cart.hide();
@@ -458,7 +459,7 @@ import Request from './js/request';
       window.wpcf7 &&
         forms.length &&
         forms.forEach((form, index) => {
-          if(!form.querySelector('.ajax-loader'))window.wpcf7.init(form);
+          if (!form.querySelector('.ajax-loader')) window.wpcf7.init(form);
         });
 
       let accordions = document.querySelectorAll('.accordion');
@@ -491,18 +492,74 @@ import Request from './js/request';
       }
 
       let scrollers = document.querySelectorAll('.scroller, .scroller a');
-      scrollers.length && scrollers.forEach((scroller) => {
-        scroller.addEventListener('click', (e) => {
-          let target = document.querySelector(scroller.getAttribute('href'));
-          if(!target) return;
-          e.preventDefault();
-          let top = target.getBoundingClientRect().top + window.scrollY;
-          window.scrollTo({ top, behavior: 'smooth' });
-        })
-      });
+      scrollers.length &&
+        scrollers.forEach((scroller) => {
+          scroller.addEventListener('click', (e) => {
+            let target = document.querySelector(scroller.getAttribute('href'));
+            if (!target) return;
+            e.preventDefault();
+            let top = target.getBoundingClientRect().top + window.scrollY;
+            window.scrollTo({ top, behavior: 'smooth' });
+          });
+        });
+      let loadMore = document.querySelectorAll('.load-more');
+      loadMore.length &&
+        loadMore.forEach((container) => {
+          let button = container.querySelector(
+            '.load-more__pagination__button'
+          );
+          button &&
+            eventDecorator({
+              target: button,
+              event: {
+                type: 'click',
+                body: (e) => {
+                  e.preventDefault();
+                  button.classList.add('button--loading');
+                  button.disabled = true;
+                  let navigation = button.closest('.load-more__pagination'),
+                    list = button
+                      .closest('.load-more')
+                      .querySelector('.load-more__list'),
+                    next = navigation.querySelector('.next'),
+                    href = next.href;
+                  Request.get({
+                    url: href,
+                    headers: {
+                      'Content-Type': 'text/html; charset=utf-8',
+                    },
+                  }).then((html) => {
+                    let parser = new DOMParser();
+                    html = parser.parseFromString(html, 'text/html');
+                    html = html.querySelector('.load-more');
+                    let htmlNavigation = html.querySelector(
+                        '.load-more__pagination'
+                      ),
+                      htmlList = html.querySelector('.load-more__list');
+                    if (htmlList.children.length) {
+                      for (let i = 0; i <= htmlList.children.length; i++) {
+                        list.appendChild(htmlList.children[i]);
+                      }
+                      router.addLinksEvent();
+                    }
+                    if (htmlNavigation) {
+                      navigation.parentNode.replaceChild(
+                        htmlNavigation,
+                        navigation
+                      );
+                    } else {
+                      navigation.remove();
+                    }
+                    history.pushState(null, null, href);
+                    commonFunc();
+                  });
+                },
+              },
+            });
+        });
     }
 
-    var router = new BurlakNavigation({
+    window.router = new BurlakNavigation({
       container: '#app',
       navItems: '.ajax, .ajax a, .pagination a',
       preloader: true,
