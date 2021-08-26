@@ -1,0 +1,54 @@
+2021-08-26T14:38:05+00:00 CRITICAL Uncaught Error: Call to undefined function get_tempalte_part() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/product/list.php:2
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/archive-product.php(3): get_template_part('product/list')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/wc-core-functions.php(345): include('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/templates/taxonomy-product-cat.php(22): wc_get_template('archive-product...')
+#6 /Users/eugeneburlak/work/php/rest/store/wp-includes/template-loader.php(106): include('/Users/eugenebu...' in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/product/list.php on line 2
+
+2021-08-26T14:38:07+00:00 CRITICAL Uncaught Error: Call to undefined function get_tempalte_part() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/product/list.php:2
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/archive-product.php(3): get_template_part('product/list')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/wc-core-functions.php(345): include('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/templates/taxonomy-product-cat.php(22): wc_get_template('archive-product...')
+#6 /Users/eugeneburlak/work/php/rest/store/wp-includes/template-loader.php(106): include('/Users/eugenebu...' in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/product/list.php on line 2
+
+2021-08-26T14:41:51+00:00 CRITICAL require(): Failed opening required '' (include_path='.:/Applications/MAMP/bin/php/php7.3.8/lib/php') in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php on line 204
+
+2021-08-26T14:42:36+00:00 CRITICAL require(): Failed opening required '' (include_path='.:/Applications/MAMP/bin/php/php7.3.8/lib/php') in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php on line 204
+
+2021-08-26T14:43:00+00:00 CRITICAL require(): Failed opening required '' (include_path='.:/Applications/MAMP/bin/php/php7.3.8/lib/php') in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php on line 204
+
+2021-08-26T14:43:19+00:00 CRITICAL require(): Failed opening required '' (include_path='.:/Applications/MAMP/bin/php/php7.3.8/lib/php') in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php on line 204
+
+2021-08-26T14:43:41+00:00 CRITICAL Uncaught Error: Call to undefined function get_post_type_archive_title() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/archive.php:9
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template-loader.php(106): include()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-blog-header.php(19): require_once('/Users/eugenebu...')
+#2 /Users/eugeneburlak/work/php/rest/store/index.php(17): require('/Users/eugenebu...')
+#3 {main}
+  thrown in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/archive.php on line 9
+
+2021-08-26T14:44:08+00:00 CRITICAL Uncaught Error: Call to undefined function get_post_type_archive_title() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/archive.php:9
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template-loader.php(106): include()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-blog-header.php(19): require_once('/Users/eugenebu...')
+#2 /Users/eugeneburlak/work/php/rest/store/index.php(17): require('/Users/eugenebu...')
+#3 {main}
+  thrown in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/archive.php on line 9
+
+2021-08-26T15:00:06+00:00 CRITICAL syntax error, unexpected '}' in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/blocks/top.php on line 26
+
+2021-08-26T15:03:56+00:00 CRITICAL syntax error, unexpected '}' in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/blocks/top.php on line 30
+
+2021-08-26T15:04:26+00:00 CRITICAL syntax error, unexpected '}' in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/blocks/top.php on line 30
+
+2021-08-26T15:04:40+00:00 CRITICAL syntax error, unexpected '}' in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/blocks/top.php on line 29
+
+2021-08-26T15:05:02+00:00 CRITICAL syntax error, unexpected '}' in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/blocks/top.php on line 29
+

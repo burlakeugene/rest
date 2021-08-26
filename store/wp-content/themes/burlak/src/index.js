@@ -557,11 +557,33 @@ import Request from './js/request';
               },
             });
         });
+
+      let selects = document.querySelectorAll('.select');
+      selects.length &&
+        selects.forEach((select) => {
+          let active = select.querySelector('.select__current');
+          active &&
+            eventDecorator({
+              target: active,
+              event: {
+                type: 'click',
+                body: (e) => {
+                  e.stopPropagation();
+                  active.closest('.select').classList.toggle('select--active');
+                },
+              },
+            });
+        });
+      document.addEventListener('click', (e) => {
+        selects.length && selects.forEach((select) => {
+          select.classList.remove('select--active');
+        });
+      });
     }
 
     window.router = new BurlakNavigation({
       container: '#app',
-      navItems: '.ajax, .ajax a, .pagination a',
+      navItems: '.ajax, .ajax a, .pagination a, .breadcrumbs a',
       preloader: true,
       beforeInit: function () {},
       beforeRendered: function () {

@@ -1,3 +1,6 @@
+<?php
+// get_template_part('blocks/breadcrumbs')
+?>
 <div class="product__list">
 	<?php
 		if($products):

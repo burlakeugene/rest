@@ -2301,11 +2301,30 @@ __webpack_require__.r(__webpack_exports__);
           }
         });
       });
+      var selects = document.querySelectorAll('.select');
+      selects.length && selects.forEach(function (select) {
+        var active = select.querySelector('.select__current');
+        active && eventDecorator({
+          target: active,
+          event: {
+            type: 'click',
+            body: function body(e) {
+              e.stopPropagation();
+              active.closest('.select').classList.toggle('select--active');
+            }
+          }
+        });
+      });
+      document.addEventListener('click', function (e) {
+        selects.length && selects.forEach(function (select) {
+          select.classList.remove('select--active');
+        });
+      });
     }
 
     window.router = new _js_burlak_navigation_js__WEBPACK_IMPORTED_MODULE_5__["default"]({
       container: '#app',
-      navItems: '.ajax, .ajax a, .pagination a',
+      navItems: '.ajax, .ajax a, .pagination a, .breadcrumbs a',
       preloader: true,
       beforeInit: function beforeInit() {},
       beforeRendered: function beforeRendered() {

@@ -8,7 +8,7 @@
   <div class="news__item__top">
     <?php if(is_archive()):?>
       <div class="news__item__image">
-        <a href="<?php the_permalink($news->ID) ?>" data-view>
+        <a class="ajax" href="<?php the_permalink($news->ID) ?>" data-view>
           <div class="lazy">
             <img src="<?= $image_lazy ?>" data-lazy="<?= $image ?>"/>
           </div>
