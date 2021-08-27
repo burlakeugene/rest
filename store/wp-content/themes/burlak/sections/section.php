@@ -1,4 +1,5 @@
-<section class="section">
+<section class="section <?= $mini_margin ? 'section--mini-margin' : '' ?> <?= $no_margin_bottom ? 'section--no-margin-bottom' : '' ?>">
+
   <div class="container">
     <?php if($header):
       $title = $header['title'];

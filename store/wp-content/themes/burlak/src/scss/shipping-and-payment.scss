@@ -1,0 +1,48 @@
+.page{
+  &--shipping-and-payment {
+    .page {
+      &__title {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.shipping-and-payment{
+  &__block{
+    margin: 20px 0;
+    &__title{
+      font-size: 18px;
+      font-weight: 600;
+      margin: 20px 0;
+    }
+    &__items{
+      display: flex;
+      margin: 0 -15px;
+    }
+    &__item{
+      flex: 1;
+      display: flex;
+      padding: 15px;
+      align-items: center;
+      &__image{
+        width: 60px;
+        font-size: 0;
+        img{
+          width: 100%;
+          height: auto;
+        }
+      }
+      &__text{
+        flex: 1;
+        padding-left: 15px;
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 1.5em;
+        p{
+          margin: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,8 +1,8 @@
 <?php
-  if(function_exists('bcn_display')):
+  if(function_exists('bcn_display_list')):
   ?>
   <div class="breadcrumbs">
-    <?php bcn_display(); ?>
+    <?php bcn_display_list(); ?>
   </div>
   <?php
   endif;

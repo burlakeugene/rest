@@ -16,6 +16,7 @@
     )
   ));
   my_get_template_part('sections/section', array(
+    'no_margin_bottom' => true,
     'header' => array(
       'title' => 'Новости и акции',
       'link' => array(

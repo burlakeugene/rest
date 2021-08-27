@@ -6,7 +6,7 @@
 ?>
 <div class="news__item">
   <div class="news__item__top">
-    <?php if(is_archive()):?>
+    <?php if(is_archive() || is_singular()):?>
       <div class="news__item__image">
         <a class="ajax" href="<?php the_permalink($news->ID) ?>" data-view>
           <div class="lazy">
@@ -16,27 +16,14 @@
       </div>
     <?php endif;?>
     <div class="news__item__info">
-      <div class="news__item__date">
-          <?php get_template_part('icons/calendar') ?>
-          <span>
-            <?php
-              $date = date_parse($news->post_date);
-              echo $date['day'].' '.getMonth($date['month'])
-            ?>
-          </span>
-        </div>
-        <div class="news__item__tags">
-          <?php foreach($tags as $tag):
-            ?>
-            <a
-              data-tag="<?= $tag->slug ?>"
-              href="<?= get_post_type_archive_link('news').'?tag='.$tag->slug ?>"
-              class="ajax"
-            >
-              <?= $tag->name ?>
-            </a>
-          <?php endforeach; ?>
-        </div>
+      <?php
+        my_get_template_part('blocks/date', array(
+          'value' => $news->post_date
+        ));
+        my_get_template_part('blocks/tags', array(
+          'value' => get_the_tags($news->ID)
+        ));
+      ?>
     </div>
     <div class="news__item__title">
       <a class="ajax" href="<?php the_permalink($news->ID) ?>">

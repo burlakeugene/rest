@@ -358,26 +358,26 @@ import Request from './js/request';
       let tabs = document.querySelectorAll('.tabs');
       tabs.length &&
         tabs.forEach((item, index) => {
-          let buttons = item.querySelectorAll('.tabs-buttons-item');
+          let buttons = item.querySelectorAll('.tabs__button');
           buttons.forEach((button, index) => {
             button.addEventListener('click', (e) => {
               let name = e.target.getAttribute('data-tab-id'),
                 buttons = e.target
                   .closest('.tabs')
-                  .querySelectorAll('.tabs-buttons-item'),
+                  .querySelectorAll('.tabs__button'),
                 targets = e.target
                   .closest('.tabs')
-                  .querySelectorAll('.tabs-contents-item');
+                  .querySelectorAll('.tabs__content');
               if (!name) return;
               buttons.forEach((button, index) => {
-                button.classList.remove('active');
+                button.classList.remove('tabs__button--active');
               });
-              e.target.classList.add('active');
+              e.target.classList.add('tabs__button--active');
               targets.forEach((target, index) => {
                 if (target.getAttribute('data-tab-id') === name) {
-                  target.classList.add('active');
+                  target.classList.add('tabs__content--active');
                 } else {
-                  target.classList.remove('active');
+                  target.classList.remove('tabs__content--active');
                 }
               });
             });
@@ -575,10 +575,21 @@ import Request from './js/request';
             });
         });
       document.addEventListener('click', (e) => {
-        selects.length && selects.forEach((select) => {
-          select.classList.remove('select--active');
-        });
+        selects.length &&
+          selects.forEach((select) => {
+            select.classList.remove('select--active');
+          });
       });
+
+      let shares = document.querySelectorAll('.ya-share');
+      shares.length &&
+        Ya &&
+        Ya.share2 &&
+        shares.forEach((share) => {
+          Ya.share2(share.id, {
+            content: {...share.dataset}
+          });
+        });
     }
 
     window.router = new BurlakNavigation({

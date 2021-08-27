@@ -1796,6 +1796,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_search__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./js/search */ "./src/js/search.js");
 /* harmony import */ var _js_cart__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./js/cart */ "./src/js/cart.js");
 /* harmony import */ var _js_request__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./js/request */ "./src/js/request.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -2126,22 +2132,22 @@ __webpack_require__.r(__webpack_exports__);
 
       var tabs = document.querySelectorAll('.tabs');
       tabs.length && tabs.forEach(function (item, index) {
-        var buttons = item.querySelectorAll('.tabs-buttons-item');
+        var buttons = item.querySelectorAll('.tabs__button');
         buttons.forEach(function (button, index) {
           button.addEventListener('click', function (e) {
             var name = e.target.getAttribute('data-tab-id'),
-                buttons = e.target.closest('.tabs').querySelectorAll('.tabs-buttons-item'),
-                targets = e.target.closest('.tabs').querySelectorAll('.tabs-contents-item');
+                buttons = e.target.closest('.tabs').querySelectorAll('.tabs__button'),
+                targets = e.target.closest('.tabs').querySelectorAll('.tabs__content');
             if (!name) return;
             buttons.forEach(function (button, index) {
-              button.classList.remove('active');
+              button.classList.remove('tabs__button--active');
             });
-            e.target.classList.add('active');
+            e.target.classList.add('tabs__button--active');
             targets.forEach(function (target, index) {
               if (target.getAttribute('data-tab-id') === name) {
-                target.classList.add('active');
+                target.classList.add('tabs__content--active');
               } else {
-                target.classList.remove('active');
+                target.classList.remove('tabs__content--active');
               }
             });
           });
@@ -2318,6 +2324,12 @@ __webpack_require__.r(__webpack_exports__);
       document.addEventListener('click', function (e) {
         selects.length && selects.forEach(function (select) {
           select.classList.remove('select--active');
+        });
+      });
+      var shares = document.querySelectorAll('.ya-share');
+      shares.length && Ya && Ya.share2 && shares.forEach(function (share) {
+        Ya.share2(share.id, {
+          content: _objectSpread({}, share.dataset)
         });
       });
     }

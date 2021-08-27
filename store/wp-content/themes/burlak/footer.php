@@ -4,11 +4,13 @@
 		$socials = get_socials();
 		$stores = get_stores();
 	?>
+	<div class="container to-top-container">
+		<a class="to-top scroller" href="#top">
+			<?php get_template_part('icons/arrow-top') ?>
+		</a>
+	</div>
 	<footer class="footer">
 		<div class="container">
-			<a class="to-top scroller" href="#top">
-				<?php get_template_part('icons/arrow-top') ?>
-			</a>
 			<div class="footer__blocks">
 				<?php
 					if($phone):

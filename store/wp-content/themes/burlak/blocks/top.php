@@ -18,38 +18,22 @@
         array(
           'text' => 'Все',
           'link' => $tags_link,
-          'active' => !$_GET['tag']
+          'active' => !get_queried_object()->term_id
         )
       );
       foreach ($tags_list as $tag) {
           $tags[] = array(
           'text' => $tag->name,
           'link' => $tags_link.'?tag='.$tag->slug,
-          'active' => $_GET['tag'] === $tag->slug
+          'active' => get_queried_object()->term_id === $tag->term_id
         );
       }
-      $tag_active_index = array_search('1', array_column($tags, 'active'));
-      $tag_active = $tags[$tag_active_index];
       ?>
       <div class="top__tags">
         Показать:
-        <div class="select">
-          <div class="select__current">
-            <?= $tag_active['text'] ?>
-            <?php get_template_part('icons/arrow-bottom') ?>
-          </div>
-          <div class="select__list">
-            <?php foreach ($tags as $key => $tag):
-              if ($key === $tag_active_index) {
-                  continue;
-              }
-              ?>
-              <a class="select__list__item ajax" href="<?= $tag['link'] ?>">
-                <?= $tag['text'] ?>
-              </a>
-            <?php endforeach; ?>
-          </div>
-        </div>
+        <?php my_get_template_part('blocks/select', array(
+          'items' => $tags
+        )) ?>
       </div>
     <?php endif; ?>
   </div>
