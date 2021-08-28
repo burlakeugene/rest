@@ -1,0 +1,44 @@
+2021-08-28T11:27:26+00:00 CRITICAL syntax error, unexpected '}' in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/stores/zone.php on line 10
+
+2021-08-28T11:27:27+00:00 CRITICAL syntax error, unexpected '}' in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/stores/zone.php on line 10
+
+2021-08-28T11:28:25+00:00 CRITICAL syntax error, unexpected '}' in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/stores/zone.php on line 11
+
+2021-08-28T11:28:31+00:00 CRITICAL syntax error, unexpected '}' in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/stores/zone.php on line 11
+
+2021-08-28T11:28:46+00:00 CRITICAL syntax error, unexpected '}' in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/stores/zone.php on line 11
+
+2021-08-28T12:13:48+00:00 CRITICAL Uncaught Error: Call to undefined function apply_filter() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/footer.php:37
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(770): require_once()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', true, Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(92): locate_template(Array, true, true, Array)
+#3 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/page-shipping-and-payment.php(4): get_footer()
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template-loader.php(106): include('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-blog-header.php(19): require_once('/Users/eugenebu...')
+#6 /Users/eugeneburlak/work/php/rest/store/index.php(17): require('/Users/eugenebu...')
+#7 {main}
+  thrown in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/footer.php on line 37
+
+2021-08-28T13:37:29+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Post as array in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/stores/zone.php:10
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/shipping-and-payment/page.php(36): get_template_part('stores/zone')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php(204): require('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/page-shipping-and-payment.php(3): my_get_template_part('shipping-and-pa...', Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-includes/template-loader.php(106): include('/Users/eugenebu...')
+#7 /Users/eugen in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/stores/zone.php on line 10
+
+2021-08-28T13:37:36+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Post as array in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/stores/zone.php:10
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#3 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/shipping-and-payment/page.php(36): get_template_part('stores/zone')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php(204): require('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/page-shipping-and-payment.php(3): my_get_template_part('shipping-and-pa...', Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-includes/template-loader.php(106): include('/Users/eugenebu...')
+#7 /Users/eugen in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/stores/zone.php on line 10
+

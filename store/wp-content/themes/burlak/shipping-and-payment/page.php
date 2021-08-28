@@ -8,7 +8,7 @@
       ),
       array(
         'label' => 'Зона доставки',
-        'path' => 'shipping-and-payment/zone'
+        'path' => 'stores/zone'
       )
     )
   )

@@ -18,7 +18,7 @@
                   <img src="<?= $item['icon']['url'] ?>" alt="<?= $item['text'] ?>">
                 </div>
                 <div class="shipping-and-payment__block__item__text">
-                  <?= apply_filters( 'the_content',$item['text'] ) ?>
+                  <?= apply_filters('the_content', $item['text']) ?>
                 </div>
               </div>
             <?php

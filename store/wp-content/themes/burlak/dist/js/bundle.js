@@ -8751,47 +8751,81 @@ function mapInit() {
       map = document.getElementById('map');
 
   if (map) {
+    var renderPins = function renderPins(data) {
+      myMap.geoObjects.removeAll();
+      data.forEach(function (item) {
+        var width = item.fields.map.marker.width / 2,
+            height = item.fields.map.marker.height / 2;
+        item.originalSizes = [width, height];
+        item.originalImage = item.fields.map.marker.url;
+        item.placemark = new ymaps.Placemark([item.fields.map.lat, item.fields.map.lng], {
+          id: item.id
+        }, {
+          iconLayout: 'default#image',
+          iconImageHref: item.originalImage,
+          iconImageSize: item.originalSizes,
+          iconImageOffset: [-(width / 2), -height],
+          hideIconOnBalloonOpen: false,
+          balloonOffset: [0, 0]
+        });
+        myMap.geoObjects.add(item.placemark);
+      });
+    };
+
+    var checkActive = function checkActive(data) {
+      data.forEach(function (item) {});
+    };
+
     var init = function init() {
       myMap = new ymaps.Map('map', {
-        center: [mapData.x, mapData.y],
-        zoom: mapData.zoom,
-        controls: ['zoomControl'],
-        behaviors: ['Drag']
+        center: [44.958835, 34.108635],
+        controls: [],
+        zoom: 8
       });
-      myPlacemark = new ymaps.Placemark([mapData.x, mapData.y], {
-        balloonContentHeader: mapData.title,
-        balloonContent: mapData.content
-      }, {
-        iconLayout: 'default#image',
-        iconImageHref: mapData.pinUrl,
-        iconImageSize: [mapData.pinWidth, mapData.pinHeight],
-        iconImageOffset: [-(mapData.pinWidth / 2), -mapData.pinHeight],
-        hideIconOnBalloonOpen: false,
-        balloonOffset: [0, 0]
+      renderPins(data);
+      checkActive(data); // map.setCenter([54.704815, 20.46638], 10);
+      // map.panTo(
+      //   [
+      //     [55.751574, 37.573856],
+      //     [43.134091, 131.928478],
+      //   ],
+      //   {
+      //     callback: function () {
+      //       alert('Прилетели!');
+      //     },
+      //   }
+      // );
+      // myMap.margin.Manager.setDefaultMargin(40,40,40,40);
+
+      myMap.setBounds(myMap.geoObjects.getBounds(), {
+        checkZoomRange: true,
+        zoomMargin: 16
+      });
+      myMap.geoObjects.events.add('click', function (e) {
+        var id = e.get('target').properties._data.id;
+
+        data.forEach(function (item) {
+          item.active = item.id === id;
+        });
+        checkActive(data);
+        var stores = document.querySelectorAll('.store');
+        stores.length && stores.forEach(function (store) {
+          store.classList.remove('store--active');
+          if (id == store.dataset.id) store.classList.add('store--active');
+        });
       });
 
       if (isMobile) {
         myMap.behaviors.enable('multiTouch');
       } else {
         myMap.behaviors.enable('drag');
-      }
+      } // if (mapData.balloonState) myPlacemark.balloon.open();
 
-      myMap.geoObjects.add(myPlacemark);
-      if (mapData.balloonState) myPlacemark.balloon.open();
     };
 
-    var mapData = {};
-    mapData.x = map.getAttribute('data-x');
-    mapData.y = map.getAttribute('data-y');
-    mapData.title = map.getAttribute('data-title');
-    mapData.content = map.getAttribute('data-content');
-    mapData.pinUrl = map.getAttribute('data-pin');
-    mapData.pinWidth = parseInt(map.getAttribute('data-pin-width'));
-    mapData.pinHeight = parseInt(map.getAttribute('data-pin-height'));
-    mapData.zoom = parseInt(map.getAttribute('data-zoom'));
-    mapData.balloonState = parseInt(map.getAttribute('data-balloon-state'));
+    var data = JSON.parse(map.dataset.data);
     ymaps.ready(init);
-    var myMap, myPlacemark;
+    var myMap;
   }
 }
 

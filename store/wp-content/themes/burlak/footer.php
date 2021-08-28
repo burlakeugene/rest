@@ -34,7 +34,7 @@
 						Время работы:
 					</div>
 					<div class="footer__block__inner">
-						<?= $work_time ?>
+						<?= apply_filters('the_content', $work_time) ?>
 					</div>
 				</div>
 				<?php endif; ?>
