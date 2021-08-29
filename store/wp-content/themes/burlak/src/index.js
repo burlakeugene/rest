@@ -108,9 +108,15 @@ import Request from './js/request';
       let callbackButtons = document.querySelectorAll('[data-callback]');
       callbackButtons.length &&
         callbackButtons.forEach((button) => {
-          button.addEventListener('click', (e) => {
-            e.preventDefault();
-            callModal(button.dataset.callback);
+          eventDecorator({
+            target: button,
+            event: {
+              type: 'click',
+              body: (e) => {
+                e.preventDefault();
+                callModal(button.dataset.callback);
+              },
+            },
           });
         });
       let search = new Search({
@@ -587,7 +593,7 @@ import Request from './js/request';
         Ya.share2 &&
         shares.forEach((share) => {
           Ya.share2(share.id, {
-            content: {...share.dataset}
+            content: { ...share.dataset },
           });
         });
     }

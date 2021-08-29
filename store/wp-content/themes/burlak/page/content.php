@@ -4,7 +4,6 @@
   $image_full = get_the_post_thumbnail_url($news->ID, 'full');
 ?>
 <div class="container">
-  <?php get_template_part('blocks/breadcrumbs') ?>
   <div class="page">
     <?php if($image): ?>
       <div class="page__side">

@@ -1,11 +1,14 @@
 <?php
 $items_active_index = array_search('1', array_column($items, 'active'));
-$items_active = $items[$items_active_index];
+if ($items_active_index || strval($items_active_index) == '0') {
+  $items_active =  $items[$items_active_index];
+}
+if($items):
 ?>
 <div class="select">
   <div class="select__current">
-    <?= $items_active['text'] ?>
-    <?php get_template_part('icons/arrow-bottom') ?>
+      <span><?= $items_active ? $items_active['text'] : '' ?></span>
+      <?php get_template_part('icons/arrow-bottom') ?>
   </div>
   <div class="select__list">
     <?php foreach ($items as $key => $item):
@@ -19,3 +22,4 @@ $items_active = $items[$items_active_index];
     <?php endforeach; ?>
   </div>
 </div>
+<?php endif; ?>

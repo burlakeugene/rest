@@ -987,8 +987,8 @@ function () {
           requestData = formData;
         }
 
-        if (method === 'GET') {
-          requestUrl += '?';
+        if (method === 'GET' && Object.keys(requestData).length) {
+          requestUrl += requestUrl.split('?')[1] ? '&' : '?';
 
           for (var data in requestData) {
             requestUrl += data + '=' + requestData[data] + '&';
@@ -1912,9 +1912,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     function commonFunc() {
       var callbackButtons = document.querySelectorAll('[data-callback]');
       callbackButtons.length && callbackButtons.forEach(function (button) {
-        button.addEventListener('click', function (e) {
-          e.preventDefault();
-          callModal(button.dataset.callback);
+        eventDecorator({
+          target: button,
+          event: {
+            type: 'click',
+            body: function body(e) {
+              e.preventDefault();
+              callModal(button.dataset.callback);
+            }
+          }
         });
       });
       var search = new _js_search__WEBPACK_IMPORTED_MODULE_9__["default"]({

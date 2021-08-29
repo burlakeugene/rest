@@ -1847,17 +1847,6 @@
   .product__popular__list[data-active="true"] {
     display: block; }
 
-.product__list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin: -10px; }
-  .product__list .product {
-    width: 25%;
-    padding: 10px; }
-
 .product__inner {
   height: 100%;
   border-radius: 10px;
@@ -1989,6 +1978,18 @@
   color: var(--white);
   font-size: 13px;
   font-weight: 600; }
+
+.products .list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-left: -10px;
+  margin-right: -10px; }
+  .products .list .product {
+    width: 25%;
+    padding: 10px; }
 
 .badge {
   color: var(--white);
@@ -3331,7 +3332,8 @@ a,
 .breadcrumbs {
   margin: 20px 0;
   font-size: 13px;
-  font-weight: 600; }
+  font-weight: 600;
+  color: var(--gray); }
   .breadcrumbs li {
     display: inline-block;
     vertical-align: middle; }
@@ -3376,7 +3378,7 @@ a,
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center; }
-  .top__tags {
+  .top__select {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -3385,7 +3387,7 @@ a,
             align-items: center;
     font-size: 13px;
     font-weight: 500; }
-    .top__tags .select {
+    .top__select .select {
       margin-left: 15px; }
 
 .title h1,

@@ -412,6 +412,7 @@ a,
   margin: 20px 0;
   font-size: 13px;
   font-weight: 600;
+  color: var(--gray);
   li {
     display: inline-block;
     vertical-align: middle;
@@ -457,7 +458,7 @@ a,
   display: flex;
   justify-content: space-between;
   align-items: center;
-  &__tags {
+  &__select {
     display: flex;
     align-items: center;
     font-size: 13px;
@@ -611,7 +612,7 @@ a,
   }
 }
 
-.tabs{
+.tabs {
   &__buttons {
     display: flex;
     border-bottom: 1px solid var(--border-color);
@@ -639,10 +640,10 @@ a,
       transition: all 0.1s;
     }
     &:hover,
-    &--active{
+    &--active {
       color: var(--black);
     }
-    &--active{
+    &--active {
       &:after {
         height: 2px;
       }
@@ -651,9 +652,9 @@ a,
       margin-right: 0;
     }
   }
-  &__content{
+  &__content {
     display: none;
-    &--active{
+    &--active {
       display: block;
     }
   }

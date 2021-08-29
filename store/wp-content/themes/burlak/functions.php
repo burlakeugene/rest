@@ -268,29 +268,32 @@ function register_post_types_init()
       )
     );
     register_post_type(
-        'stores',
-        array(
-      'label' => 'Рестораны',
-      'labels' => array(
-        'menu_name' => 'Рестораны'
-      ),
-      'public' => true,
-      'has_archive' => true,
-      'supports' => array('thumbnail', 'title', 'editor', 'excerpt', 'custom-fields')
-    )
+      'stores',
+      array(
+        'label' => 'Рестораны',
+        'labels' => array(
+          'menu_name' => 'Рестораны'
+        ),
+        'public' => true,
+        'has_archive' => true,
+        'supports' => array('thumbnail', 'title', 'editor', 'excerpt', 'custom-fields')
+      )
     );
     register_post_type(
-        'banners',
-        array(
-    'label' => 'Баннер',
-    'labels' => array(
-      'menu_name' => 'Баннеры'
-    ),
-    'public' => true,
-    'has_archive' => false,
-    'supports' => array('thumbnail', 'title', 'custom-fields')
-  )
+      'banners',
+      array(
+        'label' => 'Баннер',
+        'labels' => array(
+          'menu_name' => 'Баннеры'
+        ),
+        'public' => true,
+        'has_archive' => false,
+        'supports' => array('thumbnail', 'title', 'custom-fields')
+      )
     );
+    $get_post_type = get_post_type_object('product');
+    $labels = $get_post_type->labels;
+    $labels->name = 'Каталог';
 }
 add_action('init', 'register_post_types_init');
 
@@ -399,9 +402,32 @@ function get_socials() {
 function get_stores(){
   $stores = get_post_type_object('stores');
   $args = array(
-    'numberposts' => -1,
+    'posts_per_page' => -1,
     'post_type' => $stores->name,
   );
-  $stores = get_posts($args);
+  $stores = query_posts($args);
+  wp_reset_query();
   return $stores;
+}
+add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
+
+function get_current_tags(){
+  $post_type = get_post_type();
+  $tags = get_tags();
+  $link = get_post_type_archive_link($post_type);
+  $result = $tags ? array(
+    array(
+      'text' => 'Все',
+      'link' => $link,
+      'active' => !get_queried_object()->term_id
+    )
+  ) : array();
+  foreach ($tags as $tag) {
+    $result[] = array(
+      'text' => $tag->name,
+      'link' => $tags_link.'?tag='.$tag->slug,
+      'active' => get_queried_object()->term_id === $tag->term_id
+    );
+  }
+  return $result;
 }
