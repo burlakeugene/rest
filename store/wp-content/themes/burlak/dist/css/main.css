@@ -1905,6 +1905,8 @@
   color: var(--gray);
   margin-top: 15px;
   line-height: 1em; }
+  .product__size span {
+    color: var(--black); }
 
 .product__prices {
   display: -webkit-box;
@@ -1935,7 +1937,8 @@
   padding: 0;
   margin: 0;
   position: relative;
-  cursor: pointer; }
+  cursor: pointer;
+  color: var(--white); }
   .product__add .icon {
     position: absolute;
     top: 50%;
@@ -1956,7 +1959,8 @@
     .product__add .icon svg {
       fill: var(--white); }
   .product__add[disabled] {
-    cursor: progress; }
+    cursor: progress;
+    color: transparent; }
     .product__add[disabled] .icon--loading {
       -webkit-transform: translate(-50%, -50%) scale(1);
               transform: translate(-50%, -50%) scale(1);
@@ -2016,6 +2020,32 @@
   .product--page .product__title h1 {
     font-size: 36px;
     font-weight: 600; }
+  .product--page .product__data {
+    display: block; }
+  .product--page .product__prices {
+    margin: 20px 0; }
+  .product--page .product__price {
+    font-size: 36px; }
+    .product--page .product__price--old {
+      font-size: 20px;
+      margin-left: 20px; }
+  .product--page .product__add {
+    width: auto;
+    height: auto;
+    padding: 12px 30px;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 15px;
+    font-weight: 500; }
+    .product--page .product__add .icon--cart {
+      position: static;
+      -webkit-transform: none;
+              transform: none;
+      margin-right: 10px; }
 
 .badge {
   color: var(--white);
@@ -3548,9 +3578,6 @@ a,
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 20px;
-  padding-top: 20px;
-  border-top: 1px solid var(--border-color);
   font-size: 14px;
   font-weight: 500; }
   .share .ya-share {
@@ -3628,6 +3655,12 @@ body .page {
       line-height: 1em;
       font-size: 36px;
       font-weight: 600; }
+
+.deliver {
+  height: 1px;
+  width: 100%;
+  background-color: var(--border-color);
+  margin: 20px 0; }
 
 .content {
   font-size: 14px;

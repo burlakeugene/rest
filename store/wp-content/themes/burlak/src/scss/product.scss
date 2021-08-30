@@ -212,6 +212,9 @@
     }
   }
   &__size {
+    span{
+      color: var(--black);
+    }
     font-size: 13px;
     color: var(--gray);
     margin-top: 15px;
@@ -243,6 +246,7 @@
     margin: 0;
     position: relative;
     cursor: pointer;
+    color: var(--white);
     .icon {
       position: absolute;
       top: 50%;
@@ -267,6 +271,7 @@
     }
     &[disabled] {
       cursor: progress;
+      color: transparent;
       .icon {
         &--loading {
           transform: translate(-50%, -50%) scale(1);
@@ -336,6 +341,33 @@
         h1{
           font-size: 36px;
           font-weight: 600;
+        }
+      }
+      &__data{
+        display: block;
+      }
+      &__prices{
+        margin: 20px 0;
+      }
+      &__price{
+        font-size: 36px;
+        &--old{
+          font-size: 20px;
+          margin-left: 20px;
+        }
+      }
+      &__add{
+        width: auto;
+        height: auto;
+        padding: 12px 30px;
+        display: inline-flex;
+        align-items: center;
+        font-size: 15px;
+        font-weight: 500;
+        .icon--cart{
+          position: static;
+          transform: none;
+          margin-right: 10px;
         }
       }
     }

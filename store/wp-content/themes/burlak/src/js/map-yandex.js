@@ -37,7 +37,7 @@ function mapInit() {
       myMap = new ymaps.Map('map', {
         center: [44.958835, 34.108635],
         controls: [],
-        zoom: 8,
+        zoom: 12,
       });
       renderPins(data);
       checkActive(data);
@@ -54,10 +54,9 @@ function mapInit() {
       //   }
       // );
       // myMap.margin.Manager.setDefaultMargin(40,40,40,40);
-      myMap.setBounds(myMap.geoObjects.getBounds(), {
-        checkZoomRange: true,
-        zoomMargin: 16,
-      });
+      // myMap.setBounds(myMap.geoObjects.getBounds(), {
+      //   checkZoomRange: true,
+      // });
       myMap.geoObjects.events.add('click', function (e) {
         let id = e.get('target').properties._data.id;
         data.forEach((item) => {
