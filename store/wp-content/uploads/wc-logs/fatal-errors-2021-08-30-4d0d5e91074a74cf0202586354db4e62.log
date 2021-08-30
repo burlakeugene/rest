@@ -1,0 +1,99 @@
+2021-08-30T15:55:56+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Post::get_id() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/product/item.php:3
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php(204): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/product/list.php(13): my_get_template_part('product/item', Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php(204): require('/Users/eugenebu...')
+#3 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/product/related.php(5): my_get_template_part('product/list', Array)
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#7 /Users/eugeneburlak/wor in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/product/item.php on line 3
+
+2021-08-30T15:56:07+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Post::get_id() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/product/item.php:3
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php(204): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/product/list.php(13): my_get_template_part('product/item', Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php(204): require('/Users/eugenebu...')
+#3 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/product/related.php(5): my_get_template_part('product/list', Array)
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#7 /Users/eugeneburlak/wor in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/product/item.php on line 3
+
+2021-08-30T15:56:22+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Post::get_id() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/product/item.php:3
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php(204): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/product/list.php(13): my_get_template_part('product/item', Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php(204): require('/Users/eugenebu...')
+#3 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/product/related.php(5): my_get_template_part('product/list', Array)
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#7 /Users/eugeneburlak/wor in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/product/item.php on line 3
+
+2021-08-30T15:57:36+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Post::get_id() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/product/item.php:3
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php(204): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/product/list.php(14): my_get_template_part('product/item', Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php(204): require('/Users/eugenebu...')
+#3 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/product/related.php(5): my_get_template_part('product/list', Array)
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#7 /Users/eugeneburlak/wor in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/product/item.php on line 3
+
+2021-08-30T16:04:22+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Post::get_id() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/product/item.php:3
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php(204): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/product/list.php(14): my_get_template_part('product/item', Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php(204): require('/Users/eugenebu...')
+#3 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/product/related.php(4): my_get_template_part('product/list', Array)
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#7 /Users/eugeneburlak/wor in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/product/item.php on line 3
+
+2021-08-30T16:05:16+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Post::get_id() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/product/item.php:4
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php(204): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/product/list.php(13): my_get_template_part('product/item', Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php(204): require('/Users/eugenebu...')
+#3 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/product/related.php(4): my_get_template_part('product/list', Array)
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#7 /Users/eugeneburlak/wor in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/product/item.php on line 4
+
+2021-08-30T16:06:09+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Post::get_id() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/product/item.php:4
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php(204): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/product/list.php(13): my_get_template_part('product/item', Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php(204): require('/Users/eugenebu...')
+#3 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/product/related.php(4): my_get_template_part('product/list', Array)
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#7 /Users/eugeneburlak/wor in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/product/item.php on line 4
+
+2021-08-30T16:06:26+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Post::get_id() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/product/item.php:5
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php(204): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/product/list.php(13): my_get_template_part('product/item', Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php(204): require('/Users/eugenebu...')
+#3 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/product/related.php(4): my_get_template_part('product/list', Array)
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#7 /Users/eugeneburlak/wor in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/product/item.php on line 5
+
+2021-08-30T16:06:34+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Post::get_id() in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/product/item.php:5
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php(204): require()
+#1 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/product/list.php(13): my_get_template_part('product/item', Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php(204): require('/Users/eugenebu...')
+#3 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/product/related.php(4): my_get_template_part('product/list', Array)
+#4 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, Array)
+#6 /Users/eugeneburlak/work/php/rest/store/wp-includes/general-template.php(204): locate_template(Array, true, false, Array)
+#7 /Users/eugeneburlak/wor in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/product/item.php on line 5
+

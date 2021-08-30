@@ -1,4 +1,5 @@
 <?php
+  if($product && get_class($product) == 'WP_Post') $product = new WC_Product($product->ID);
   if(!$product) $product = new WC_Product(get_the_id());
   $image_lazy = wp_get_attachment_image_src(get_post_thumbnail_id($product->get_id()), 'product-rect-lazy');
   $image = wp_get_attachment_image_src(get_post_thumbnail_id($product->get_id()), 'product-rect');
