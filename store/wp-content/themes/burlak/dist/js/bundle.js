@@ -2332,6 +2332,44 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           select.classList.remove('select--active');
         });
       });
+      var fields = document.querySelectorAll('.field');
+      fields.length && fields.forEach(function (field) {
+        var data = field.dataset,
+            buttons = field.querySelectorAll('.field__button'),
+            input = field.querySelector('.field__input');
+        buttons.forEach(function (button) {
+          eventDecorator({
+            target: button,
+            event: {
+              type: 'click',
+              body: function body(e) {
+                e.stopPropagation();
+                var nextValue = parseFloat(data.value) + parseFloat(button.dataset.direction) * parseFloat(data.step);
+                if (data.max && nextValue > parseFloat(data.max)) nextValue = parseFloat(data.max);
+                if (data.min && nextValue < parseFloat(data.min)) nextValue = parseFloat(data.min);
+                data.value = nextValue;
+                input.innerHTML = nextValue + data.postfix;
+
+                if (field.closest('.product__cart')) {
+                  var _button = field.closest('.product__cart').querySelector('.product__add');
+
+                  _button.dataset.quantity = nextValue;
+                }
+
+                buttons.forEach(function (button) {
+                  if (button.dataset.direction === '1' && data.max) {
+                    button.disabled = nextValue >= parseFloat(data.max);
+                  }
+
+                  if (button.dataset.direction === '-1' && data.min) {
+                    button.disabled = nextValue <= parseFloat(data.min);
+                  }
+                });
+              }
+            }
+          });
+        });
+      });
       var shares = document.querySelectorAll('.ya-share');
       shares.length && Ya && Ya.share2 && shares.forEach(function (share) {
         Ya.share2(share.id, {

@@ -587,6 +587,41 @@ import Request from './js/request';
           });
       });
 
+      let fields = document.querySelectorAll('.field');
+      fields.length && fields.forEach((field) => {
+        let data = field.dataset,
+          buttons = field.querySelectorAll('.field__button'),
+          input = field.querySelector('.field__input');
+        buttons.forEach((button) => {
+          eventDecorator({
+            target: button,
+            event: {
+              type: 'click',
+              body: (e) => {
+                e.stopPropagation();
+                let nextValue = parseFloat(data.value) + parseFloat(button.dataset.direction) * parseFloat(data.step);
+                if(data.max && nextValue > parseFloat(data.max)) nextValue = parseFloat(data.max);
+                if(data.min && nextValue < parseFloat(data.min)) nextValue = parseFloat(data.min);
+                data.value = nextValue;
+                input.innerHTML = nextValue + data.postfix;
+                if(field.closest('.product__cart')){
+                  let button = field.closest('.product__cart').querySelector('.product__add');
+                  button.dataset.quantity = nextValue;
+                }
+                buttons.forEach((button) => {
+                  if(button.dataset.direction === '1' && data.max){
+                    button.disabled = nextValue >= parseFloat(data.max);
+                  }
+                  if(button.dataset.direction === '-1' && data.min){
+                    button.disabled = nextValue <= parseFloat(data.min);
+                  }
+                });
+              },
+            },
+          });
+        });
+      });
+
       let shares = document.querySelectorAll('.ya-share');
       shares.length &&
         Ya &&

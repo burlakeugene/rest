@@ -1,0 +1,20 @@
+.checkout{
+  .page__side{
+    width: 100%;
+    flex: 1;
+    &:first-child{
+      padding-right: 38px;
+    }
+    &:last-child{
+      padding-left: 38px;
+      border-left: 1px solid var(--border-color);
+    }
+  }
+  .cart__list,
+  .cart__totals{
+    max-width: 420px;
+  }
+  .cart__list{
+    padding: 10px 0;
+  }
+}

@@ -5,37 +5,39 @@
 ?>
 <div class="container">
   <div class="page">
-    <?php if($image): ?>
+    <div class="page__sides">
+      <?php if($image): ?>
+        <div class="page__side">
+          <div class="page__image">
+            <a data-fancybox href="<?= $image_full ?>">
+              <div class="lazy">
+                <img src="<?= $image_lazy ?>" data-lazy="<?= $image ?>" alt="<?= get_the_title() ?>">
+              </div>
+            </a>
+          </div>
+        </div>
+      <?php endif; ?>
       <div class="page__side">
-        <div class="page__image">
-          <a data-fancybox href="<?= $image_full ?>">
-            <div class="lazy">
-              <img src="<?= $image_lazy ?>" data-lazy="<?= $image ?>" alt="<?= get_the_title() ?>">
-            </div>
-          </a>
+        <div class="page__data">
+          <?php
+            my_get_template_part('blocks/date', array(
+              'value' => get_the_date()
+            ));
+          ?>
+          <?php
+            my_get_template_part('blocks/tags', array(
+              'value' => get_the_tags()
+            ));
+          ?>
+          <div class="page__title">
+            <h1><?php the_title() ?></h1>
+          </div>
+          <div class="page__content content">
+            <?php the_content() ?>
+          </div>
+          <div class="deliver"></div>
+          <?php get_template_part('blocks/share') ?>
         </div>
-      </div>
-    <?php endif; ?>
-    <div class="page__side">
-      <div class="page__data">
-        <?php
-          my_get_template_part('blocks/date', array(
-            'value' => get_the_date()
-          ));
-        ?>
-        <?php
-          my_get_template_part('blocks/tags', array(
-            'value' => get_the_tags()
-          ));
-        ?>
-        <div class="page__title">
-          <h1><?php the_title() ?></h1>
-        </div>
-        <div class="page__content content">
-          <?php the_content() ?>
-        </div>
-        <div class="deliver"></div>
-        <?php get_template_part('blocks/share') ?>
       </div>
     </div>
   </div>

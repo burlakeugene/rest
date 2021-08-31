@@ -21,17 +21,17 @@ my_get_template_part('blocks/top', array(
       'label' => 'Сортировать по:',
       'items' => array(
         array(
-          'link' => $link,
+          'link' => $link.($_GET['s'] ? '?s='.$_GET['s'] : ''),
           'text' => 'Умолчанию',
           'active' => !$_GET['orderby']
         ),
         array(
-          'link' => $link.'?orderby=price',
+          'link' => $link.'?orderby=price'.($_GET['s'] ? '&s='.$_GET['s'] : ''),
           'text' => 'Цена по возрастанию',
           'active' => $_GET['orderby'] == 'price'
         ),
         array(
-          'link' => $link.'?orderby=price-desc',
+          'link' => $link.'?orderby=price-desc'.($_GET['s'] ? '&s='.$_GET['s'] : ''),
           'text' => 'Цена по убыванию',
           'active' => $_GET['orderby'] == 'price-desc'
         )

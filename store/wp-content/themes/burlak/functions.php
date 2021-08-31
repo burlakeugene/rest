@@ -350,6 +350,9 @@ function getFragments()
     ob_start();
     my_get_template_part('cart/list');
     $result['fragments']['.cart__list'] = ob_get_clean();
+    ob_start();
+    my_get_template_part('cart/totals');
+    $result['fragments']['.cart__totals'] = ob_get_clean();
     return $result;
 }
 
@@ -438,4 +441,21 @@ function load_template_part($path) {
   $result = ob_get_contents();
   ob_end_clean();
   return $result;
+}
+
+
+add_filter( 'woocommerce_checkout_fields', 'misha_remove_fields', 9999 );
+
+function misha_remove_fields( $fields ) {
+  unset( $fields['billing']);
+  unset( $fields['account']);
+  unset( $fields['shipping']['shipping_last_name']);
+  unset( $fields['shipping']['shipping_company']);
+  unset( $fields['shipping']['shipping_country']);
+  unset( $fields['shipping']['shipping_address_2']);
+  unset( $fields['shipping']['shipping_city']);
+  unset( $fields['shipping']['shipping_state']);
+  unset( $fields['shipping']['shipping_postcode']);
+  $fields['shipping']['shipping_first_name']['label'] = 'Имя получателя';
+	return $fields;
 }

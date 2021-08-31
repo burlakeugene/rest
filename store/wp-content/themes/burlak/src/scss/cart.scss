@@ -193,3 +193,19 @@
     }
   }
 }
+
+.cart__totals{
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #EFF2F3;
+  font-size: 18px;
+  font-weight: 600;
+  align-items: center;
+  line-height: 1em;
+  span{
+    color: var(--red);
+    font-size: 24px;
+    font-weight: 700;
+  }
+}

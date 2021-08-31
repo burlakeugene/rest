@@ -4,6 +4,7 @@
   $image_lazy = get_the_post_thumbnail_url($news->ID, 'lazy');
   $image_full = get_the_post_thumbnail_url($news->ID, 'full');
   $size = $product->get_weight();
+  $quantity = 1;
 ?>
 <div class="container">
   <div class="product product--page">
@@ -59,10 +60,18 @@
             </div>
           <?php endif; ?>
         </div>
-        <button class="product__add" data-product_id="<?= $product->get_id() ?>" data-product_title="<?= $product->get_title() ?>">
-          <?php get_template_part('icons/cart') ?> Добавить в корзину
-          <?php get_template_part('icons/loading') ?>
-        </button>
+        <div class="product__cart">
+          <?php my_get_template_part('blocks/field', array(
+            'value' => $quantity,
+            'min' => 1,
+            'step' => 1,
+            'postfix' => ' шт.'
+          )) ?>
+          <button class="product__add" data-quantity="<?= $quantity ?>" data-product_id="<?= $product->get_id() ?>" data-product_title="<?= $product->get_title() ?>">
+            <?php get_template_part('icons/cart') ?> Добавить в корзину
+            <?php get_template_part('icons/loading') ?>
+          </button>
+        </div>
         <div class="deliver"></div>
         <?php get_template_part('blocks/share') ?>
       </div>
