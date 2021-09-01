@@ -1,4 +1,4 @@
-<button class="search search--button">
+<button class="search search--button" data-search>
   <div class="search__icon search__icon--search">
     <?php get_template_part('icons/search') ?>
   </div>

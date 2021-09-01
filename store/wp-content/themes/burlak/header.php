@@ -29,7 +29,6 @@
         </div>
         <?php get_template_part('cart/popup') ?>
       </div>
-      <?php get_template_part('search/panel') ?>
       <div class="header__navigation">
         <?php get_template_part('product/categories') ?>
       </div>

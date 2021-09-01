@@ -102,3 +102,13 @@ Stack trace:
 #6 /Users/eugeneburlak/work/php/rest/store/wp-includes/template-loader.php(106): include('/Users/eugenebu...')
 #7 /Users/eugeneburlak/work/php/rest/sto in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/cart/list.php on line 30
 
+2021-08-31T20:50:58+00:00 CRITICAL Uncaught Error: Call to a member function get_value() on null in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php:476
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/class-wp-hook.php(303): misha_remove_fields(Array)
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/plugin.php(189): WP_Hook->apply_filters(Array, Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/class-wc-checkout.php(265): apply_filters('woocommerce_che...', Array)
+#3 /Users/eugeneburlak/work/php/rest/store/wp-content/plugins/woocommerce/includes/class-wc-checkout.php(148): WC_Checkout->get_checkout_fields()
+#4 /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/checkout/page.php(2): WC_Checkout->__get('checkout_fields')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(772): require('/Users/eugenebu...')
+#6 /Users/eugeneburlak/work/php/rest/store/wp-includes/template.php(716): load_template('/Users/eugenebu...', false, in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php on line 476
+

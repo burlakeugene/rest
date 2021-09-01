@@ -88,6 +88,7 @@
 		</div>
 	</footer>
 	<?php get_template_part('blocks/callback') ?>
+	<?php get_template_part('search/modal') ?>
 </div>
 <div class="preloader preloader__visible">
 	<div class="preloader-spinner">

@@ -47,20 +47,9 @@
       }
     }
   }
-  &--panel {
-    height: 0;
-    transition: all 0.3s;
-    overflow: hidden;
-    background-color: var(--white);
-    .search {
-      &__inner {
-      }
-    }
-  }
   &__form{
     display: flex;
     padding: 10px;
-    border-bottom: 2px solid var(--body-background);
     input{
       flex: 1;
       margin-right: 10px;

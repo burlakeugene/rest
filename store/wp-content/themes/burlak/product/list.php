@@ -18,7 +18,9 @@
 					get_template_part('product/item');
 				endwhile;
 			else:
-				get_template_part('blocks/empty');
+				my_get_template_part('blocks/empty', array(
+					'text' => 'Товары не найдены'
+				));
 			endif;
 		?>
 		</div>

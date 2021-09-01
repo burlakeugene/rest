@@ -69,7 +69,7 @@ function getMonth($month)
 
 function devise_number_displayed_posts($query)
 {
-    if (!is_admin() && (is_post_type_archive('product') || is_tax( get_object_taxonomies( 'product' )))) {
+    if (!is_admin() && (is_post_type_archive('product') || is_tax(get_object_taxonomies('product')))) {
         $query->set('posts_per_page', 16);
         return;
     }
@@ -255,8 +255,8 @@ add_action('after_setup_theme', 'burlak_theme_setup');
 function register_post_types_init()
 {
     register_post_type(
-      'news',
-      array(
+        'news',
+        array(
         'label' => 'Новости и акции',
         'labels' => array(
           'menu_name' => 'Новости и акции'
@@ -268,8 +268,8 @@ function register_post_types_init()
       )
     );
     register_post_type(
-      'stores',
-      array(
+        'stores',
+        array(
         'label' => 'Рестораны',
         'labels' => array(
           'menu_name' => 'Рестораны'
@@ -280,8 +280,8 @@ function register_post_types_init()
       )
     );
     register_post_type(
-      'banners',
-      array(
+        'banners',
+        array(
         'label' => 'Баннер',
         'labels' => array(
           'menu_name' => 'Баннеры'
@@ -297,39 +297,41 @@ function register_post_types_init()
 }
 add_action('init', 'register_post_types_init');
 
-function settings(){
-  if (!is_admin() && WC() && WC()->session) {
-    if (!WC()->session->get('product')) {
-      WC()->session->set('product', array(
-        'popular' => array(
-          'active' => 'all'
-        )
-      ));
+function settings()
+{
+    if (!is_admin() && WC() && WC()->session) {
+      if (!WC()->session->get('product')) {
+        WC()->session->set('product', array(
+          'popular' => array(
+            'active' => 'all'
+          )
+        ));
+      }
+      if (!WC()->session->get('shipping')) {
+        WC()->session->set('shipping', array(
+          'type' => 'courier',
+          'at_time' => '0',
+        ));
+      }
     }
-    if (!WC()->session->get('shipping')) {
-      WC()->session->set('shipping', array(
-        'type' => 'courier',
-        'at_time' => '0'
-      ));
-    }
-  }
 }
 add_action('init', 'settings');
 
-function custom_pre_get_posts_query( $q ) {
-  if (is_shop() && $_GET['categories']) {
-      $tax_query = (array) $q->get('tax_query');
-      $categories = explode(',',$_GET['categories']);
-      $tax_query[] = array(
+function custom_pre_get_posts_query($q)
+{
+    if (is_shop() && $_GET['categories']) {
+        $tax_query = (array) $q->get('tax_query');
+        $categories = explode(',', $_GET['categories']);
+        $tax_query[] = array(
          'taxonomy' => 'product_cat',
          'field' => 'slug',
          'terms' => $categories,
          'operator' => 'IN'
   );
-      $q->set('tax_query', $tax_query);
-  }
+        $q->set('tax_query', $tax_query);
+    }
 }
-add_action( 'woocommerce_product_query', 'custom_pre_get_posts_query' );
+add_action('woocommerce_product_query', 'custom_pre_get_posts_query');
 
 /** Disable Ajax Call from WooCommerce */
 add_action('wp_enqueue_scripts', 'dequeue_woocommerce_cart_fragments', 11);
@@ -387,75 +389,110 @@ add_action('wc_ajax_shipping_set', 'shipping_set');
 function shipping_set()
 {
     $shipping = WC()->session->get('shipping');
-    if(!$shipping) $shipping = array();
     $shipping[$_POST['key']] = $_POST['value'];
     WC()->session->set('shipping', $shipping);
     exit(json_encode($shipping));
 }
 
-function get_socials() {
-  $socials = array();
-  if(get_option('vkontakte')) $socials['vkontakte'] = get_option('vkontakte');
-  if(get_option('telegram')) $socials['telegram'] = get_option('telegram');
-  if(get_option('instagram')) $socials['instagram'] = get_option('instagram');
-  if(get_option('odnoklassniki')) $socials['odnoklassniki'] = get_option('odnoklassniki');
-  return $socials;
+function get_socials()
+{
+    $socials = array();
+    if (get_option('vkontakte')) {
+        $socials['vkontakte'] = get_option('vkontakte');
+    }
+    if (get_option('telegram')) {
+        $socials['telegram'] = get_option('telegram');
+    }
+    if (get_option('instagram')) {
+        $socials['instagram'] = get_option('instagram');
+    }
+    if (get_option('odnoklassniki')) {
+        $socials['odnoklassniki'] = get_option('odnoklassniki');
+    }
+    return $socials;
 }
 
-function get_stores(){
-  $stores = get_post_type_object('stores');
-  $args = array(
+function get_stores()
+{
+    $stores = get_post_type_object('stores');
+    $args = array(
     'posts_per_page' => -1,
     'post_type' => $stores->name,
   );
-  $stores = query_posts($args);
-  wp_reset_query();
-  return $stores;
+    $stores = query_posts($args);
+    wp_reset_query();
+    return $stores;
 }
-add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
+add_filter('woocommerce_enqueue_styles', '__return_empty_array');
 
-function get_current_tags(){
-  $post_type = get_post_type();
-  $tags = get_tags();
-  $link = get_post_type_archive_link($post_type);
-  $result = $tags ? array(
+function get_current_tags()
+{
+    $post_type = get_post_type();
+    $tags = get_tags();
+    $link = get_post_type_archive_link($post_type);
+    $result = $tags ? array(
     array(
       'text' => 'Все',
       'link' => $link,
       'active' => !get_queried_object()->term_id
     )
   ) : array();
-  foreach ($tags as $tag) {
-    $result[] = array(
+    foreach ($tags as $tag) {
+        $result[] = array(
       'text' => $tag->name,
       'link' => $tags_link.'?tag='.$tag->slug,
       'active' => get_queried_object()->term_id === $tag->term_id
     );
-  }
-  return $result;
+    }
+    return $result;
 }
 
-function load_template_part($path) {
-  ob_start();
-  get_template_part($path);
-  $result = ob_get_contents();
-  ob_end_clean();
-  return $result;
+function load_template_part($path)
+{
+    ob_start();
+    get_template_part($path);
+    $result = ob_get_contents();
+    ob_end_clean();
+    return $result;
 }
 
 
-add_filter( 'woocommerce_checkout_fields', 'misha_remove_fields', 9999 );
+add_filter('woocommerce_checkout_fields', 'misha_remove_fields', 9999);
 
-function misha_remove_fields( $fields ) {
-  unset( $fields['billing']);
-  unset( $fields['account']);
-  unset( $fields['shipping']['shipping_last_name']);
-  unset( $fields['shipping']['shipping_company']);
-  unset( $fields['shipping']['shipping_country']);
-  unset( $fields['shipping']['shipping_address_2']);
-  unset( $fields['shipping']['shipping_city']);
-  unset( $fields['shipping']['shipping_state']);
-  unset( $fields['shipping']['shipping_postcode']);
-  $fields['shipping']['shipping_first_name']['label'] = 'Имя получателя';
-	return $fields;
+function misha_remove_fields($fields)
+{
+    $shipping = WC()->session->get('shipping');
+    $fields['shipping']['data'] = $shipping;
+    unset($fields['billing']);
+    unset($fields['account']);
+    unset($fields['shipping']['shipping_last_name']);
+    unset($fields['shipping']['shipping_company']);
+    unset($fields['shipping']['shipping_country']);
+    unset($fields['shipping']['shipping_address_2']);
+    unset($fields['shipping']['shipping_city']);
+    unset($fields['shipping']['shipping_state']);
+    unset($fields['shipping']['shipping_postcode']);
+
+    $fields['shipping']['shipping_address_1']['label'] = 'Адрес доставки';
+    $fields['shipping']['shipping_address_1']['placeholder'] = 'Введите адрес';
+    $address = '';
+    if($shipping['type'] == 'courier' && $shipping['address']){
+      $address = $shipping['address'];
+    }
+    if($shipping['type'] == 'self' && $shipping['store']){
+      $address = $shipping['store'];
+    }
+    $fields['shipping']['shipping_address_1']['value'] = $address;
+
+    $fields['shipping']['shipping_first_name']['label'] = 'Имя получателя';
+    $fields['shipping']['shipping_first_name']['placeholder'] = 'Введите имя';
+
+    $fields['shipping']['about_yourself'] = array(
+      'label' => __('About yourself', 'woocommerce'),
+      'placeholder' => 'About yourself',
+      'required' => false,
+      'priority' => 1
+   );
+
+    return $fields;
 }

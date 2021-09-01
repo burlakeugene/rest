@@ -1923,15 +1923,23 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           }
         });
       });
-      var search = new _js_search__WEBPACK_IMPORTED_MODULE_9__["default"]({
-        onShow: function onShow() {
-          cart.hide();
-        }
+      var searchButtons = document.querySelectorAll('[data-search]');
+      searchButtons.length && searchButtons.forEach(function (button) {
+        eventDecorator({
+          target: button,
+          event: {
+            type: 'click',
+            body: function body(e) {
+              e.preventDefault();
+              $.fancybox.open({
+                src: '#search',
+                type: 'inline'
+              });
+            }
+          }
+        });
       });
       var cart = new _js_cart__WEBPACK_IMPORTED_MODULE_10__["default"]({
-        onShow: function onShow() {
-          search.hide();
-        },
         listeners: function listeners(cart) {
           var products = document.querySelectorAll('.product__add');
           products.length && products.forEach(function (button) {
@@ -8903,62 +8911,11 @@ var request = new burlak__WEBPACK_IMPORTED_MODULE_0__["Request"]();
 __webpack_require__.r(__webpack_exports__);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+var Search = function Search() {
+  var props = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-var Search =
-/*#__PURE__*/
-function () {
-  function Search() {
-    var _this = this;
-
-    var props = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-
-    _classCallCheck(this, Search);
-
-    this.props = props;
-    this.button = document.querySelector('.search--button');
-    this.panel = document.querySelector('.search--panel');
-    document.addEventListener('click', function (event) {
-      _this.hide();
-    });
-    this.panel.addEventListener('click', function (event) {
-      event.stopPropagation();
-    });
-    this.init();
-  }
-
-  _createClass(Search, [{
-    key: "hide",
-    value: function hide() {
-      this.props.onHide && this.props.onHide();
-      this.button.classList.remove('search--button--active');
-      this.panel.style.height = '0px';
-    }
-  }, {
-    key: "show",
-    value: function show() {
-      this.props.onShow && this.props.onShow();
-      this.button.classList.add('search--button--active');
-      this.panel.style.height = this.panel.scrollHeight + 'px';
-    }
-  }, {
-    key: "init",
-    value: function init() {
-      var _this2 = this;
-
-      var self = this;
-      this.button.addEventListener('click', function (event) {
-        event.stopPropagation();
-        var nextState = !_this2.button.classList.contains('search--button--active');
-        nextState ? _this2.show() : _this2.hide();
-      });
-    }
-  }]);
-
-  return Search;
-}();
+  _classCallCheck(this, Search);
+};
 
 /* harmony default export */ __webpack_exports__["default"] = (Search);
 

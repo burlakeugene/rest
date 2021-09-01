@@ -137,7 +137,7 @@ a,
 
 .empty {
   font-size: 18px;
-  color: $theme-color;
+  color: var(--color);
   padding: 15px;
   text-align: center;
 }
@@ -416,7 +416,7 @@ a,
   li {
     display: inline-block;
     vertical-align: middle;
-    &.post_tag {
+    &.post_tag:not(:last-child) {
       display: none;
     }
     &:after {
@@ -745,4 +745,16 @@ body .page {
   width: 100%;
   background-color: var(--border-color);
   margin: 20px 0;
+}
+
+.not-found{
+  text-align: center;
+  font-weight: 700;
+  padding: 40px 0;
+  font-size: 15px;
+  h1{
+    font-size: 82px;
+    font-weight: 700;
+    color: var(--theme);
+  }
 }
