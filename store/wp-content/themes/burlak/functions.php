@@ -476,11 +476,31 @@ function misha_remove_fields($fields)
     $fields['shipping']['shipping_address_1']['label'] = 'Адрес доставки';
     $fields['shipping']['shipping_address_1']['placeholder'] = 'Введите адрес';
     $address = '';
-    if($shipping['type'] == 'courier' && $shipping['address']){
-      $address = $shipping['address'];
+    if($shipping['type'] == 'courier'){
+      $fields['shipping']['shipping_address_1']['type'] = 'text';
+      if($shipping['address']){
+        $address = $shipping['address'];
+      }
     }
-    if($shipping['type'] == 'self' && $shipping['store']){
-      $address = $shipping['store'];
+    if($shipping['type'] == 'self'){
+      $fields['shipping']['shipping_address_1']['type'] = 'select';
+      $options = array(
+        array(
+          'label' => 'Выбрать место самовывоза',
+          'value' => ''
+        )
+      );
+      $stores = get_stores();
+      foreach($stores as $store){
+        $options[] = array(
+          'label' => get_field('address', $store->ID),
+          'value' => $store->ID
+        );
+      }
+      $fields['shipping']['shipping_address_1']['options'] = $options;
+      if($shipping['store']){
+        $address = $shipping['store'];
+      }
     }
     $fields['shipping']['shipping_address_1']['value'] = $address;
 
