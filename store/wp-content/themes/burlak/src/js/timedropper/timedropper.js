@@ -151,7 +151,7 @@
           clearInterval(changeInterval);
           changeInterval = setTimeout(() => {
             n.change();
-          }, 3000);
+          }, 1000);
         };
       /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
         navigator.userAgent

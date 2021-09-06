@@ -5,6 +5,7 @@ import dateDropper from './js/datedropper/datedropper.js';
 import timeDropper from './js/timedropper/timedropper.js';
 import BurlakNavigation from './js/burlak-navigation.js';
 import * as Burlak from 'burlak';
+import Maskit from 'maskit';
 import mapInit from './js/map-yandex.js';
 import Notic from 'notic';
 import Search from './js/search';
@@ -306,35 +307,48 @@ import Request from './js/request';
       let themeColor = getComputedStyle(
         document.documentElement
       ).getPropertyValue('--theme');
-      $('.shipping__time__control--calendar input').dateDropper({
+      $('input[data-date]').dateDropper({
         animate: false,
         lang: 'ru',
         dropWidth: 200,
         dropPrimaryColor: themeColor,
         dropBorder: '1px solid ' + themeColor,
       });
-      $('.shipping__time__control--calendar input').on('change', (e) => {
-        setShippingField({
-          key: 'date',
-          value: e.target.value,
-        }).then((resp) => {
-          $('.shipping__time__control--calendar input').val(e.target.value);
-        });
-      });
 
-      $('.shipping__time__control--time input').timeDropper({
+      $('input[data-time]').timeDropper({
         format: 'HH:mm',
         primaryColor: themeColor,
         borderColor: themeColor,
         setCurrentTime: false,
       });
 
-      $('.shipping__time__control--time input').on('change', (e) => {
+      $('[data-set-shipping]').on('change', (e) => {
+        let key = e.target.dataset['setShipping'];
         setShippingField({
-          key: 'time',
+          key,
           value: e.target.value,
         }).then((resp) => {
-          $('.shipping__time__control--time input').val(e.target.value);
+          $('[data-set-shipping="' + key + '"]').val(e.target.value);
+          let updateCheckout = e.target.dataset.updateCheckout;
+          if (updateCheckout) {
+            let checkout = document.querySelector('.checkout__wrapper');
+            checkout.classList.add('checkout__wrapper--loading');
+            Request.get({
+              url: updateCheckout,
+              headers: {
+                'Content-Type': 'text/html; charset=utf-8',
+              },
+            }).then((html) => {
+              let parser = new DOMParser();
+              html = parser.parseFromString(html, 'text/html');
+              let replacement = html.querySelector('.checkout'),
+                replaced = document.querySelector('.checkout');
+              replaced.parentNode.replaceChild(replacement, replaced);
+              checkout.classList.remove('checkout__wrapper--loading');
+              router.addLinksEvent();
+              commonFunc();
+            });
+          }
         });
       });
 
@@ -646,6 +660,20 @@ import Request from './js/request';
         shares.forEach((share) => {
           Ya.share2(share.id, {
             content: { ...share.dataset },
+          });
+        });
+
+      let maskits = document.querySelectorAll('input[data-maskit]');
+      maskits.length &&
+        maskits.forEach((maskit) => {
+          new Maskit(maskit, {
+            mask: maskit.getAttribute('data-maskit'),
+            notFilledClear: true,
+            onFilled: (scope) => {},
+            offFilled: (scope) => {},
+            onBlur: (scope) => {},
+            onChange: (scope) => {},
+            onInit: (scope) => {},
           });
         });
     }

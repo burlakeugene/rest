@@ -60,13 +60,13 @@
           </div>
           <div class="shipping__time__control shipping__time__control--calendar">
             <label>
-              <input <?= $shipping['date'] ? 'value="'.$shipping['date'].'"' : ''?> type="text">
+              <input data-set-shipping="date" data-date <?= $shipping['date'] ? 'value="'.$shipping['date'].'"' : ''?> type="text">
               <?php get_template_part('icons/calendar') ?>
             </label>
           </div>
           <div class="shipping__time__control shipping__time__control--time">
             <label>
-              <input <?= $shipping['time'] ? 'value="'.$shipping['time'].'"' : ''?> type="text">
+              <input data-set-shipping="time" data-time <?= $shipping['time'] ? 'value="'.$shipping['time'].'"' : ''?> type="text">
               <?php get_template_part('icons/time') ?>
             </label>
           </div>

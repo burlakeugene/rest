@@ -462,8 +462,9 @@ add_filter('woocommerce_checkout_fields', 'misha_remove_fields', 9999);
 function misha_remove_fields($fields)
 {
     $shipping = WC()->session->get('shipping');
-    $fields['shipping']['data'] = $shipping;
+    // $fields['shipping']['data'] = $shipping;
     unset($fields['billing']);
+    unset($fields['order']);
     unset($fields['account']);
     unset($fields['shipping']['shipping_last_name']);
     unset($fields['shipping']['shipping_company']);
@@ -473,11 +474,76 @@ function misha_remove_fields($fields)
     unset($fields['shipping']['shipping_state']);
     unset($fields['shipping']['shipping_postcode']);
 
+    $fields['shipping']['type'] = array(
+      'type' => 'radio',
+      'label' => 'Доставка',
+      'required' => true,
+      'priority' => 0,
+      'value' => $shipping['type'],
+      'attrs' => array(
+        'data-set-shipping="type"',
+        'data-update-checkout="'.get_permalink(get_page_by_path('checkout')).'"'
+      ),
+      'options' => array(
+        array(
+          'label' => 'Доставка курьером',
+          'value' => 'courier'
+        ),
+        array(
+          'label' => 'Заберу с собой',
+          'value' => 'self'
+        )
+      )
+    );
+
     $fields['shipping']['shipping_address_1']['label'] = 'Адрес доставки';
     $fields['shipping']['shipping_address_1']['placeholder'] = 'Введите адрес';
+    $fields['shipping']['shipping_address_1']['priority'] = 1;
+
+    $fields['shipping']['at_time'] = array(
+      'type' => 'radio',
+      'label' => 'Когда доставить',
+      'required' => true,
+      'priority' => 1,
+      'value' => $shipping['at_time'],
+      'attrs' => array(
+        'data-set-shipping="at_time"',
+        'data-update-checkout="'.get_permalink(get_page_by_path('checkout')).'"'
+      ),
+      'options' => array(
+        array(
+          'label' => 'Чем раньше, тем лучше',
+          'value' => '0'
+        ),
+        array(
+          'label' => 'Выбрать дату и время',
+          'value' => '1'
+        )
+      )
+    );
+
+    if($shipping['at_time']){
+      $fields['shipping']['date'] = array(
+        'label' => 'Время доставки',
+        'placeholder' => 'Укажите время',
+        'required' => true,
+        'priority' => 2,
+        'value' => $shipping['date'] ? $shipping['date'] : '',
+        'attrs' => array('data-date', 'data-set-shipping="date"'),
+        'class' => array('half')
+      );
+      $fields['shipping']['time'] = array(
+        'label' => 'Дата доставки',
+        'placeholder' => 'Укажите даты',
+        'required' => true,
+        'priority' => 3,
+        'value' => $shipping['time'] ? $shipping['time'] : '',
+        'attrs' => array('data-time', 'data-set-shipping="time"'),
+        'class' => array('half')
+     );
+    }
     $address = '';
     if($shipping['type'] == 'courier'){
-      $fields['shipping']['shipping_address_1']['type'] = 'text';
       if($shipping['address']){
         $address = $shipping['address'];
       }
@@ -487,7 +553,8 @@ function misha_remove_fields($fields)
       $options = array(
         array(
           'label' => 'Выбрать место самовывоза',
-          'value' => ''
+          'value' => '',
+          'disabled' => true
         )
       );
       $stores = get_stores();
@@ -498,21 +565,38 @@ function misha_remove_fields($fields)
         );
       }
       $fields['shipping']['shipping_address_1']['options'] = $options;
-      if($shipping['store']){
+      if($shipping['store'] && array_search($shipping['store'], array_column($options, 'value'))){
         $address = $shipping['store'];
       }
     }
     $fields['shipping']['shipping_address_1']['value'] = $address;
+    $fields['shipping']['shipping_address_1']['attrs'] = array(
+      'data-set-shipping="'.($shipping['type'] == 'self' ? 'store' : 'address').'"'
+    );
 
     $fields['shipping']['shipping_first_name']['label'] = 'Имя получателя';
     $fields['shipping']['shipping_first_name']['placeholder'] = 'Введите имя';
+    $fields['shipping']['shipping_first_name']['priority'] = 4;
+    $fields['shipping']['shipping_first_name']['value'] = $shipping['name'];
+    $fields['shipping']['shipping_first_name']['attrs'] = array('data-set-shipping="name"');
 
-    $fields['shipping']['about_yourself'] = array(
-      'label' => __('About yourself', 'woocommerce'),
-      'placeholder' => 'About yourself',
-      'required' => false,
-      'priority' => 1
-   );
+    $fields['shipping']['phone'] = array(
+      'label' => 'Контактный телефон',
+      'placeholder' => 'Введите телефон',
+      'required' => true,
+      'priority' => 5,
+      'value' => $shipping['phone'],
+      'attrs' => array('data-maskit="+{7}(000) 000-00-00"', 'data-set-shipping="phone"')
+    );
+
+    $fields['shipping']['comment'] = array(
+      'label' => 'Комментарий',
+      'placeholder' => 'Введите комментарий',
+      'type' => 'textarea',
+      'priority' => 6,
+      'value' => $shipping['comment'],
+      'attrs' => array('data-set-shipping="comment"')
+    );
 
     return $fields;
 }

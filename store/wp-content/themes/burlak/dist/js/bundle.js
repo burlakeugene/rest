@@ -1238,6 +1238,239 @@ var Url = function Url() {
 
 /***/ }),
 
+/***/ "./node_modules/maskit/package/bundle.js":
+/*!***********************************************!*\
+  !*** ./node_modules/maskit/package/bundle.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+module.exports = function (t) {
+  var e = {};
+
+  function i(n) {
+    if (e[n]) return e[n].exports;
+    var r = e[n] = {
+      i: n,
+      l: !1,
+      exports: {}
+    };
+    return t[n].call(r.exports, r, r.exports, i), r.l = !0, r.exports;
+  }
+
+  return i.m = t, i.c = e, i.d = function (t, e, n) {
+    i.o(t, e) || Object.defineProperty(t, e, {
+      enumerable: !0,
+      get: n
+    });
+  }, i.r = function (t) {
+    "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(t, Symbol.toStringTag, {
+      value: "Module"
+    }), Object.defineProperty(t, "__esModule", {
+      value: !0
+    });
+  }, i.t = function (t, e) {
+    if (1 & e && (t = i(t)), 8 & e) return t;
+    if (4 & e && "object" == _typeof(t) && t && t.__esModule) return t;
+    var n = Object.create(null);
+    if (i.r(n), Object.defineProperty(n, "default", {
+      enumerable: !0,
+      value: t
+    }), 2 & e && "string" != typeof t) for (var r in t) {
+      i.d(n, r, function (e) {
+        return t[e];
+      }.bind(null, r));
+    }
+    return n;
+  }, i.n = function (t) {
+    var e = t && t.__esModule ? function () {
+      return t.default;
+    } : function () {
+      return t;
+    };
+    return i.d(e, "a", e), e;
+  }, i.o = function (t, e) {
+    return Object.prototype.hasOwnProperty.call(t, e);
+  }, i.p = "./", i(i.s = 0);
+}([function (t, e, i) {
+  "use strict";
+
+  function n(t, e) {
+    for (var i = 0; i < e.length; i++) {
+      var n = e[i];
+      n.enumerable = n.enumerable || !1, n.configurable = !0, "value" in n && (n.writable = !0), Object.defineProperty(t, n.key, n);
+    }
+  }
+
+  i.r(e);
+
+  var r = function () {
+    function t(e) {
+      var i = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
+      !function (t, e) {
+        if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
+      }(this, t), this.isDom = e instanceof Element || e instanceof HTMLDocument, this.input = !!this.isDom && e, this.value = this.input ? this.input.value : "", this.input.value = "", this.mask = !!i.mask && this.createMaskArray(i.mask), this.options = i, this.filled = !1, this.onBlur = this.onBlur.bind(this), this.setInitialValue = this.setInitialValue.bind(this), this.checkErrors(), this.init();
+    }
+
+    var e, i, r;
+    return e = t, (i = [{
+      key: "checkErrors",
+      value: function value() {
+        if (!this.isDom) throw new Error("First argument must be DOM element");
+      }
+    }, {
+      key: "createMaskArray",
+      value: function value(t, e) {
+        if (!t) return !1;
+        var i = [],
+            n = 0;
+
+        for (var r in t) {
+          r = parseInt(r), n ? --n : "{" === t[r] && "}" === t[r + 2] ? (i.push({
+            type: "plain",
+            value: t[r + 1]
+          }), n += 2) : "?+-()[]{}.,\\/-=_~`|'\" ".split("").indexOf(t[r]) >= 0 ? i.push({
+            type: "plain",
+            value: t[r]
+          }) : i.push({
+            type: "dynamic",
+            value: t[r]
+          });
+        }
+
+        return e && e(), i;
+      }
+    }, {
+      key: "checkMaskChar",
+      value: function value(t, e, i, n) {
+        var r = "",
+            a = e[i];
+        return "plain" === a.type && (r += a.value, r += this.checkMaskChar(t, e, ++i, n)), "dynamic" === a.type && ("0" === a.value && /^[0-9]+$/.test(t) && (r += t), "A" === a.value && /^[A-Za-zА-Яа-я]+$/.test(t) && (r += t), "Ы" === a.value && /^[А-Яа-я]+$/.test(t) && (r += t)), r.length && n(), r;
+      }
+    }, {
+      key: "checkMask",
+      value: function value(t, e) {
+        if (!e) return t;
+        var i = "",
+            n = 0;
+
+        for (var r in t) {
+          if (!e[r]) return i;
+          var a = t[r = parseInt(r)].toString();
+          a === e[r].value ? (i += a, ++n) : i += this.checkMaskChar(a, e, n, function () {
+            ++n;
+          });
+        }
+
+        return i;
+      }
+    }, {
+      key: "checkInitialMask",
+      value: function value(t, e) {
+        var i = "";
+
+        for (var n in t) {
+          var r = t[n = parseInt(n)].toString(),
+              a = e[n];
+          if (!a) break;
+
+          if ("plain" === a.type) {
+            if (a.value !== r) break;
+            i += r;
+          }
+
+          if ("dynamic" === a.type) {
+            if ("0" === a.value) {
+              if (!/^[0-9]+$/.test(r)) break;
+              i += r;
+            }
+
+            if ("A" === a.value) {
+              if (!/^[A-Za-zА-Яа-я]+$/.test(r)) break;
+              i += r;
+            }
+
+            if ("Ы" === a.value) {
+              if (!/^[А-Яа-я]+$/.test(r)) break;
+              i += r;
+            }
+          }
+        }
+
+        return i;
+      }
+    }, {
+      key: "setMask",
+      value: function value(t) {
+        this.mask = this.createMaskArray(t), this.setInitialValue();
+      }
+    }, {
+      key: "onFilled",
+      value: function value() {
+        var t = this.options.onFilled;
+        this.filled = !0, t && t(this);
+      }
+    }, {
+      key: "offFilled",
+      value: function value() {
+        var t = this.options.offFilled;
+        this.filled = !1, t && t(this);
+      }
+    }, {
+      key: "onBlur",
+      value: function value() {
+        var t = this.options,
+            e = t.onBlur;
+        t.notFilledClear && this.value.length !== this.mask.length && this.setValue(""), e && e(this);
+      }
+    }, {
+      key: "setValue",
+      value: function value(t) {
+        var e = this.options.onChange;
+        this.input.value = t, this.value !== t && (this.value = t, e && e(this), t.length === this.mask.length ? this.onFilled() : this.offFilled());
+      }
+    }, {
+      key: "setInitialValue",
+      value: function value() {
+        if (this.value) {
+          var t = this.checkInitialMask(this.value, this.mask);
+          this.setValue(t);
+        }
+      }
+    }, {
+      key: "listenerInput",
+      value: function value() {
+        var t = this;
+        this.input && this.input.addEventListener("input", function (e) {
+          t.setValue(t.checkMask(e.target.value, t.mask));
+        });
+      }
+    }, {
+      key: "listenerBlur",
+      value: function value() {
+        this.input && this.input.addEventListener("blur", this.onBlur);
+      }
+    }, {
+      key: "runListener",
+      value: function value() {
+        this.listenerInput(), this.listenerBlur();
+      }
+    }, {
+      key: "init",
+      value: function value() {
+        var t = this.options.onInit;
+        this.setInitialValue(), this.runListener(), t && t(this);
+      }
+    }]) && n(e.prototype, i), r && n(e, r), t;
+  }();
+
+  e.default = r;
+}]);
+
+/***/ }),
+
 /***/ "./node_modules/notic/package/bundle.js":
 /*!**********************************************!*\
   !*** ./node_modules/notic/package/bundle.js ***!
@@ -1790,17 +2023,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_timedropper_timedropper_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_js_timedropper_timedropper_js__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _js_burlak_navigation_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./js/burlak-navigation.js */ "./src/js/burlak-navigation.js");
 /* harmony import */ var burlak__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! burlak */ "./node_modules/burlak/src/index.js");
-/* harmony import */ var _js_map_yandex_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./js/map-yandex.js */ "./src/js/map-yandex.js");
-/* harmony import */ var notic__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! notic */ "./node_modules/notic/package/bundle.js");
-/* harmony import */ var notic__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(notic__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _js_search__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./js/search */ "./src/js/search.js");
-/* harmony import */ var _js_cart__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./js/cart */ "./src/js/cart.js");
-/* harmony import */ var _js_request__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./js/request */ "./src/js/request.js");
+/* harmony import */ var maskit__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! maskit */ "./node_modules/maskit/package/bundle.js");
+/* harmony import */ var maskit__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(maskit__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _js_map_yandex_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./js/map-yandex.js */ "./src/js/map-yandex.js");
+/* harmony import */ var notic__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! notic */ "./node_modules/notic/package/bundle.js");
+/* harmony import */ var notic__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(notic__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _js_search__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./js/search */ "./src/js/search.js");
+/* harmony import */ var _js_cart__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./js/cart */ "./src/js/cart.js");
+/* harmony import */ var _js_request__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./js/request */ "./src/js/request.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -1859,7 +2095,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   }
 
   function setShippingField(data) {
-    return _js_request__WEBPACK_IMPORTED_MODULE_11__["default"].post({
+    return _js_request__WEBPACK_IMPORTED_MODULE_12__["default"].post({
       url: '?wc-ajax=shipping_set',
       data: data,
       headers: {
@@ -1871,7 +2107,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   var view = burlak__WEBPACK_IMPORTED_MODULE_6__["InView"];
   var isMobile = new burlak__WEBPACK_IMPORTED_MODULE_6__["Detection"]().isMobile;
   $(document).ready(function () {
-    window.Notic = new notic__WEBPACK_IMPORTED_MODULE_8___default.a();
+    window.Notic = new notic__WEBPACK_IMPORTED_MODULE_9___default.a();
     document.addEventListener('wpcf7mailsent', function (event) {
       $.fancybox.close();
       window.Notic.addMessage({
@@ -1939,7 +2175,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           }
         });
       });
-      var cart = new _js_cart__WEBPACK_IMPORTED_MODULE_10__["default"]({
+      var cart = new _js_cart__WEBPACK_IMPORTED_MODULE_11__["default"]({
         listeners: function listeners(cart) {
           var products = document.querySelectorAll('.product__add');
           products.length && products.forEach(function (button) {
@@ -2085,33 +2321,47 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         });
       });
       var themeColor = getComputedStyle(document.documentElement).getPropertyValue('--theme');
-      $('.shipping__time__control--calendar input').dateDropper({
+      $('input[data-date]').dateDropper({
         animate: false,
         lang: 'ru',
         dropWidth: 200,
         dropPrimaryColor: themeColor,
         dropBorder: '1px solid ' + themeColor
       });
-      $('.shipping__time__control--calendar input').on('change', function (e) {
-        setShippingField({
-          key: 'date',
-          value: e.target.value
-        }).then(function (resp) {
-          $('.shipping__time__control--calendar input').val(e.target.value);
-        });
-      });
-      $('.shipping__time__control--time input').timeDropper({
+      $('input[data-time]').timeDropper({
         format: 'HH:mm',
         primaryColor: themeColor,
         borderColor: themeColor,
         setCurrentTime: false
       });
-      $('.shipping__time__control--time input').on('change', function (e) {
+      $('[data-set-shipping]').on('change', function (e) {
+        var key = e.target.dataset['setShipping'];
         setShippingField({
-          key: 'time',
+          key: key,
           value: e.target.value
         }).then(function (resp) {
-          $('.shipping__time__control--time input').val(e.target.value);
+          $('[data-set-shipping="' + key + '"]').val(e.target.value);
+          var updateCheckout = e.target.dataset.updateCheckout;
+
+          if (updateCheckout) {
+            var checkout = document.querySelector('.checkout__wrapper');
+            checkout.classList.add('checkout__wrapper--loading');
+            _js_request__WEBPACK_IMPORTED_MODULE_12__["default"].get({
+              url: updateCheckout,
+              headers: {
+                'Content-Type': 'text/html; charset=utf-8'
+              }
+            }).then(function (html) {
+              var parser = new DOMParser();
+              html = parser.parseFromString(html, 'text/html');
+              var replacement = html.querySelector('.checkout'),
+                  replaced = document.querySelector('.checkout');
+              replaced.parentNode.replaceChild(replacement, replaced);
+              checkout.classList.remove('checkout__wrapper--loading');
+              router.addLinksEvent();
+              commonFunc();
+            });
+          }
         });
       });
       var popularButtons = document.querySelectorAll('[data-set-popular]');
@@ -2221,7 +2471,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           delay: 5000
         }
       });
-      Object(_js_map_yandex_js__WEBPACK_IMPORTED_MODULE_7__["default"])();
+      Object(_js_map_yandex_js__WEBPACK_IMPORTED_MODULE_8__["default"])();
       _js_jquery_jquery__WEBPACK_IMPORTED_MODULE_0___default()('.gallery').each(function () {
         _js_jquery_jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).find('.gallery-icon a').attr('data-fancybox', 'group-' + _js_jquery_jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('id'));
       });
@@ -2288,7 +2538,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                   list = button.closest('.load-more').querySelector('.load-more__list'),
                   next = navigation.querySelector('.next'),
                   href = next.href;
-              _js_request__WEBPACK_IMPORTED_MODULE_11__["default"].get({
+              _js_request__WEBPACK_IMPORTED_MODULE_12__["default"].get({
                 url: href,
                 headers: {
                   'Content-Type': 'text/html; charset=utf-8'
@@ -2382,6 +2632,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       shares.length && Ya && Ya.share2 && shares.forEach(function (share) {
         Ya.share2(share.id, {
           content: _objectSpread({}, share.dataset)
+        });
+      });
+      var maskits = document.querySelectorAll('input[data-maskit]');
+      maskits.length && maskits.forEach(function (maskit) {
+        new maskit__WEBPACK_IMPORTED_MODULE_7___default.a(maskit, {
+          mask: maskit.getAttribute('data-maskit'),
+          notFilledClear: true,
+          onFilled: function onFilled(scope) {},
+          offFilled: function offFilled(scope) {},
+          onBlur: function onBlur(scope) {},
+          onChange: function onChange(scope) {},
+          onInit: function onInit(scope) {}
         });
       });
     }
@@ -14047,7 +14309,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;function _type
         clearInterval(changeInterval);
         changeInterval = setTimeout(function () {
           n.change();
-        }, 3000);
+        }, 1000);
       };
 
       /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) && (a = !0), u.find('.td-time span').on('click', function (e) {
