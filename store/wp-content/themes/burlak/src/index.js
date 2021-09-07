@@ -323,33 +323,37 @@ import Request from './js/request';
       });
 
       $('[data-set-shipping]').on('change', (e) => {
-        let key = e.target.dataset['setShipping'];
+        let key = e.target.dataset['setShipping'],
+          updateCheckout = e.target.dataset.updateCheckout,
+          checkout = document.querySelector('.checkout__wrapper');
+        if (updateCheckout)
+          checkout.classList.add('checkout__wrapper--loading');
         setShippingField({
           key,
           value: e.target.value,
-        }).then((resp) => {
-          $('[data-set-shipping="' + key + '"]').val(e.target.value);
-          let updateCheckout = e.target.dataset.updateCheckout;
-          if (updateCheckout) {
-            let checkout = document.querySelector('.checkout__wrapper');
-            checkout.classList.add('checkout__wrapper--loading');
-            Request.get({
-              url: updateCheckout,
-              headers: {
-                'Content-Type': 'text/html; charset=utf-8',
-              },
-            }).then((html) => {
-              let parser = new DOMParser();
-              html = parser.parseFromString(html, 'text/html');
-              let replacement = html.querySelector('.checkout'),
-                replaced = document.querySelector('.checkout');
-              replaced.parentNode.replaceChild(replacement, replaced);
+        })
+          .then((resp) => {
+            $('[data-set-shipping="' + key + '"]').val(e.target.value);
+            if (updateCheckout && resp.fragments) {
+              for (let fragment in resp.fragments) {
+                let html = resp.fragments[fragment],
+                  elements = document.querySelectorAll(fragment);
+                elements.forEach((element) => {
+                  let parser = new DOMParser(),
+                    htmlDoc = parser.parseFromString(html, 'text/html'),
+                    htmlFragment = htmlDoc.querySelector(fragment);
+                  element.parentNode.replaceChild(htmlFragment, element);
+                });
+              }
+            }
+          })
+          .finally(() => {
+            if(updateCheckout){
               checkout.classList.remove('checkout__wrapper--loading');
               router.addLinksEvent();
               commonFunc();
-            });
-          }
-        });
+            }
+          });
       });
 
       let popularButtons = document.querySelectorAll('[data-set-popular]');
@@ -676,6 +680,31 @@ import Request from './js/request';
             onInit: (scope) => {},
           });
         });
+      let checkouts = document.querySelectorAll('.checkout-form');
+      checkouts.length && checkouts.forEach((checkout) => {
+        eventDecorator({
+          target: checkout,
+          event: {
+            type: 'submit',
+            body: (e) => {
+              e.preventDefault();
+              let fields = new FormData(e.target),
+                data = Object.fromEntries(fields.entries()),
+                action = e.target.action,
+                method = e.target.method;
+              Request[method]({
+                url: action,
+                data,
+                headers: {
+                  'Content-Type': '',
+                },
+              }).then((resp) => {
+                console.log(resp);
+              });
+            },
+          },
+        });
+      });
     }
 
     window.router = new BurlakNavigation({

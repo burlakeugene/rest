@@ -343,18 +343,14 @@ function dequeue_woocommerce_cart_fragments()
 //REST
 function getFragments()
 {
+  global $woocommerce, $woocommerce_errors;
     $result = array(
-    'fragments' => array()
-  );
-    ob_start();
-    my_get_template_part('cart/count');
-    $result['fragments']['.cart__count'] = ob_get_clean();
-    ob_start();
-    my_get_template_part('cart/list');
-    $result['fragments']['.cart__list'] = ob_get_clean();
-    ob_start();
-    my_get_template_part('cart/totals');
-    $result['fragments']['.cart__totals'] = ob_get_clean();
+      'fragments' => array(),
+      'redirect' => is_checkout() && sizeof($woocommerce->cart->cart_contents) == 0 ? esc_url(home_url('/')) : false
+    );
+    $result['fragments']['.cart__count'] = load_template_part('cart/count');
+    $result['fragments']['.cart__list'] = load_template_part('cart/list');
+    $result['fragments']['.cart__totals'] = load_template_part('cart/totals');
     return $result;
 }
 
@@ -391,7 +387,13 @@ function shipping_set()
     $shipping = WC()->session->get('shipping');
     $shipping[$_POST['key']] = $_POST['value'];
     WC()->session->set('shipping', $shipping);
-    exit(json_encode($shipping));
+    $result = array(
+      'data' => $shipping,
+      'fragments' => array(
+        '.checkout' => load_template_part('checkout/content')
+      )
+    );
+    exit(json_encode($result));
 }
 
 function get_socials()
@@ -522,8 +524,8 @@ function misha_remove_fields($fields)
       )
     );
 
-    if($shipping['at_time']){
-      $fields['shipping']['date'] = array(
+    if ($shipping['at_time']) {
+        $fields['shipping']['date'] = array(
         'label' => 'Время доставки',
         'placeholder' => 'Укажите время',
         'required' => true,
@@ -532,7 +534,7 @@ function misha_remove_fields($fields)
         'attrs' => array('data-date', 'data-set-shipping="date"'),
         'class' => array('half')
       );
-      $fields['shipping']['time'] = array(
+        $fields['shipping']['time'] = array(
         'label' => 'Дата доставки',
         'placeholder' => 'Укажите даты',
         'required' => true,
@@ -543,31 +545,31 @@ function misha_remove_fields($fields)
      );
     }
     $address = '';
-    if($shipping['type'] == 'courier'){
-      if($shipping['address']){
-        $address = $shipping['address'];
-      }
+    if ($shipping['type'] == 'courier') {
+        if ($shipping['address']) {
+            $address = $shipping['address'];
+        }
     }
-    if($shipping['type'] == 'self'){
-      $fields['shipping']['shipping_address_1']['type'] = 'select';
-      $options = array(
+    if ($shipping['type'] == 'self') {
+        $fields['shipping']['shipping_address_1']['type'] = 'select';
+        $options = array(
         array(
           'label' => 'Выбрать место самовывоза',
           'value' => '',
           'disabled' => true
         )
       );
-      $stores = get_stores();
-      foreach($stores as $store){
-        $options[] = array(
+        $stores = get_stores();
+        foreach ($stores as $store) {
+            $options[] = array(
           'label' => get_field('address', $store->ID),
           'value' => $store->ID
         );
-      }
-      $fields['shipping']['shipping_address_1']['options'] = $options;
-      if($shipping['store'] && array_search($shipping['store'], array_column($options, 'value'))){
-        $address = $shipping['store'];
-      }
+        }
+        $fields['shipping']['shipping_address_1']['options'] = $options;
+        if ($shipping['store'] && array_search($shipping['store'], array_column($options, 'value'))) {
+            $address = $shipping['store'];
+        }
     }
     $fields['shipping']['shipping_address_1']['value'] = $address;
     $fields['shipping']['shipping_address_1']['attrs'] = array(
@@ -598,5 +600,39 @@ function misha_remove_fields($fields)
       'attrs' => array('data-set-shipping="comment"')
     );
 
+    if ($shipping['type'] == 'courier') {
+      $fields['shipping']['payment'] = array(
+        'label' => 'Способ оплаты',
+        'type' => 'radio',
+        'priority' => 7,
+        'value' => $shipping['payment'] ? $shipping['payment'] : 'cash',
+        'attrs' => array('data-set-shipping="payment"'),
+        'options' => array(
+          array(
+            'label' => 'Наличными курьеру',
+            'value' => 'cash'
+          ),
+          array(
+            'label' => 'Картой курьеру',
+            'value' => 'card'
+          )
+        )
+      );
+    }
+
     return $fields;
 }
+
+add_action('wc_ajax_my_checkout', 'my_checkout');
+function my_checkout(){
+    exit(json_encode($_POST));
+}
+
+function cart_empty_redirect_to_shop() {
+  global $woocommerce, $woocommerce_errors;
+  if ( is_cart() && sizeof($woocommerce->cart->cart_contents) == 0) {
+    wp_safe_redirect(esc_url(home_url('/')));
+    exit;
+  }
+}
+add_action( 'template_redirect', 'cart_empty_redirect_to_shop' );

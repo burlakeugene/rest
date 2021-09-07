@@ -2335,32 +2335,37 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         setCurrentTime: false
       });
       $('[data-set-shipping]').on('change', function (e) {
-        var key = e.target.dataset['setShipping'];
+        var key = e.target.dataset['setShipping'],
+            updateCheckout = e.target.dataset.updateCheckout,
+            checkout = document.querySelector('.checkout__wrapper');
+        if (updateCheckout) checkout.classList.add('checkout__wrapper--loading');
         setShippingField({
           key: key,
           value: e.target.value
         }).then(function (resp) {
           $('[data-set-shipping="' + key + '"]').val(e.target.value);
-          var updateCheckout = e.target.dataset.updateCheckout;
 
+          if (updateCheckout && resp.fragments) {
+            var _loop = function _loop(fragment) {
+              var html = resp.fragments[fragment],
+                  elements = document.querySelectorAll(fragment);
+              elements.forEach(function (element) {
+                var parser = new DOMParser(),
+                    htmlDoc = parser.parseFromString(html, 'text/html'),
+                    htmlFragment = htmlDoc.querySelector(fragment);
+                element.parentNode.replaceChild(htmlFragment, element);
+              });
+            };
+
+            for (var fragment in resp.fragments) {
+              _loop(fragment);
+            }
+          }
+        }).finally(function () {
           if (updateCheckout) {
-            var checkout = document.querySelector('.checkout__wrapper');
-            checkout.classList.add('checkout__wrapper--loading');
-            _js_request__WEBPACK_IMPORTED_MODULE_12__["default"].get({
-              url: updateCheckout,
-              headers: {
-                'Content-Type': 'text/html; charset=utf-8'
-              }
-            }).then(function (html) {
-              var parser = new DOMParser();
-              html = parser.parseFromString(html, 'text/html');
-              var replacement = html.querySelector('.checkout'),
-                  replaced = document.querySelector('.checkout');
-              replaced.parentNode.replaceChild(replacement, replaced);
-              checkout.classList.remove('checkout__wrapper--loading');
-              router.addLinksEvent();
-              commonFunc();
-            });
+            checkout.classList.remove('checkout__wrapper--loading');
+            router.addLinksEvent();
+            commonFunc();
           }
         });
       });
@@ -2644,6 +2649,31 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           onBlur: function onBlur(scope) {},
           onChange: function onChange(scope) {},
           onInit: function onInit(scope) {}
+        });
+      });
+      var checkouts = document.querySelectorAll('.checkout-form');
+      checkouts.length && checkouts.forEach(function (checkout) {
+        eventDecorator({
+          target: checkout,
+          event: {
+            type: 'submit',
+            body: function body(e) {
+              e.preventDefault();
+              var fields = new FormData(e.target),
+                  data = Object.fromEntries(fields.entries()),
+                  action = e.target.action,
+                  method = e.target.method;
+              _js_request__WEBPACK_IMPORTED_MODULE_12__["default"][method]({
+                url: action,
+                data: data,
+                headers: {
+                  'Content-Type': ''
+                }
+              }).then(function (resp) {
+                console.log(resp);
+              });
+            }
+          }
         });
       });
     }
@@ -2994,6 +3024,7 @@ function () {
         }
       }
 
+      if (cart.redirect) window.router.goTo(cart.redirect);
       this.listeners();
     }
   }, {

@@ -47,4 +47,60 @@
   .cart__list{
     padding: 10px 0;
   }
+  &__title{
+    margin-bottom: 20px;
+    h2{
+      line-height: 1em;
+      font-size: 18px;
+      font-weight: 600;
+    }
+  }
+  &__fields{
+    max-width: 440px;
+    width: 100%;
+    margin: 0 -10px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__field{
+    padding: 0 10px;
+    margin-bottom: 15px;
+    display: block;
+    width: 100%;
+    &.half{
+      width: 50%;
+    }
+    &__label{
+      margin-bottom: 15px;
+      font-weight: 600;
+      font-size: 13px;
+    }
+    &__control{
+      input, select{
+        width: 100%;
+      }
+    }
+    &--radio{
+      .control{
+        display: inline-block;
+        margin: 5px 0;
+        margin-right: 30px;
+        &:last-child{
+          margin-right: 0;
+        }
+        &__fake{
+          font-size: 13px;
+        }
+      }
+    }
+  }
+  &__buttons{
+    font-size: 0;
+    .button{
+      margin-right: 18px;
+      &:last-child{
+        margin-right: 0;
+      }
+    }
+  }
 }

@@ -18,7 +18,7 @@ class Cart {
     this.button.classList.add('cart__button--active');
   }
   listeners() {
-    this.props.listeners && this.props.listeners(this)
+    this.props.listeners && this.props.listeners(this);
   }
   init() {
     [this.button, this.popup].forEach((item) => {
@@ -48,6 +48,7 @@ class Cart {
         });
       }
     }
+    if (cart.redirect) window.router.goTo(cart.redirect);
     this.listeners();
   }
   remove(data) {

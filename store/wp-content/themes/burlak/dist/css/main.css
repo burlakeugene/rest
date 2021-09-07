@@ -2766,6 +2766,52 @@
 .checkout .cart__list {
   padding: 10px 0; }
 
+.checkout__title {
+  margin-bottom: 20px; }
+  .checkout__title h2 {
+    line-height: 1em;
+    font-size: 18px;
+    font-weight: 600; }
+
+.checkout__fields {
+  max-width: 440px;
+  width: 100%;
+  margin: 0 -10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+
+.checkout__field {
+  padding: 0 10px;
+  margin-bottom: 15px;
+  display: block;
+  width: 100%; }
+  .checkout__field.half {
+    width: 50%; }
+  .checkout__field__label {
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 13px; }
+  .checkout__field__control input, .checkout__field__control select {
+    width: 100%; }
+  .checkout__field--radio .control {
+    display: inline-block;
+    margin: 5px 0;
+    margin-right: 30px; }
+    .checkout__field--radio .control:last-child {
+      margin-right: 0; }
+    .checkout__field--radio .control__fake {
+      font-size: 13px; }
+
+.checkout__buttons {
+  font-size: 0; }
+  .checkout__buttons .button {
+    margin-right: 18px; }
+    .checkout__buttons .button:last-child {
+      margin-right: 0; }
+
 .gallery {
   margin: 0 !important;
   margin-top: 0px !important;
@@ -2871,7 +2917,8 @@ span.wpcf7-list-item {
 
 .control {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  position: relative; }
   .control input {
     visibility: hidden;
     opacity: 0;
@@ -3005,7 +3052,8 @@ select {
   display: block;
   border-radius: 10px;
   font-size: 13px;
-  font-family: Inter; }
+  font-family: Inter;
+  width: 100%; }
   input::-webkit-input-placeholder,
   textarea::-webkit-input-placeholder,
   select::-webkit-input-placeholder {
@@ -3029,7 +3077,8 @@ select {
 
 textarea {
   resize: none;
-  max-height: 100px; }
+  max-height: 100px;
+  min-height: 90px; }
 
 input,
 select,
@@ -3055,7 +3104,7 @@ select {
   background-repeat: no-repeat;
   -moz-appearance: none;
        appearance: none;
-  padding: 10px 15px;
+  padding: 15.5px 15px;
   padding-right: 40px;
   line-height: 1em;
   background-color: var(--white);
@@ -3064,7 +3113,7 @@ select {
   width: 100%;
   display: block;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 13px;
   cursor: pointer; }
   select::-webkit-input-placeholder {
     color: #404040; }
@@ -3170,13 +3219,17 @@ a,
   font-size: 13px;
   font-weight: 600;
   border: none;
-  position: relative; }
+  position: relative;
+  display: inline-block; }
   .button:not([disabled]):hover {
     color: var(--white);
     background-color: var(--orange); }
   .button--gray {
     background-color: var(--button-gray);
     color: var(--white); }
+  .button--gray-light {
+    background-color: var(--border-color);
+    color: var(--footer-title); }
   .button--red {
     background-color: var(--red);
     color: var(--white); }

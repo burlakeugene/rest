@@ -89,6 +89,7 @@ a,
   font-weight: 600;
   border: none;
   position: relative;
+  display: inline-block;
   &:not([disabled]):hover {
     color: var(--white);
     background-color: var(--orange);
@@ -96,6 +97,10 @@ a,
   &--gray {
     background-color: var(--button-gray);
     color: var(--white);
+  }
+  &--gray-light{
+    background-color: var(--border-color);
+    color: var(--footer-title);
   }
   &--red {
     background-color: var(--red);
