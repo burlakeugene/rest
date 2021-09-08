@@ -1252,12 +1252,12 @@ module.exports = function (t) {
 
   function i(n) {
     if (e[n]) return e[n].exports;
-    var r = e[n] = {
+    var a = e[n] = {
       i: n,
       l: !1,
       exports: {}
     };
-    return t[n].call(r.exports, r, r.exports, i), r.l = !0, r.exports;
+    return t[n].call(a.exports, a, a.exports, i), a.l = !0, a.exports;
   }
 
   return i.m = t, i.c = e, i.d = function (t, e, n) {
@@ -1278,10 +1278,10 @@ module.exports = function (t) {
     if (i.r(n), Object.defineProperty(n, "default", {
       enumerable: !0,
       value: t
-    }), 2 & e && "string" != typeof t) for (var r in t) {
-      i.d(n, r, function (e) {
+    }), 2 & e && "string" != typeof t) for (var a in t) {
+      i.d(n, a, function (e) {
         return t[e];
-      }.bind(null, r));
+      }.bind(null, a));
     }
     return n;
   }, i.n = function (t) {
@@ -1306,7 +1306,7 @@ module.exports = function (t) {
 
   i.r(e);
 
-  var r = function () {
+  var a = function () {
     function t(e) {
       var i = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
       !function (t, e) {
@@ -1314,7 +1314,7 @@ module.exports = function (t) {
       }(this, t), this.isDom = e instanceof Element || e instanceof HTMLDocument, this.input = !!this.isDom && e, this.value = this.input ? this.input.value : "", this.input.value = "", this.mask = !!i.mask && this.createMaskArray(i.mask), this.options = i, this.filled = !1, this.onBlur = this.onBlur.bind(this), this.setInitialValue = this.setInitialValue.bind(this), this.checkErrors(), this.init();
     }
 
-    var e, i, r;
+    var e, i, a;
     return e = t, (i = [{
       key: "checkErrors",
       value: function value() {
@@ -1327,16 +1327,16 @@ module.exports = function (t) {
         var i = [],
             n = 0;
 
-        for (var r in t) {
-          r = parseInt(r), n ? --n : "{" === t[r] && "}" === t[r + 2] ? (i.push({
+        for (var a in t) {
+          a = parseInt(a), n ? --n : "{" === t[a] && "}" === t[a + 2] ? (i.push({
             type: "plain",
-            value: t[r + 1]
-          }), n += 2) : "?+-()[]{}.,\\/-=_~`|'\" ".split("").indexOf(t[r]) >= 0 ? i.push({
+            value: t[a + 1]
+          }), n += 2) : "?+-()[]{}.,\\/-=_~`|'\" ".split("").indexOf(t[a]) >= 0 ? i.push({
             type: "plain",
-            value: t[r]
+            value: t[a]
           }) : i.push({
             type: "dynamic",
-            value: t[r]
+            value: t[a]
           });
         }
 
@@ -1345,9 +1345,9 @@ module.exports = function (t) {
     }, {
       key: "checkMaskChar",
       value: function value(t, e, i, n) {
-        var r = "",
-            a = e[i];
-        return "plain" === a.type && (r += a.value, r += this.checkMaskChar(t, e, ++i, n)), "dynamic" === a.type && ("0" === a.value && /^[0-9]+$/.test(t) && (r += t), "A" === a.value && /^[A-Za-zА-Яа-я]+$/.test(t) && (r += t), "Ы" === a.value && /^[А-Яа-я]+$/.test(t) && (r += t)), r.length && n(), r;
+        var a = "",
+            r = e[i];
+        return "plain" === r.type && (a += r.value, a += this.checkMaskChar(t, e, ++i, n)), "dynamic" === r.type && ("0" === r.value && /^[0-9]+$/.test(t) && (a += t), "A" === r.value && /^[A-Za-zА-Яа-я]+$/.test(t) && (a += t), "Ы" === r.value && /^[А-Яа-я]+$/.test(t) && (a += t)), a.length && n(), a;
       }
     }, {
       key: "checkMask",
@@ -1356,10 +1356,10 @@ module.exports = function (t) {
         var i = "",
             n = 0;
 
-        for (var r in t) {
-          if (!e[r]) return i;
-          var a = t[r = parseInt(r)].toString();
-          a === e[r].value ? (i += a, ++n) : i += this.checkMaskChar(a, e, n, function () {
+        for (var a in t) {
+          if (!e[a]) return i;
+          var r = t[a = parseInt(a)].toString();
+          r === e[a].value ? (i += r, ++n) : i += this.checkMaskChar(r, e, n, function () {
             ++n;
           });
         }
@@ -1372,29 +1372,29 @@ module.exports = function (t) {
         var i = "";
 
         for (var n in t) {
-          var r = t[n = parseInt(n)].toString(),
-              a = e[n];
-          if (!a) break;
+          var a = t[n = parseInt(n)].toString(),
+              r = e[n];
+          if (!r) break;
 
-          if ("plain" === a.type) {
-            if (a.value !== r) break;
-            i += r;
+          if ("plain" === r.type) {
+            if (r.value !== a) break;
+            i += a;
           }
 
-          if ("dynamic" === a.type) {
-            if ("0" === a.value) {
-              if (!/^[0-9]+$/.test(r)) break;
-              i += r;
+          if ("dynamic" === r.type) {
+            if ("0" === r.value) {
+              if (!/^[0-9]+$/.test(a)) break;
+              i += a;
             }
 
-            if ("A" === a.value) {
-              if (!/^[A-Za-zА-Яа-я]+$/.test(r)) break;
-              i += r;
+            if ("A" === r.value) {
+              if (!/^[A-Za-zА-Яа-я]+$/.test(a)) break;
+              i += a;
             }
 
-            if ("Ы" === a.value) {
-              if (!/^[А-Яа-я]+$/.test(r)) break;
-              i += r;
+            if ("Ы" === r.value) {
+              if (!/^[А-Яа-я]+$/.test(a)) break;
+              i += a;
             }
           }
         }
@@ -1421,9 +1421,15 @@ module.exports = function (t) {
     }, {
       key: "onBlur",
       value: function value() {
-        var t = this.options,
-            e = t.onBlur;
-        t.notFilledClear && this.value.length !== this.mask.length && this.setValue(""), e && e(this);
+        var t = this,
+            e = this.options,
+            i = e.onBlur;
+        e.notFilledClear && this.value.length !== this.mask.length && (this.setValue(""), setTimeout(function () {
+          if ("createEvent" in document) {
+            var e = document.createEvent("HTMLEvents");
+            e.initEvent("change", !1, !0), t.input.dispatchEvent(e);
+          } else t.input.fireEvent("onchange");
+        }, 0)), i && i(this);
       }
     }, {
       key: "setValue",
@@ -1463,10 +1469,10 @@ module.exports = function (t) {
         var t = this.options.onInit;
         this.setInitialValue(), this.runListener(), t && t(this);
       }
-    }]) && n(e.prototype, i), r && n(e, r), t;
+    }]) && n(e.prototype, i), a && n(e, a), t;
   }();
 
-  e.default = r;
+  e.default = a;
 }]);
 
 /***/ }),
@@ -2336,9 +2342,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       });
       $('[data-set-shipping]').on('change', function (e) {
         var key = e.target.dataset['setShipping'],
-            updateCheckout = e.target.dataset.updateCheckout,
-            checkout = document.querySelector('.checkout__wrapper');
-        if (updateCheckout) checkout.classList.add('checkout__wrapper--loading');
+            updateCheckout = e.target.dataset.updateCheckout;
+        if (updateCheckout) window.Notic.loadingOn();
         setShippingField({
           key: key,
           value: e.target.value
@@ -2363,7 +2368,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           }
         }).finally(function () {
           if (updateCheckout) {
-            checkout.classList.remove('checkout__wrapper--loading');
+            window.Notic.loadingOff();
             router.addLinksEvent();
             commonFunc();
           }
@@ -2643,7 +2648,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       maskits.length && maskits.forEach(function (maskit) {
         new maskit__WEBPACK_IMPORTED_MODULE_7___default.a(maskit, {
           mask: maskit.getAttribute('data-maskit'),
-          notFilledClear: true,
+          // notFilledClear: true,
           onFilled: function onFilled(scope) {},
           offFilled: function offFilled(scope) {},
           onBlur: function onBlur(scope) {},
@@ -2662,7 +2667,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
               var fields = new FormData(e.target),
                   data = Object.fromEntries(fields.entries()),
                   action = e.target.action,
-                  method = e.target.method;
+                  method = e.target.method,
+                  submits = checkout.querySelectorAll('button[type="submit"]');
+              window.Notic.loadingOn();
+              submits.length && submits.forEach(function (submit) {
+                submit.disabled = true;
+              });
               _js_request__WEBPACK_IMPORTED_MODULE_12__["default"][method]({
                 url: action,
                 data: data,
@@ -2670,7 +2680,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                   'Content-Type': ''
                 }
               }).then(function (resp) {
-                console.log(resp);
+                if (resp.notification) window.Notic.addMessage(resp.notification);
+                if (resp.redirect) window.router.goTo(resp.redirect);
+              }).finally(function () {
+                window.Notic.loadingOff();
+                submits.length && submits.forEach(function (submit) {
+                  submit.disabled = false;
+                });
               });
             }
           }

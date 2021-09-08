@@ -26,7 +26,7 @@ $fields = WC()->checkout()->checkout_fields;
               <?php endif; ?>
               <div class="checkout__field__control">
                 <?php if (!$field['type']): ?>
-                  <input placeholder="<?= $field['placeholder'] ?>" name="<?= $key ?>" type="text" value="<?= $field['value'] ?>"
+                  <input <?= $field['required'] ? 'required' : '' ?> placeholder="<?= $field['placeholder'] ?>" name="<?= $key ?>" type="text" value="<?= $field['value'] ?>"
                     <?php
                       if ($field['attrs']) {
                           foreach ($field['attrs'] as $attr) {
@@ -36,7 +36,7 @@ $fields = WC()->checkout()->checkout_fields;
                     ?>
                   />
                 <?php elseif ($field['type'] == 'textarea'): ?>
-                  <textarea placeholder="<?= $field['placeholder'] ?>" name="<?= $key ?>"
+                  <textarea <?= $field['required'] ? 'required' : '' ?> placeholder="<?= $field['placeholder'] ?>" name="<?= $key ?>"
                     <?php
                       if ($field['attrs']) {
                           foreach ($field['attrs'] as $attr) {
@@ -46,7 +46,7 @@ $fields = WC()->checkout()->checkout_fields;
                     ?>
                   ><?= $field['value'] ?></textarea>
                 <?php elseif ($field['type'] == 'select'): ?>
-                  <select name="<?= $key ?>"
+                  <select <?= $field['required'] ? 'required' : '' ?> name="<?= $key ?>"
                     <?php
                       if ($field['attrs']) {
                           foreach ($field['attrs'] as $attr) {
@@ -69,6 +69,7 @@ $fields = WC()->checkout()->checkout_fields;
                   <label class="control control--radio">
                     <input
                       type="radio"
+                      <?= $field['required'] ? 'required' : '' ?>
                       <?= $field['value'] === $option['value'] ? 'checked' : '' ?>
                       value="<?= $option['value'] ?>" name="<?= $key ?>"
                       <?php

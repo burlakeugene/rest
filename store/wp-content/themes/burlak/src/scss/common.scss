@@ -90,6 +90,9 @@ a,
   border: none;
   position: relative;
   display: inline-block;
+  &[disabled]{
+    cursor: progress;
+  }
   &:not([disabled]):hover {
     color: var(--white);
     background-color: var(--orange);
@@ -762,4 +765,8 @@ body .page {
     font-weight: 700;
     color: var(--theme);
   }
+}
+
+body .notic-loading svg{
+  stroke: var(--theme);
 }

@@ -324,10 +324,8 @@ import Request from './js/request';
 
       $('[data-set-shipping]').on('change', (e) => {
         let key = e.target.dataset['setShipping'],
-          updateCheckout = e.target.dataset.updateCheckout,
-          checkout = document.querySelector('.checkout__wrapper');
-        if (updateCheckout)
-          checkout.classList.add('checkout__wrapper--loading');
+          updateCheckout = e.target.dataset.updateCheckout;
+        if (updateCheckout) window.Notic.loadingOn();
         setShippingField({
           key,
           value: e.target.value,
@@ -348,8 +346,8 @@ import Request from './js/request';
             }
           })
           .finally(() => {
-            if(updateCheckout){
-              checkout.classList.remove('checkout__wrapper--loading');
+            if (updateCheckout) {
+              window.Notic.loadingOff();
               router.addLinksEvent();
               commonFunc();
             }
@@ -672,7 +670,7 @@ import Request from './js/request';
         maskits.forEach((maskit) => {
           new Maskit(maskit, {
             mask: maskit.getAttribute('data-maskit'),
-            notFilledClear: true,
+            // notFilledClear: true,
             onFilled: (scope) => {},
             offFilled: (scope) => {},
             onBlur: (scope) => {},
@@ -681,30 +679,47 @@ import Request from './js/request';
           });
         });
       let checkouts = document.querySelectorAll('.checkout-form');
-      checkouts.length && checkouts.forEach((checkout) => {
-        eventDecorator({
-          target: checkout,
-          event: {
-            type: 'submit',
-            body: (e) => {
-              e.preventDefault();
-              let fields = new FormData(e.target),
-                data = Object.fromEntries(fields.entries()),
-                action = e.target.action,
-                method = e.target.method;
-              Request[method]({
-                url: action,
-                data,
-                headers: {
-                  'Content-Type': '',
-                },
-              }).then((resp) => {
-                console.log(resp);
-              });
+      checkouts.length &&
+        checkouts.forEach((checkout) => {
+          eventDecorator({
+            target: checkout,
+            event: {
+              type: 'submit',
+              body: (e) => {
+                e.preventDefault();
+                let fields = new FormData(e.target),
+                  data = Object.fromEntries(fields.entries()),
+                  action = e.target.action,
+                  method = e.target.method,
+                  submits = checkout.querySelectorAll('button[type="submit"]');
+                window.Notic.loadingOn();
+                submits.length &&
+                  submits.forEach((submit) => {
+                    submit.disabled = true;
+                  });
+                Request[method]({
+                  url: action,
+                  data,
+                  headers: {
+                    'Content-Type': '',
+                  },
+                })
+                  .then((resp) => {
+                    if (resp.notification)
+                      window.Notic.addMessage(resp.notification);
+                    if (resp.redirect) window.router.goTo(resp.redirect);
+                  })
+                  .finally(() => {
+                    window.Notic.loadingOff();
+                    submits.length &&
+                      submits.forEach((submit) => {
+                        submit.disabled = false;
+                      });
+                  });
+              },
             },
-          },
+          });
         });
-      });
     }
 
     window.router = new BurlakNavigation({

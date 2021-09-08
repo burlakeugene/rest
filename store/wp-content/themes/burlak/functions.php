@@ -475,7 +475,8 @@ function misha_remove_fields($fields)
     unset($fields['shipping']['shipping_city']);
     unset($fields['shipping']['shipping_state']);
     unset($fields['shipping']['shipping_postcode']);
-
+    unset($fields['shipping']['shipping_address_1']);
+    unset($fields['shipping']['shipping_first_name']);
     $fields['shipping']['type'] = array(
       'type' => 'radio',
       'label' => 'Доставка',
@@ -498,9 +499,41 @@ function misha_remove_fields($fields)
       )
     );
 
-    $fields['shipping']['shipping_address_1']['label'] = 'Адрес доставки';
-    $fields['shipping']['shipping_address_1']['placeholder'] = 'Введите адрес';
-    $fields['shipping']['shipping_address_1']['priority'] = 1;
+    $fields['shipping']['address'] = array(
+      'label' => 'Адрес доставки',
+      'placeholder' => 'Введите адрес',
+      'priority' => 1,
+      'required' => true,
+      'attrs' => array('data-set-shipping="'.($shipping['type'] == 'self' ? 'store' : 'address').'"')
+    );
+    $address = '';
+    if ($shipping['type'] == 'courier') {
+      if ($shipping['address']) {
+        $address = $shipping['address'];
+      }
+    }
+    if ($shipping['type'] == 'self') {
+        $fields['shipping']['address']['type'] = 'select';
+        $options = array(
+        array(
+          'label' => 'Выбрать место самовывоза',
+          'value' => '',
+          'disabled' => true
+        )
+      );
+        $stores = get_stores();
+        foreach ($stores as $store) {
+            $options[] = array(
+          'label' => get_field('address', $store->ID),
+          'value' => $store->ID
+        );
+        }
+        $fields['shipping']['address']['options'] = $options;
+        if ($shipping['store'] && array_search($shipping['store'], array_column($options, 'value'))) {
+            $address = $shipping['store'];
+        }
+    }
+    $fields['shipping']['address']['value'] = $address;
 
     $fields['shipping']['at_time'] = array(
       'type' => 'radio',
@@ -544,43 +577,15 @@ function misha_remove_fields($fields)
         'class' => array('half')
      );
     }
-    $address = '';
-    if ($shipping['type'] == 'courier') {
-        if ($shipping['address']) {
-            $address = $shipping['address'];
-        }
-    }
-    if ($shipping['type'] == 'self') {
-        $fields['shipping']['shipping_address_1']['type'] = 'select';
-        $options = array(
-        array(
-          'label' => 'Выбрать место самовывоза',
-          'value' => '',
-          'disabled' => true
-        )
-      );
-        $stores = get_stores();
-        foreach ($stores as $store) {
-            $options[] = array(
-          'label' => get_field('address', $store->ID),
-          'value' => $store->ID
-        );
-        }
-        $fields['shipping']['shipping_address_1']['options'] = $options;
-        if ($shipping['store'] && array_search($shipping['store'], array_column($options, 'value'))) {
-            $address = $shipping['store'];
-        }
-    }
-    $fields['shipping']['shipping_address_1']['value'] = $address;
-    $fields['shipping']['shipping_address_1']['attrs'] = array(
-      'data-set-shipping="'.($shipping['type'] == 'self' ? 'store' : 'address').'"'
-    );
 
-    $fields['shipping']['shipping_first_name']['label'] = 'Имя получателя';
-    $fields['shipping']['shipping_first_name']['placeholder'] = 'Введите имя';
-    $fields['shipping']['shipping_first_name']['priority'] = 4;
-    $fields['shipping']['shipping_first_name']['value'] = $shipping['name'];
-    $fields['shipping']['shipping_first_name']['attrs'] = array('data-set-shipping="name"');
+    $fields['shipping']['name'] = array(
+      'label' => 'Имя получателя',
+      'placeholder' => 'Введите имя',
+      'required' => true,
+      'priority' => 4,
+      'value' => $shipping['name'],
+      'attrs' => array('data-set-shipping="name"')
+    );
 
     $fields['shipping']['phone'] = array(
       'label' => 'Контактный телефон',
@@ -623,11 +628,6 @@ function misha_remove_fields($fields)
     return $fields;
 }
 
-add_action('wc_ajax_my_checkout', 'my_checkout');
-function my_checkout(){
-    exit(json_encode($_POST));
-}
-
 function cart_empty_redirect_to_shop() {
   global $woocommerce, $woocommerce_errors;
   if ( is_cart() && sizeof($woocommerce->cart->cart_contents) == 0) {
@@ -636,3 +636,54 @@ function cart_empty_redirect_to_shop() {
   }
 }
 add_action( 'template_redirect', 'cart_empty_redirect_to_shop' );
+
+
+function my_checkout(){
+    $cart = WC()->cart;
+    $checkout = WC()->checkout();
+    $order_id = $checkout->create_order(array());
+    $order = wc_get_order($order_id);
+
+    $shipping = new WC_Order_Item_Shipping();
+    $shipping->set_method_title($_POST['type'] === 'courier' ? 'Доставка курьером' : 'Самовывоз');
+    $shipping->set_method_id($_POST['type']);
+    $order->add_item($shipping);
+
+    $address = $_POST['address'];
+    if($_POST['type'] === 'self' && $address){
+      $address = get_field('address', $address);
+    }
+    $order->set_billing_address_1($address);
+    $order->set_billing_first_name($_POST['name']);
+    $order->set_billing_phone($_POST['phone']);
+
+    if($_POST['at_time']){
+      $order->add_order_note("Дата: ".$_POST['date']."\nВремя: ".$_POST['time']);
+    }
+    if($_POST['payment']){
+      $payment = $_POST['payment'];
+      if($payment == 'cash') $payment = 'Наличными';
+      if($payment == 'card') $payment = 'Картой';
+      $order->add_order_note('Оплата: '.$payment);
+    }
+
+    if($_POST['comment']) $order->add_order_note("Комментарий:\n".$_POST['comment']);
+
+    $order->calculate_totals();
+    $order->payment_complete();
+    $cart->empty_cart();
+    exit(json_encode(array(
+      'notification' => array(
+        'message' => 'Заказ успешно создан',
+        'type' => 'success',
+        'delay' => 5000
+      ),
+      'redirect' => esc_url(home_url('/'))
+    )));
+}
+add_action('wc_ajax_my_checkout', 'my_checkout');
+
+// $order = wc_get_order(522);
+// $order->get_shipping_methods();
+// $order->get_shipping_method())
+// if( $order->has_shipping_method('courier') )
