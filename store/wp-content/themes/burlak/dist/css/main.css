@@ -1246,6 +1246,8 @@
     max-width: 284px;
     display: block;
     font-size: 0; }
+    .header .logo--mini {
+      display: none; }
     .header .logo img {
       width: 100%;
       height: auto; }

@@ -249,6 +249,7 @@ add_shortcode('tabs', function ($attrs) {
 function burlak_theme_setup()
 {
     add_theme_support('custom-logo');
+    add_theme_support('custom-header');
 }
 add_action('after_setup_theme', 'burlak_theme_setup');
 
