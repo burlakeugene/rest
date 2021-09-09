@@ -60,14 +60,6 @@
   }
 }
 
-.header__main {
-  position: relative;
-}
-.header__left,
-.header__right {
-  position: relative;
-  z-index: 2;
-}
 .cart__popup {
   z-index: 1;
   transition: all 0.3s;

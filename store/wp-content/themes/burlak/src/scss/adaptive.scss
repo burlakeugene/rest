@@ -1,0 +1,36 @@
+@media(max-width: 1200px){
+  .stores--header{
+    margin: 0 10px;
+    padding: 10px;
+  }
+  .contacts--header .contacts__item{
+    padding: 0 10px;
+  }
+  .cart__button{
+    padding: 10px;
+  }
+}
+
+
+@media(max-width: 991px){
+  .contacts--header{
+    display: none;
+  }
+  .header__navigation{
+    height: calc(100% - 75px);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    width: 240px;
+    transition: all 0.3s;
+    transform: translateX(100%);
+    overflow: auto;
+  }
+  .product__categories{
+    flex-direction: column;
+    a{
+      width: 100%;
+    }
+  }
+}

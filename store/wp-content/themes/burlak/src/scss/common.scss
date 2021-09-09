@@ -466,6 +466,8 @@ a,
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  z-index: 3;
   &__select {
     display: flex;
     align-items: center;

@@ -458,10 +458,20 @@ function load_template_part($path)
     return $result;
 }
 
+function mergeQueryString($array = []){
+  $result = '';
+  if(count($_GET) || count($array)) $result .= '?';
+  $array = array_merge($_GET, $array);
+  foreach($array as $key => $item){
+    if($item) $result .= $key.'='.$item.'&';
+  }
+  $result = substr_replace($result,'',-1);
+  return $result;
+}
 
-add_filter('woocommerce_checkout_fields', 'misha_remove_fields', 9999);
+add_filter('woocommerce_checkout_fields', 'checkout_fields', 9999);
 
-function misha_remove_fields($fields)
+function checkout_fields($fields)
 {
     $shipping = WC()->session->get('shipping');
     // $fields['shipping']['data'] = $shipping;
