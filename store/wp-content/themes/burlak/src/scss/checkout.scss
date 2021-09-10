@@ -103,4 +103,10 @@
       }
     }
   }
+  &__notice{
+    color: var(--theme);
+    font-weight: 600;
+    font-size: 13px;
+    margin-bottom: 15px;
+  }
 }

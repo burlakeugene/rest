@@ -2810,6 +2810,12 @@
     .checkout__buttons .button:last-child {
       margin-right: 0; }
 
+.checkout__notice {
+  color: var(--theme);
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 15px; }
+
 .gallery {
   margin: 0 !important;
   margin-top: 0px !important;
@@ -3832,6 +3838,9 @@ body .page {
 
 body .notic-loading svg {
   stroke: var(--theme); }
+
+.dd-y {
+  display: none; }
 
 .content {
   font-size: 14px;

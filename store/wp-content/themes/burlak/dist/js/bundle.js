@@ -3211,7 +3211,7 @@ jQuery.easing._dd_easing = function (a, b, c, d, e) {
           lock: !1,
           maxYear: new Date().getFullYear() + 10,
           minYear: new Date().getFullYear(),
-          yearsRange: 10,
+          yearsRange: 1,
           dropPrimaryColor: '#967ADC',
           dropTextColor: '#1D2B36',
           dropBackgroundColor: '#FFFFFF',

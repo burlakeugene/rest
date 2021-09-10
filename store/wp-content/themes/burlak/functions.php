@@ -300,6 +300,9 @@ add_action('init', 'register_post_types_init');
 
 function settings()
 {
+    if ( !is_admin() && WC() && !WC()->session->has_session() ) {
+      WC()->session->set_customer_session_cookie(true);
+    }
     if (!is_admin() && WC() && WC()->session) {
       if (!WC()->session->get('product')) {
         WC()->session->set('product', array(
