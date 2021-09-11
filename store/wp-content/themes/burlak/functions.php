@@ -92,7 +92,7 @@ add_action('admin_init', function () {
     register_setting('theme-page-settings', 'address');
     register_setting('theme-page-settings', 'phone');
     register_setting('theme-page-settings', 'email');
-    register_setting('theme-page-settings', 'theme-color');
+    register_setting('theme-page-settings', 'theme');
     register_setting('theme-page-settings', 'vkontakte');
     register_setting('theme-page-settings', 'telegram');
     register_setting('theme-page-settings', 'instagram');
@@ -137,8 +137,8 @@ function theme_settings_page()
         <input type="text" name="copyrights" value="<?= esc_attr(get_option('copyrights')) ?>" />
       </label>
       <label>
-        <div>Theme color</div>
-        <input name="theme-color" type="text" value="<?= esc_attr(get_option('theme-color')); ?>">
+        <div>Theme</div>
+        <input name="theme" type="text" value="<?= esc_attr(get_option('theme')); ?>">
       </label>
       <label>
         <div>Vkontakte</div>
@@ -701,3 +701,12 @@ add_action('wc_ajax_my_checkout', 'my_checkout');
 // $order->get_shipping_methods();
 // $order->get_shipping_method())
 // if( $order->has_shipping_method('courier') )
+
+function get_theme_color($theme = 'default'){
+  $colors = array(
+    'default' => '#E31E24',
+    'dark' => '#362d2c'
+  );
+  if(!$colors[$theme]) $theme = 'default';
+  return $colors[$theme];
+}

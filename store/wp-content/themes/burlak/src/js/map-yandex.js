@@ -53,10 +53,14 @@ function mapInit() {
       //     },
       //   }
       // );
-      // myMap.margin.Manager.setDefaultMargin(40,40,40,40);
-      // myMap.setBounds(myMap.geoObjects.getBounds(), {
-      //   checkZoomRange: true,
-      // });
+      let bounds = myMap.geoObjects.getBounds();
+      bounds[0][0] -= 0.02;
+      bounds[0][1] -= 0.02;
+      bounds[1][0] += 0.02;
+      bounds[1][1] += 0.02;
+      myMap.setBounds(bounds, {
+        checkZoomRange: true,
+      });
       myMap.geoObjects.events.add('click', function (e) {
         let id = e.get('target').properties._data.id;
         data.forEach((item) => {

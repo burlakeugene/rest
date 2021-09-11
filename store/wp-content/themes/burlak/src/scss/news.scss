@@ -53,12 +53,12 @@
         width: 25px;
         overflow: hidden;
         svg{
-          fill: var(--red);
+          fill: var(--theme);
           transition: all 0.3s;
         }
       }
       a {
-        color: var(--red);
+        color: var(--theme);
         display: inline-flex;
         align-items: center;
         font-size: 13px;

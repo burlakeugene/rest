@@ -13,7 +13,7 @@
   if (has_custom_header()):
     $url = get_header_image();
 ?>
-    <a href="<?= esc_url(home_url('/')); ?>" title="<?= get_bloginfo('name') ?>" class="ajax logo logo--mini">
+    <a href="<?= esc_url(home_url('/')); ?>" title="<?= get_bloginfo('name') ?>" class="ajax logo logo--mobile">
       <img src="<?= $url ?>" alt="">
     </a>
 <?php endif; ?>

@@ -15,12 +15,12 @@ $categories = get_categories($args);
     foreach ($categories as $category):
 			$url = esc_url(get_term_link($category));
 			$current_url =  home_url($wp->request).'/';
-    ?>
-	<a href="<?= $url ?>" class="ajax <?= $current_url === $url ? 'active' : '' ?>">
-		<?= woocommerce_subcategory_thumbnail($category); ?>
-		<?= $category->name ?>
-	</a>
-	<?php
+			?>
+				<a href="<?= $url ?>" class="ajax <?= $current_url === $url ? 'active' : '' ?>">
+					<?= woocommerce_subcategory_thumbnail($category); ?>
+					<?= $category->name ?>
+				</a>
+			<?php
     endforeach;
-    ?>
+	?>
 </div>

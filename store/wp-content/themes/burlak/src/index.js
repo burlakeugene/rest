@@ -132,6 +132,9 @@ import Request from './js/request';
                 $.fancybox.open({
                   src: '#search',
                   type: 'inline',
+                  afterShow: function () {
+                    document.querySelector('#search input').focus();
+                  },
                 });
               },
             },
@@ -305,7 +308,7 @@ import Request from './js/request';
         });
 
       let themeColor = getComputedStyle(
-        document.documentElement
+        document.body
       ).getPropertyValue('--theme');
       $('input[data-date]').dateDropper({
         animate: false,
@@ -415,29 +418,27 @@ import Request from './js/request';
           });
         });
 
-      document.body.addEventListener('click', () => {
-        document
-          .querySelector('.header')
-          .classList.remove('navigation-visible');
-      });
-
-      var slideBar = document.querySelector('.header-slidebar');
-      slideBar &&
-        slideBar.addEventListener('click', (e) => {
+      let navigation = document.querySelector('.header__navigation');
+      navigation &&
+        navigation.addEventListener('click', (e) => {
           e.stopPropagation();
         });
 
-      var toggleButton = document.querySelector('.nav-toggle');
-      if (toggleButton) {
-        toggleButton.addEventListener('click', function (e) {
-          e.preventDefault();
-          e.stopPropagation();
-          let header = document.querySelector('.header');
-          header && header.classList.remove('search-visible');
-          header && header.classList.toggle('navigation-visible');
+      var toggles = document.querySelectorAll('.toggle');
+      toggles.length &&
+        toggles.forEach((toggle) => {
+          eventDecorator({
+            target: toggle,
+            event: {
+              type: 'click',
+              body: (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                document.body.classList.toggle('navigation-visible');
+              },
+            },
+          });
         });
-      }
-
       new view('.lazy', {
         in: (item) => {
           setTimeout(() => {
@@ -606,6 +607,7 @@ import Request from './js/request';
             });
         });
       document.addEventListener('click', (e) => {
+        document.body.classList.remove('navigation-visible');
         selects.length &&
           selects.forEach((select) => {
             select.classList.remove('select--active');

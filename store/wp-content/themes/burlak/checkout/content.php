@@ -94,7 +94,7 @@ $fields = WC()->checkout()->checkout_fields;
           Оформляя заказ вы соглашаетесь с политикой конфиденциальности
         </div>
         <div class="checkout__buttons">
-          <button class="button button--red" type="submit">Оформить</button>
+          <button class="button button--theme" type="submit">Оформить</button>
           <a href="<?= esc_url(home_url('/')); ?>" class="ajax button button--gray-light" type="shubmit">Отменить</a>
         </div>
       </form>

@@ -52,7 +52,7 @@
 				</div>
 				<?php endif; ?>
 				<?php if($socials): ?>
-				<div class="footer__block">
+				<div class="footer__block footer__block--socials">
 					<div class="footer__block__title">
 						Мы в соц. сетях:
 					</div>
@@ -63,7 +63,7 @@
 				<?php endif; ?>
 			</div>
 			<div class="footer__blocks footer__blocks--borders">
-				<div class="footer__block">
+				<div class="footer__block footer__block--navigation">
 					<?php
 						wp_nav_menu(array(
 							'theme_location' => 'footer',

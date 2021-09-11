@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-:root{
+body{
   --theme: #E31E24;
   --theme-dark: #c12226;
   --white: #ffffff;
@@ -18,6 +18,11 @@
   --footer-text: #E0E0E0;
   --footer-title: #828282;
   --button-gray: #4F4F4F;
+}
+
+body.dark{
+  --theme: #362d2c;
+  --theme-dark: #000000;
 }
 @import 'js/fancybox/fancybox.css';
 @import 'js/swiper/swiper.min.css';
