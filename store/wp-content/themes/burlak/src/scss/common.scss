@@ -795,16 +795,16 @@ body .notic-loading svg {
 }
 
 .logo {
-  width: 100%;
-  max-width: 284px;
   display: block;
   font-size: 0;
+  padding: 10px;
   &--mobile {
     display: none;
-    max-width: 50px;
   }
   img {
-    width: 100%;
+    width: auto;
+    max-height: 45px;
+    max-width: 267px;
     height: auto;
   }
 }

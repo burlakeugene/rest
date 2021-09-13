@@ -1,0 +1,84 @@
+2021-09-12T00:00:01+00:00 CRITICAL Uncaught Error: Call to a member function has_session() on null in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php:303
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/class-wp-hook.php(303): settings('')
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/class-wp-hook.php(327): WP_Hook->apply_filters(NULL, Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-includes/plugin.php(470): WP_Hook->do_action(Array)
+#3 /Users/eugeneburlak/work/php/rest/store/wp-settings.php(578): do_action('init')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-config.php(96): require_once('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-load.php(50): require_once('/Users/eugenebu...')
+#6 /Users/eugeneburlak/work/php/rest/store/wp-cron.php(44): require_once('/Users/eugenebu...')
+#7 {main}
+  thrown in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php on line 303
+
+2021-09-12T00:01:01+00:00 CRITICAL Uncaught Error: Call to a member function has_session() on null in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php:303
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/class-wp-hook.php(303): settings('')
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/class-wp-hook.php(327): WP_Hook->apply_filters(NULL, Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-includes/plugin.php(470): WP_Hook->do_action(Array)
+#3 /Users/eugeneburlak/work/php/rest/store/wp-settings.php(578): do_action('init')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-config.php(96): require_once('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-load.php(50): require_once('/Users/eugenebu...')
+#6 /Users/eugeneburlak/work/php/rest/store/wp-cron.php(44): require_once('/Users/eugenebu...')
+#7 {main}
+  thrown in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php on line 303
+
+2021-09-12T00:02:44+00:00 CRITICAL Uncaught Error: Call to a member function has_session() on null in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php:303
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/class-wp-hook.php(303): settings('')
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/class-wp-hook.php(327): WP_Hook->apply_filters(NULL, Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-includes/plugin.php(470): WP_Hook->do_action(Array)
+#3 /Users/eugeneburlak/work/php/rest/store/wp-settings.php(578): do_action('init')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-config.php(96): require_once('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-load.php(50): require_once('/Users/eugenebu...')
+#6 /Users/eugeneburlak/work/php/rest/store/wp-cron.php(44): require_once('/Users/eugenebu...')
+#7 {main}
+  thrown in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php on line 303
+
+2021-09-12T00:04:40+00:00 CRITICAL Uncaught Error: Call to a member function has_session() on null in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php:303
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/class-wp-hook.php(303): settings('')
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/class-wp-hook.php(327): WP_Hook->apply_filters(NULL, Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-includes/plugin.php(470): WP_Hook->do_action(Array)
+#3 /Users/eugeneburlak/work/php/rest/store/wp-settings.php(578): do_action('init')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-config.php(96): require_once('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-load.php(50): require_once('/Users/eugenebu...')
+#6 /Users/eugeneburlak/work/php/rest/store/wp-cron.php(44): require_once('/Users/eugenebu...')
+#7 {main}
+  thrown in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php on line 303
+
+2021-09-12T00:07:42+00:00 CRITICAL Uncaught Error: Call to a member function has_session() on null in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php:303
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/class-wp-hook.php(303): settings('')
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/class-wp-hook.php(327): WP_Hook->apply_filters(NULL, Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-includes/plugin.php(470): WP_Hook->do_action(Array)
+#3 /Users/eugeneburlak/work/php/rest/store/wp-settings.php(578): do_action('init')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-config.php(96): require_once('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-load.php(50): require_once('/Users/eugenebu...')
+#6 /Users/eugeneburlak/work/php/rest/store/wp-cron.php(44): require_once('/Users/eugenebu...')
+#7 {main}
+  thrown in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php on line 303
+
+2021-09-12T00:09:43+00:00 CRITICAL Uncaught Error: Call to a member function has_session() on null in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php:303
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/class-wp-hook.php(303): settings('')
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/class-wp-hook.php(327): WP_Hook->apply_filters(NULL, Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-includes/plugin.php(470): WP_Hook->do_action(Array)
+#3 /Users/eugeneburlak/work/php/rest/store/wp-settings.php(578): do_action('init')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-config.php(96): require_once('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-load.php(50): require_once('/Users/eugenebu...')
+#6 /Users/eugeneburlak/work/php/rest/store/wp-cron.php(44): require_once('/Users/eugenebu...')
+#7 {main}
+  thrown in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php on line 303
+
+2021-09-12T00:26:45+00:00 CRITICAL Uncaught Error: Call to a member function has_session() on null in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php:303
+Stack trace:
+#0 /Users/eugeneburlak/work/php/rest/store/wp-includes/class-wp-hook.php(303): settings('')
+#1 /Users/eugeneburlak/work/php/rest/store/wp-includes/class-wp-hook.php(327): WP_Hook->apply_filters(NULL, Array)
+#2 /Users/eugeneburlak/work/php/rest/store/wp-includes/plugin.php(470): WP_Hook->do_action(Array)
+#3 /Users/eugeneburlak/work/php/rest/store/wp-settings.php(578): do_action('init')
+#4 /Users/eugeneburlak/work/php/rest/store/wp-config.php(96): require_once('/Users/eugenebu...')
+#5 /Users/eugeneburlak/work/php/rest/store/wp-load.php(50): require_once('/Users/eugenebu...')
+#6 /Users/eugeneburlak/work/php/rest/store/wp-cron.php(44): require_once('/Users/eugenebu...')
+#7 {main}
+  thrown in /Users/eugeneburlak/work/php/rest/store/wp-content/themes/burlak/functions.php on line 303
+

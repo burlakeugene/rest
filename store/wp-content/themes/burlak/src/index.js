@@ -307,9 +307,9 @@ import Request from './js/request';
           });
         });
 
-      let themeColor = getComputedStyle(
-        document.body
-      ).getPropertyValue('--theme');
+      let themeColor = getComputedStyle(document.body).getPropertyValue(
+        '--theme'
+      );
       $('input[data-date]').dateDropper({
         animate: false,
         lang: 'ru',
@@ -486,13 +486,6 @@ import Request from './js/request';
           .find('.gallery-icon a')
           .attr('data-fancybox', 'group-' + jQuery(this).attr('id'));
       });
-
-      let forms = document.querySelectorAll('.wpcf7-form');
-      window.wpcf7 &&
-        forms.length &&
-        forms.forEach((form, index) => {
-          if (!form.querySelector('.ajax-loader')) window.wpcf7.init(form);
-        });
 
       let accordions = document.querySelectorAll('.accordion');
       for (let i = 0; i < accordions.length; i++) {
@@ -721,6 +714,14 @@ import Request from './js/request';
               },
             },
           });
+        });
+
+      let forms = document.querySelectorAll('.wpcf7-form');
+      window.wpcf7 &&
+        window.wpcf7.init &&
+        forms.length &&
+        forms.forEach((form, index) => {
+          if (!form.querySelector('.ajax-loader')) window.wpcf7.init(form);
         });
     }
 

@@ -32,7 +32,7 @@
     display: none;
   }
   .header__navigation {
-    height: calc(100% - 75px);
+    height: calc(100% - 65px);
     position: fixed;
     bottom: 0;
     right: 0;
@@ -169,9 +169,6 @@
     &--mobile {
       display: block;
     }
-  }
-  .header__navigation {
-    height: calc(100% - 60px);
   }
   .banners--index .banners__grid {
     flex-direction: column;
