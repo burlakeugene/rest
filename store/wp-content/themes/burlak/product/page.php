@@ -1,8 +1,9 @@
 <?php
-  $product = new WC_Product(get_the_id());
-  $image = get_the_post_thumbnail_url($news->ID, 'medium');
-  $image_lazy = get_the_post_thumbnail_url($news->ID, 'lazy');
-  $image_full = get_the_post_thumbnail_url($news->ID, 'full');
+  $id = get_the_id();
+  $product = new WC_Product($id);
+  $image = get_the_post_thumbnail_url($id, 'product-rect');
+  $image_lazy = get_the_post_thumbnail_url($id, 'product-rect-lazy');
+  $image_full = get_the_post_thumbnail_url($id, 'full');
   $size = $product->get_weight();
   $quantity = 1;
 ?>
