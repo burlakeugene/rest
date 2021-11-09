@@ -563,7 +563,7 @@ import Request from './js/request';
                       htmlList = html.querySelector('.load-more__list');
                     if (htmlList.children.length) {
                       for (let i = 0; i <= htmlList.children.length; i++) {
-                        list.appendChild(htmlList.children[i]);
+                        if(htmlList.children[i]) list.appendChild(htmlList.children[i]);
                       }
                       router.addLinksEvent();
                     }
