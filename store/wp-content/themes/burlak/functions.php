@@ -571,8 +571,8 @@ function checkout_fields($fields)
 
     if ($shipping['at_time']) {
         $fields['shipping']['date'] = array(
-        'label' => 'Время доставки',
-        'placeholder' => 'Укажите время',
+        'label' => 'Дата доставки',
+        'placeholder' => 'Укажите дату',
         'required' => true,
         'priority' => 2,
         'value' => $shipping['date'] ? $shipping['date'] : '',
@@ -580,8 +580,8 @@ function checkout_fields($fields)
         'class' => array('half')
       );
         $fields['shipping']['time'] = array(
-        'label' => 'Дата доставки',
-        'placeholder' => 'Укажите даты',
+        'label' => 'Время доставки',
+        'placeholder' => 'Укажите время',
         'required' => true,
         'priority' => 3,
         'value' => $shipping['time'] ? $shipping['time'] : '',
