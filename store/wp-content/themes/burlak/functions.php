@@ -451,10 +451,9 @@ function get_current_tags()
     return $result;
 }
 
-function load_template_part($path)
-{
+function load_template_part($path, $props = false){
     ob_start();
-    get_template_part($path);
+    my_get_template_part($path, $props);
     $result = ob_get_contents();
     ob_end_clean();
     return $result;
