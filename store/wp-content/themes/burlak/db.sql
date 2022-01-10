@@ -4988,3 +4988,4 @@ ALTER TABLE `rest_woocommerce_tax_rate_locations`
 --
 ALTER TABLE `rest_wc_download_log`
   ADD CONSTRAINT `fk_rest_wc_download_log_permission_id` FOREIGN KEY (`permission_id`) REFERENCES `rest_woocommerce_downloadable_product_permissions` (`permission_id`) ON DELETE CASCADE;
+lorem

@@ -667,6 +667,7 @@ function my_checkout(){
     $order->set_billing_address_1($address);
     $order->set_billing_first_name($_POST['name']);
     $order->set_billing_phone($_POST['phone']);
+    $order->set_billing_company($_POST['phone']);
 
     if($_POST['at_time']){
       $order->add_order_note("Дата: ".$_POST['date']."\nВремя: ".$_POST['time']);
