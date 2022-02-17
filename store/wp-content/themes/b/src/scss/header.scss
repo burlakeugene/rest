@@ -1,0 +1,34 @@
+.header{
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  .container{
+    padding: 0;
+  }
+  &__main,
+  &__left,
+  &__right{
+    background-color: var(--theme);
+  }
+  &__main{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 3;
+  }
+  &__left,
+  &__right{
+    display: flex;
+    align-items: center;
+  }
+  &__left{
+    justify-content: flex-start;
+  }
+  &__right{
+    justify-content: flex-end;
+    flex: 1;
+  }
+  &__navigation{
+    background-color: var(--white);
+  }
+}

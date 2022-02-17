@@ -690,7 +690,7 @@ function my_checkout(){
         'type' => 'success',
         'delay' => 5000
       ),
-      'redirect' => esc_url(home_url('/'))
+      'redirect' => esc_url(home_url('/order?id='.$order->get_id()))
     )));
 }
 add_action('wc_ajax_my_checkout', 'my_checkout');

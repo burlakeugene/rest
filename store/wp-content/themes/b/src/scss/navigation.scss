@@ -1,0 +1,19 @@
+.navigation {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  a {
+    font-size: 13px;
+    font-weight: 500;
+  }
+  &--footer {
+    display: flex;
+    flex-wrap: wrap;
+    li {
+      margin-right: 34px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

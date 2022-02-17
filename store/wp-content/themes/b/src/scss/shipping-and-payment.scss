@@ -1,0 +1,54 @@
+.shipping-and-payment{
+  &__block{
+    margin: 20px 0;
+    &__title{
+      font-size: 18px;
+      font-weight: 600;
+      margin: 20px 0;
+    }
+    &__items{
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -15px;
+    }
+    &__item{
+      flex: 1;
+      display: flex;
+      padding: 15px;
+      flex-wrap: wrap;
+      align-items: center;
+      &__image{
+        flex: 0 0 60px;
+        font-size: 0;
+        margin-right: 15px;
+        img{
+          width: 100%;
+          height: auto;
+        }
+      }
+      &__label{
+        flex: 1;
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 1.5em;
+        p{
+          margin: 0;
+        }
+      }
+      &__text{
+        font-size: 13px;
+        line-height: 1.5em;
+        flex: 0 0 100%;
+        margin-top: 15px;
+        p{
+          &:first-child{
+            margin-top: 0;
+          }
+          &:last-child{
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}

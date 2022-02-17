@@ -2834,7 +2834,8 @@ body.dark {
     margin-bottom: 15px;
     font-weight: 600;
     font-size: 13px; }
-  .checkout__field__control input, .checkout__field__control select {
+  .checkout__field__control input,
+  .checkout__field__control select {
     width: 100%; }
   .checkout__field--radio .control {
     display: inline-block;
@@ -2859,6 +2860,25 @@ body.dark {
   font-size: 13px;
   margin-bottom: 15px;
   padding: 0 10px; }
+
+.checkout__order {
+  text-align: center;
+  margin: 40px auto;
+  max-width: 540px; }
+  .checkout__order__icon svg,
+  .checkout__order__icon img {
+    width: 100%;
+    max-width: 168px; }
+  .checkout__order__title {
+    margin: 40px 0; }
+    .checkout__order__title h1 {
+      font-size: 24px;
+      text-transform: uppercase;
+      font-weight: 800;
+      line-height: 1em; }
+  .checkout__order__text {
+    margin: 40px 0;
+    font-size: 16px; }
 
 .gallery {
   margin: 0 !important;
