@@ -561,12 +561,17 @@ import Request from './js/request';
                         '.load-more__pagination'
                       ),
                       htmlList = html.querySelector('.load-more__list');
+
                     if (htmlList.children.length) {
-                      for (let i = 0; i <= htmlList.children.length; i++) {
-                        if(htmlList.children[i]) list.appendChild(htmlList.children[i]);
-                      }
+                      const newList = [...htmlList.children].filter(Boolean);
+
+                      newList.forEach((item) => {
+                        list.appendChild(item);
+                      });
+
                       router.addLinksEvent();
                     }
+
                     if (htmlNavigation) {
                       navigation.parentNode.replaceChild(
                         htmlNavigation,
