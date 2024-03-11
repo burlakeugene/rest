@@ -1,4 +1,5 @@
 <?php
+
 if (!function_exists('burlak_setup')) :
   function burlak_setup()
   {
@@ -298,8 +299,7 @@ function register_post_types_init()
 }
 add_action('init', 'register_post_types_init');
 
-function settings()
-{
+function settings(){
     if (!is_admin() && WC() && WC()->session) {
       WC()->session->set_customer_session_cookie(true);
       if (!WC()->session->get('product')) {
@@ -315,6 +315,16 @@ function settings()
           'at_time' => '0',
         ));
       }
+
+      date_default_timezone_set('Europe/Simferopol');
+
+      $shipping = WC()->session->get('shipping');
+
+      $shipping['date'] = $shipping['date'] ? $shipping['date'] : date('Y-m-d');
+      $shipping['date_min'] = date('Y-m-d');
+      $shipping['time'] = $shipping['time'] ? $shipping['time'] : date('H:i');
+
+      WC()->session->set('shipping', $shipping);
     }
 }
 add_action('init', 'settings');
@@ -569,22 +579,25 @@ function checkout_fields($fields)
     );
 
     if ($shipping['at_time']) {
-        $fields['shipping']['date'] = array(
+      $fields['shipping']['date'] = array(
+        'type' => 'date',
         'label' => 'Дата доставки',
         'placeholder' => 'Укажите дату',
         'required' => true,
         'priority' => 2,
-        'value' => $shipping['date'] ? $shipping['date'] : '',
-        'attrs' => array('data-date', 'data-set-shipping="date"'),
+        'min' => $shipping['date_min'],
+        'value' => $shipping['date'],
+        'attrs' => array('data-set-shipping="date"'),
         'class' => array('half')
       );
-        $fields['shipping']['time'] = array(
+      $fields['shipping']['time'] = array(
+        'type' => 'time',
         'label' => 'Время доставки',
         'placeholder' => 'Укажите время',
         'required' => true,
         'priority' => 3,
-        'value' => $shipping['time'] ? $shipping['time'] : '',
-        'attrs' => array('data-time', 'data-set-shipping="time"'),
+        'value' => $shipping['time'],
+        'attrs' => array('data-set-shipping="time"'),
         'class' => array('half')
      );
     }
@@ -604,7 +617,8 @@ function checkout_fields($fields)
       'required' => true,
       'priority' => 5,
       'value' => $shipping['phone'],
-      'attrs' => array('data-maskit="+{7}(000) 000-00-00"', 'data-set-shipping="phone"')
+      'type' => 'tel',
+      'attrs' => array('data-set-shipping="phone"')
     );
 
     $fields['shipping']['comment'] = array(

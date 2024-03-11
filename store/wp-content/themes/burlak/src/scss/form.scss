@@ -82,6 +82,17 @@
   }
 }
 
+input[type="time"],
+input[type="date"]{
+  height: 50px;
+  line-height: 48px;
+  padding: 0 10px 0 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 100%;
+}
+
 input,
 textarea,
 select {

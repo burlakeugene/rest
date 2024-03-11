@@ -59,16 +59,10 @@
             </label>
           </div>
           <div class="shipping__time__control shipping__time__control--calendar">
-            <label>
-              <input data-set-shipping="date" data-date <?= $shipping['date'] ? 'value="'.$shipping['date'].'"' : ''?> type="text">
-              <?php get_template_part('icons/calendar') ?>
-            </label>
+            <input type="date" data-set-shipping="date" value="<?= $shipping['date'] ?>" min="<?= $shipping['date_min'] ?>" />
           </div>
           <div class="shipping__time__control shipping__time__control--time">
-            <label>
-              <input data-set-shipping="time" data-time <?= $shipping['time'] ? 'value="'.$shipping['time'].'"' : ''?> type="text">
-              <?php get_template_part('icons/time') ?>
-            </label>
+            <input type="time" data-set-shipping="time" value="<?= $shipping['time'] ?>" />
           </div>
         </div>
       </div>

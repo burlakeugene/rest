@@ -35,6 +35,36 @@ $fields = WC()->checkout()->checkout_fields;
                       }
                     ?>
                   />
+                <?php elseif ($field['type'] == 'tel'): ?>
+                  <input <?= $field['required'] ? 'required' : '' ?> min="<?= $field['min'] ?>" placeholder="<?= $field['placeholder'] ?>" name="<?= $key ?>" type="tel" value="<?= $field['value'] ?>"
+                    <?php
+                      if ($field['attrs']) {
+                          foreach ($field['attrs'] as $attr) {
+                              echo $attr.' ';
+                          }
+                      }
+                    ?>
+                  />
+                <?php elseif ($field['type'] == 'date'): ?>
+                  <input <?= $field['required'] ? 'required' : '' ?> min="<?= $field['min'] ?>" placeholder="<?= $field['placeholder'] ?>" name="<?= $key ?>" type="date" value="<?= $field['value'] ?>"
+                    <?php
+                      if ($field['attrs']) {
+                          foreach ($field['attrs'] as $attr) {
+                              echo $attr.' ';
+                          }
+                      }
+                    ?>
+                  />
+                <?php elseif ($field['type'] == 'time'): ?>
+                  <input <?= $field['required'] ? 'required' : '' ?> placeholder="<?= $field['placeholder'] ?>" name="<?= $key ?>" type="time" value="<?= $field['value'] ?>"
+                    <?php
+                      if ($field['attrs']) {
+                          foreach ($field['attrs'] as $attr) {
+                              echo $attr.' ';
+                          }
+                      }
+                    ?>
+                  />
                 <?php elseif ($field['type'] == 'textarea'): ?>
                   <textarea <?= $field['required'] ? 'required' : '' ?> placeholder="<?= $field['placeholder'] ?>" name="<?= $key ?>"
                     <?php

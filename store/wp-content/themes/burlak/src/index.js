@@ -665,19 +665,34 @@ import Request from './js/request';
           });
         });
 
-      let maskits = document.querySelectorAll('input[data-maskit]');
+      let maskits = document.querySelectorAll(
+        'input[data-maskit], input[name="phone"], input[type="tel"]'
+      );
       maskits.length &&
         maskits.forEach((maskit) => {
           new Maskit(maskit, {
-            mask: maskit.getAttribute('data-maskit'),
-            // notFilledClear: true,
+            mask: maskit.getAttribute('data-maskit') || '0 (000) 000-00-00',
+            notFilledClear: true,
             onFilled: (scope) => {},
             offFilled: (scope) => {},
             onBlur: (scope) => {},
             onChange: (scope) => {},
             onInit: (scope) => {},
+            beforeChange: ({ scope, value }) => {
+              if (scope.options.mask === '0 (000) 000-00-00') {
+                if (value[0] === '+' && value[1] === '8') {
+                  scope.setMask('0 (000) 000-00-00');
+                } else if (value[0] === '+') {
+                  scope.setMask('+0 (000) 000-00-00');
+                } else {
+                  scope.setMask('0 (000) 000-00-00');
+                }
+                return value;
+              }
+            },
           });
         });
+
       let checkouts = document.querySelectorAll('.checkout-form');
       checkouts.length &&
         checkouts.forEach((checkout) => {
